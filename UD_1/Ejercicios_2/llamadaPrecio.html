@@ -1,0 +1,14 @@
+<script>
+
+    let duracion = prompt("Introduzca la duracion de la llamada (en minutos):")
+    duracion = Number(duracion)
+
+    if (duracion <= 3) {
+        console.log("La llamada ha sido gratuita.")
+    } else if (duracion > 3 && duracion <= 10) {
+        console.log ("La llamada ha costado 0.50€ por minuto.")
+    } else {
+        console.log("El minuto adicional ha costado 0.3€")
+    }
+
+</script>

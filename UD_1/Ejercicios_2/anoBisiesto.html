@@ -1,0 +1,16 @@
+<script>
+
+    let ano = prompt("Introduzca un ano: ")
+    ano = Number(ano)
+
+    let restoCuatro = ano % 4
+    let restoCien = ano % 100
+    let restoCuatrocientos = ano % 400
+    
+    if (restoCuatro == 0 && !restoCien == 0 || restoCuatrocientos == 0) {
+        console.log("Es ano bisiesto.")
+    } else {
+        console.log("No es año bisiesto.")
+    }
+
+</script>

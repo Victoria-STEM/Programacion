@@ -1,0 +1,16 @@
+<script>
+
+    let numero = prompt("Introduce un numero de 2 cifras: ")
+    numero = Number(numero)
+    
+    let segundoNumero = numero % 10
+    let primerNumero = parseInt(numero / 10)
+    let suma = primerNumero + segundoNumero
+
+    if (numero >= 10 && numero <= 99) {
+        console.log("Los numero suman: " + suma)
+    } else {
+        console.log("El numero introducido no tiene 2 cifras.")
+    }
+
+</script>

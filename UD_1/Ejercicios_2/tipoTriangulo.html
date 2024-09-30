@@ -1,0 +1,19 @@
+<script>
+
+    let longitud1 = prompt("Introduce la longitud del primer lado del triangulo: ")
+    let longitud2 = prompt("Introduce la longitud del segundo lado del triangulo: ")
+    let longitud3 = prompt("Introduce la longitud del tercer lado del triangulo: ")
+
+    longitud1 = Number(longitud1)
+    longitud2 = Number(longitud2)
+    longitud3 = Number(longitud3)
+
+    if (longitud1 == longitud2 && longitud1 == longitud3) {
+        console.log("El triangulo es equilatero.")
+    } else if (longitud1 == longitud2 || longitud1 == longitud3 || longitud2 == longitud3) {
+        console.log("El triangulo es isosceles.")
+    } else {
+        console.log("El triangulo es escaleno.")
+    }
+
+</script>
