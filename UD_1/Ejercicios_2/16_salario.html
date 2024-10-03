@@ -1,0 +1,42 @@
+<script>
+
+    let salarioAnual = prompt("Introduzca su salario anual: ")
+    salarioAnual = Number(salarioAnual)
+
+    let impuesto = 0
+
+    if (salarioAnual <= 10000) {
+        console.log("Tiene que pagar 0% de impuestos.")
+    } else if (salarioAnual <= 20000) {
+        impuesto = (salarioAnual - 10000)*0.1
+        console.log("Tiene que pagar un 10% de impuestos: " + impuesto + " €.")
+    } else if (salarioAnual <= 40000) {
+        impuesto = (1000) + (salarioAnual - 20000)*0.2
+        console.log("Tiene que pagar un 20% de impuestos: " + impuesto + " €.")
+    } else {
+        impuesto = (1000) + (20000*0.2) + (salarioAnual - 40000)*0.3
+        console.log("Tiene que pagar 30% de impuesto: " + impuesto + " €.")
+    }
+
+
+/*
+
+    let salarioAnual = prompt("Introduzca su salario anual: ")
+    salarioAnual = Number(salarioAnual)
+
+    let impuesto = 0
+
+    if (salarioAnual > 40000) {
+        impuesto += (salarioAnual - 40000) * 0.3
+    } 
+    if (salarioAnual > 20000) {
+        impuesto += (salarioAnual - 20000) * 0.2
+        salarioAnual = 20000
+    }
+    if (salarioAnual > 10000) {
+        impuesto += (salario - 10000) * 0.1
+    }
+    console.log("Impustos a pagar: " + impuesto)
+
+*/
+</script>
