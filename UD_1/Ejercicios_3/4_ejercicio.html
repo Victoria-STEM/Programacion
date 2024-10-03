@@ -1,13 +1,16 @@
 <script>
 
+    let numero = prompt("Introduce un numero: ")
     let color = prompt("Introduce un color: ")
-
-    let salida = ""
-
-    for (let i = 0; i >= 0 && i < 5; i++) {
-        salida += color + " "
-    }
-    console.log(salida)
     
+    numero = Number(numero)
+
+    let salida = "" 
+
+    for (let i = 0; i < numero; i++) {
+        salida += color + " " 
+    }
+
+    console.log(salida)
 
 </script>
