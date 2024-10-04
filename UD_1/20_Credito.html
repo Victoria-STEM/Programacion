@@ -1,0 +1,17 @@
+<script>
+
+    let credito = prompt("Introduzca su puntuacion de credito: ")
+    let tiempo = prompt("Introduzca cuando tiempo ha estado en el banco: ")
+
+    credito = Number(credito)
+    tiempo = Number(tiempo)
+
+    if (credito > 750 && tiempo > 5) {
+        console.log("Se le aprueba un credito premium.")
+    } else if (credito > 650 && (tiempo >= 2 && tiempo <= 5)) {
+        console.log("Se le aprueba un credito standard.")
+    } else {
+        console.log("Se le rechaza el credito.")
+    }
+
+</script>
