@@ -1,0 +1,25 @@
+<script>
+
+    let numero = prompt("Introduce un numero: ")
+    numero = Number(numero)
+
+    console.log("Este es el número introducido: " + numero)
+
+    for (let i = 0; i <= numero; i++) {
+        let fila = ""  // Reiniciar la fila en cada iteración del bucle externo
+
+        // Bucle para agregar los espacios en blanco
+        for (let j = 0; j <= numero - i; j++) {
+            fila += " "  // Añadir un espacio a la fila
+        }
+
+        // Bucle para agregar los asteriscos
+        for (let k = 0; k <= (2 * i); k++) {
+            fila += "*" // Añadir un asterisco a la fila
+        }
+
+        console.log(fila)  // Mostrar la fila completa en la consola
+    }
+
+    console.log("Esto es lo que sale del bucle.")
+</script>

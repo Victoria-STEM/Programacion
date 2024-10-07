@@ -1,0 +1,25 @@
+<script>
+
+    let numero = prompt("Introduce un numero: ")
+    numero = Number(numero)
+
+    console.log("Este es el número introducido: " + numero);
+
+    for(let i = numero; 0 < i; i--) {
+        fila = "" 
+
+        for(let k = 0; k < (numero - i); k++) {
+            fila += " "
+        }
+
+        for(let j = i; 0 < j; j--) {
+            fila += "*"
+        }
+
+        console.log(fila)
+    
+    }
+
+    console.log("Esto es lo que sale del bucle.")
+
+</script>

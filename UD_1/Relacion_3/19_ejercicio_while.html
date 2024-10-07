@@ -1,0 +1,20 @@
+<script>
+
+    let numero1 = prompt("Introduce un numero entero: ")
+    numero1 = Number(numero1)
+    
+    let numero2 = prompt("Introduce un numero entero: ")
+    numero2 = Number(numero2)
+
+    console.log("Estos son los numero introducidos: " + numero1 + " y " + numero2)
+
+    numero1++
+
+    while(numero1%numero2 != 0) {
+        numero1++
+        console.log("Este es el numero dentro del bucle: " + numero1)
+    }
+
+    console.log("Este es el multiplo del segundo numero fuera del bucle: " + numero1)
+
+</script>

@@ -1,0 +1,24 @@
+<script>
+
+    let numero1 = prompt("Introduce un numero: ")
+    numero1 = Number(numero1)
+
+    let numero2 = prompt("Introduce otro numero: ")
+    numero2 = Number(numero2)
+
+    console.log("Estos son los numero introducidos: " + numero1 + " y " + numero2)
+    
+    let fila = ""
+    let asterisco = ""
+
+    for (let i = 0; i < numero1; i++) {
+        fila = ""
+
+        for (let j = 0; j < numero2; j++) {
+            fila += "*"
+        }
+         
+        console.log(fila)
+    }
+
+</script>

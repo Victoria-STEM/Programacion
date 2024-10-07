@@ -1,0 +1,19 @@
+<script>
+
+    let numero = prompt("Introduce un numero entero: ")
+    numero = Number(numero) 
+
+    console.log("Este es el numero introducido: " + numero)
+
+    numero++
+
+    console.log("Este es el numero +1: " + numero)
+
+    while(numero%2 != 0 && numero%3 != 0){ // con || es multiplo de 2 y 3, con && es multiplo de 2 ó 3 :)
+        numero++
+    }
+
+    console.log("Esta es el numero fuera del bucle multiplo de 2 y de 3: " + numero)
+
+
+</script>

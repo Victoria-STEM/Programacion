@@ -1,0 +1,17 @@
+<script>
+
+    let numero = prompt("Introduce un numero entero: ")
+    numero = Number(numero) 
+
+    console.log("Este es el numero introducido: " + numero)
+
+    numero++
+
+    while(numero%2 != 0 || numero%5 != 0 || numero%3 != 0) {
+        numero++
+        console.log("Este es el numero dentro del bucle: " + numero)
+    }
+
+    console.log("Este es el numero fuera del bucle: " + numero)
+
+</script>
