@@ -1,0 +1,29 @@
+<script>
+
+    let numero1 = prompt("Introduce un numero:")
+    let numero2 = prompt("Introduce otro numero: ")
+
+    numero1 = Number(numero1)
+    numero2 = Number(numero2)
+
+    console.log("El primer numero es " + numero1)
+
+    while (numero1 != numero2) {
+        console.log(numero2 + " No es el numero correcto.")
+
+        if (numero1 < numero2) {
+                console.log("El primer numero es menor que el segundo.")
+            } else {
+                console.log("El segundo numero es mayor que el primero.")
+            }
+            
+        numero2 = prompt("Vuelve a introducir otro numero: ")
+    } console.log("El ultimo numero es igual al primero.")
+
+    // if (numero1 == numero2) {
+    //     console.log(numero1 + " y " + numero2 + "son iguales.")
+    // } REDUNDANTE!!!
+    
+
+    
+</script>

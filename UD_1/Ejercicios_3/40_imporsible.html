@@ -1,0 +1,18 @@
+<script>
+
+    let numeroUsuario = prompt("Introduce un numeroUsuario entero: ")
+    numeroUsuario = Number(numeroUsuario)
+
+    let cifrasrestantes = numeroUsuario
+    let resto 
+    let suma = 0
+
+    while (cifrasrestantes != 0) {
+        resto = cifrasrestantes % 10
+        cifrasrestantes = parseInt(cifrasrestantes/10)
+        suma += resto
+    }
+
+    console.log("Los digitos del numero suman " + suma)
+
+</script>

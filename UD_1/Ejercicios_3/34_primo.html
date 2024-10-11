@@ -1,0 +1,42 @@
+<!-- <script>
+
+    let numero = prompt("Introduce un numero entero: ")
+    numero = Number(numero)
+
+    console.log("Ha introducido: " + numero) 
+    let i = ""
+
+    for (i = 2; i < numero; i++) {
+    }
+
+    if (numero == 2 || numero == 3 && numero != i && numero%i != 0) {
+        console.log("El numero es primo.")
+    } else {
+        console.log("El numero no es primo.")
+    }
+
+    console.log("Numero fuera del buble " + numero) 
+
+</script> -->
+
+
+<script>
+
+    let numero = prompt("Introduce un numero entero: ")
+    numero = Number(numero)
+
+    let esPrimo = true
+    let i = 2
+
+    for (i = 2; i < numero && esPrimo; i++) {
+        if(numero%i == 0)
+            esPrimo = false
+    }
+
+    if(esPrimo){
+        console.log("El numero es primo.")
+    }else{
+        console.log("El numero no es primo.")
+    }
+
+</script>
