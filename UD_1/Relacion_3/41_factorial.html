@@ -1,0 +1,16 @@
+<script>
+
+    let numero = prompt("Introduce un numero: ")
+    numero = Number(numero)
+
+    console.log("El numero introducido es " + numero)
+    let factorial = numero
+
+    while (numero > 1) {
+        numero--
+        factorial *= numero
+    }   
+    
+    console.log("Fuera del while " + factorial)
+
+</script>

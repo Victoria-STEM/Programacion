@@ -1,0 +1,39 @@
+<script>
+
+    let calificacion = prompt("Introduce la calificacion del alumno: ")
+    calificacion = Number(calificacion)
+
+    console.log("La primera calificacion introducida es: " + calificacion)
+
+    let nuevaCalificacion
+    let alumno = 1
+    let promedio
+
+    let aprobados = 0
+    let suspensos = 0
+
+    while (calificacion != (-1) && nuevaCalificacion != (-1)) {
+        nuevaCalificacion = prompt("Introduce la siguiente calificacion: ")
+        nuevaCalificacion = Number(nuevaCalificacion)
+        console.log("La siguiente calificacion introducida es: " + nuevaCalificacion)
+        calificacion += nuevaCalificacion
+        alumno += 1
+
+        if (calificacion > 5 || nuevaCalificacion > 5) {
+            aprobados +=1
+        }
+
+        if (calificacion <= 5 || nuevaCalificacion <= 5) {
+            suspensos += 1
+        }
+    } 
+    
+    promedio = calificacion / alumno
+    console.log("La suma de las calificaciones es " + calificacion)
+    console.log("La suma de los alumnos es " + alumno)
+    console.log("El promedio de los alumnos es " + promedio)
+
+    console.log("El numero de alumnos suspensos es: " + suspensos)
+    console.log("El numero de alumnos aprobados es: " + aprobados)
+
+</script>

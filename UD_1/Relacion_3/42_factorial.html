@@ -1,0 +1,28 @@
+<script>
+
+    let numero = prompt("Introduce un numero: ")
+    numero = Number(numero)
+
+    console.log("El numero introducido es " + numero)
+
+    let factorial = numero
+
+    while (numero > 1) {
+        numero-- 
+
+        let siguienteNumero = numero
+        console.log("El siguiente numero es " + siguienteNumero)
+        let factorial2 = siguienteNumero
+
+            while (siguienteNumero > 1) {
+                siguienteNumero--
+                factorial2 *= siguienteNumero
+            }
+
+        console.log("Su factorial es " + factorial2)
+        factorial *= numero
+    }   
+    
+    console.log("El factorial del primer numero es " + factorial)
+
+</script>
