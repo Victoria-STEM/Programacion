@@ -1,0 +1,29 @@
+<script>
+
+    let saldoInicial = 1000
+    console.log("El saldo inicial es de: " + saldoInicial)
+
+    let retiradaDinero
+    let otrCantidad
+
+    while (saldoInicial > 0) {
+    
+    retiradaDinero = prompt("Introduzca saldo a retirar: ")
+    retiradaDinero = Number(retiradaDinero)
+
+    saldoInicial -= retiradaDinero
+
+        if (saldoInicial < retiradaDinero && saldoInicial < 0) {
+            console.log("Saldo insuficiente.")
+        }
+
+        if (saldoInicial == 0) {
+            console.log("Te has quedado sin dinero.")
+        }
+
+    console.log("Has retirado " + retiradaDinero + " te queda " + saldoInicial)    
+
+    }
+
+
+</script>
