@@ -1,0 +1,67 @@
+<!-- <script>
+
+    let temperatura = prompt("Introduce la temperatura:")
+    temperatura = Number(temperatura)
+
+    let diaSemana = 1
+    let otraTemperatura
+    let temperaturaMedia
+    let diaSemanaContables = 1
+
+    console.log("Introduce la temperatura del día " + diaSemana + " : " + temperatura)
+
+    while (diaSemana < 7) {
+        diaSemana ++
+
+        otraTemperatura = prompt("Introduce otra temperatura")
+        otraTemperatura = Number(otraTemperatura)
+
+        console.log ("Introduce la temperatura del día " + diaSemana + " : " + otraTemperatura)
+
+        if (otraTemperatura <= -20 || otraTemperatura >= 50) {
+            otraTemperatura = 0
+            temperatura += otraTemperatura
+            diaSemana -= diaSemanaContables
+            temperaturaMedia = temperatura/diaSemana 
+        }
+    }
+
+    temperaturaMedia = temperatura/diaSemana 
+
+    console.log("La suma total de las temperaturas es: " + temperatura)
+    console.log("Los días de la semana son: " + diaSemana)
+    console.log("La temperatura media de la semana es " + temperaturaMedia)
+
+</script> -->
+
+
+<script>
+
+    let temperatura = prompt("Introduce la temperatura:")
+    temperatura = Number(temperatura)
+
+    let diaSemana = 1
+    let otraTemperatura
+    let temperaturaMedia
+
+    console.log("Introduce la temperatura del día " + diaSemana + " : " + temperatura)
+
+    for (let i = 2; i <= 7; i++) {
+
+        otraTemperatura = prompt("Introduce otra temperatura")
+        otraTemperatura = Number(otraTemperatura)
+
+        console.log ("Introduce la temperatura del día " + i + " : " + otraTemperatura)
+
+        if (otraTemperatura > -20 && otraTemperatura < 50) {
+            diaSemana += 1
+            temperatura += otraTemperatura
+        }
+    }
+
+    temperaturaMedia = temperatura/diaSemana 
+
+    console.log("La suma total de las temperaturas es: " + temperatura)
+    console.log("La temperatura media de la semana es " + temperaturaMedia)
+
+</script>
