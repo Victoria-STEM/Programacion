@@ -1,0 +1,63 @@
+<script>
+
+    // Pido el combustible inicial
+    let combustibleInicial = prompt("Introduce el combustible inicial: ")
+    combustibleInicial = Number(combustibleInicial)
+    
+    // Pido el precio del litro de combustible
+    let precioCombustibleLitro = prompt("Introduce el precio del combustible: ")
+    precioCombustibleLitro = Number(precioCombustibleLitro)
+
+    // Pido el consumo: precio l x 100 km
+    let consumo = prompt("Introduce el consumo cada 100km: ")
+    consumo = Number(consumo)    
+
+    // Imprimo el combustible inicial, el precio por litro y el consumo
+    console.log("Introduce el combustible inicial: " + combustibleInicial)
+    console.log("Precio del litro de combustible: " + precioCombustibleLitro)
+    console.log("Consumo cada 100km: " + consumo)
+
+    let kmSiguienteViaje
+    let numeroViaje = 1
+
+    while (combustibleInicial > 0) {
+
+        let kmViaje = prompt("Introduce los km del viaje " + numeroViaje + " :")
+        kmViaje = Number(kmViaje)
+    
+        // Calculo el precio del viaje: km x precio litro
+        // Imprimo el precio del viaje
+        let consumoPrimerViaje = (consumo * kmViaje)/100
+        let precioViaje = consumoPrimerViaje * precioCombustibleLitro
+        combustibleInicial -= consumoPrimerViaje
+
+        if (combustibleInicial < 0) {
+            console.log("Combustible insuficiente.")
+        } else {
+        
+        numeroViaje += 1
+
+        console.log("Introduce los kilometro del viaje " + numeroViaje + " :" + kmViaje)
+        console.log("Precio del viaje: " + precioViaje)
+        console.log("Combustible restante: " + combustibleInicial)
+
+        kmSiguienteViaje = prompt("Introduce los km del viaje " + numeroViaje + " :")
+        kmSiguienteViaje = Number(kmSiguienteViaje)
+
+        let consumoSiguienteViaje = (consumo * kmSiguienteViaje)/100
+        let precioSiguienteViaje = consumoSiguienteViaje*precioCombustibleLitro
+        combustibleInicial -= consumoSiguienteViaje
+
+        if (combustibleInicial < 0) {
+            console.log("Combustible insuficiente.")
+        } else {
+        
+        console.log("Introduce los kilometro del viaje " + numeroViaje + " :" + kmSiguienteViaje)
+        console.log("Precio del viaje es: " + precioSiguienteViaje) 
+        console.log("Combustible restante: " + combustibleInicial + " litros")
+        }
+        }
+
+    }
+
+</script>
