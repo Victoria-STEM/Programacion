@@ -1,18 +1,17 @@
 <script>
 
-    let operacion = 0
-    let numero1 = 0
-    let numero2 = 0
+    let numero1 
+    let numero2 
+    let operacion 
     
-    while (operacion != "SALIR" || numero1 != "SALIR" || numero2 != "SALIR") {
+    while (operacion != "SALIR") {
 
         numero1 = prompt("Introduce el primer numero: ")
-        numero1 = Number(numero1)
-
         numero2 = prompt("Introduce el segundo numero: ")
-        numero2 = Number(numero2)
-
         operacion = prompt("Introduce la operacion (+,-,*,/): ")
+
+        numero1 = Number(numero1)
+        numero2 = Number(numero2)
 
         if (operacion == "+") {
             let suma = numero1 + numero2
