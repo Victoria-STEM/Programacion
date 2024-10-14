@@ -1,0 +1,38 @@
+<script>
+
+    let operacion = 0
+    
+    while (operacion != "SALIR") {
+
+        let numero1 = prompt("Introduce el primer numero: ")
+        numero1 = Number(numero1)
+
+        let numero2 = prompt("Introduce el segundo numero: ")
+        numero2 = Number(numero2)
+
+        operacion = prompt("Introduce la operacion (+,-,*,/): ")
+
+        if (operacion == "+") {
+            let suma = numero1 + numero2
+            console.log("El resultado de " + numero1 + operacion + numero2 + " es " + suma)
+        } 
+        
+        if (operacion == "-") {
+            let resta = numero1 - numero2
+            console.log("El resultado de " + numero1 + operacion + numero2 + " es " + resta)
+        }
+
+        if (operacion == "*") {
+            let multiplicacion = numero1 * numero2
+            console.log("El resultado de " + numero1 + operacion + numero2 + " es " + multiplicacion)
+        }
+
+        if (operacion == "/") {
+            let division = numero1 / numero2
+            console.log("El resultado de " + numero1 + operacion + numero2 + " es " + division)
+        }
+    
+    }
+
+
+</script>
