@@ -1,0 +1,21 @@
+<script>
+
+    let filas = prompt("Introduce un filas: ")
+    filas = Number(filas)
+
+    let asteriscos = ""
+    let espacios = ""
+
+    for (let i = filas; 0 < i; i--) {
+        asteriscos += "**"
+        espacios = ""
+
+        for (let j = 0; j < i; j++) {
+            espacios += " " 
+        }
+
+        console.log(espacios+asteriscos)
+
+    }
+
+    </script>

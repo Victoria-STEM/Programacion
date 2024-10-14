@@ -1,0 +1,22 @@
+<script>
+
+    let numero = prompt("Introduce un numero: ")
+    numero = Number(numero)
+
+    let asteriscos = ""
+    let espacios = ""
+
+    for (let i = 0; i < numero; i++) {
+        espacios += " "
+        asteriscos = ""
+
+        for (let j = 0; j > numero -i; j++) {
+            asteriscos += "*"
+        }
+
+        console.log(espacios+asteriscos)
+
+    } 
+        
+            
+</script>
