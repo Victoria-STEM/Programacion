@@ -3,37 +3,46 @@
     let numero1 
     let numero2 
     let operacion 
+    let bucle = true
     
-    while (operacion != "SALIR") {
+    while (bucle == true) {
 
         numero1 = prompt("Introduce el primer numero: ")
-        numero2 = prompt("Introduce el segundo numero: ")
-        operacion = prompt("Introduce la operacion (+,-,*,/): ")
 
-        numero1 = Number(numero1)
-        numero2 = Number(numero2)
-
-        if (operacion == "+") {
-            let suma = numero1 + numero2
-            console.log("El resultado de " + numero1 + operacion + numero2 + " es " + suma)
-        } 
+        if (numero1 != "SALIR") {
+            numero2 = prompt("Introduce el segundo numero: ")
+        } else {
+            bucle = false
+        }
         
-        if (operacion == "-") {
-            let resta = numero1 - numero2
-            console.log("El resultado de " + numero1 + operacion + numero2 + " es " + resta)
+        if (numero2 != "SALIR" && bucle == true) {
+            operacion = prompt("Introduce la operacion (+,-,*,/): ")
+        } else {
+            bucle = false
         }
 
-        if (operacion == "*") {
-            let multiplicacion = numero1 * numero2
-            console.log("El resultado de " + numero1 + operacion + numero2 + " es " + multiplicacion)
-        }
+        if (operacion != "SALIR" && bucle == true) {
 
-        if (operacion == "/") {
-            let division = numero1 / numero2
-            console.log("El resultado de " + numero1 + operacion + numero2 + " es " + division)
+            numero1 = Number(numero1)
+            numero2 = Number(numero2)
+
+            if (operacion == "+") {
+                let suma = numero1 + numero2
+                console.log("El resultado de " + numero1 + operacion + numero2 + " es " + suma)
+            } else if (operacion == "-") {
+                let resta = numero1 - numero2
+                console.log("El resultado de " + numero1 + operacion + numero2 + " es " + resta)
+            } else if (operacion == "*") {
+                let multiplicacion = numero1 * numero2
+                console.log("El resultado de " + numero1 + operacion + numero2 + " es " + multiplicacion)
+            } else if (operacion == "/") {
+                let division = numero1 / numero2
+                console.log("El resultado de " + numero1 + operacion + numero2 + " es " + division)
+            }
+        } else {
+            bucle = false
         }
     
     }
-
-
+    
 </script>
