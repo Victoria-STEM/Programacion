@@ -1,35 +1,37 @@
 <script>
 
-    let numero
-    let digito
+    let numero = 0
+    let digito = 0
+
+    let digitoNumero
+    let contador = 0
+    let bucle = true
 
     while (numero != "SALIR" || digito != "SALIR") {
     
         numero = prompt("Introduce un numero: ")
-        digito = prompt("Introduce un digito: ")
-
+        numero = Number(numero)
         console.log("Introduce el numero: " + numero)
-        console.log("Introduce el digito: " + digito)
 
-    //     if (digito < 0 || digito > 10) {
-    //         console.log("Digito incorrecto!")
-    //     }
+        digito = prompt("Introduce un digito: ")
+        digito = Number(digito)
 
-    //     if (numero < 0) {
-    //         console.log("Numero incorrecto!")
-    //     }
+        if (digito < 0) {
+            console.log("Numero incorrecto.")
+        } 
 
-    //     let veces = 0
+        while (numero >= digito) {
+            
+            digitoNumero = parseInt(digito%10)
 
-    //     while (0 < numero) {
+            if (digito = digitoNumero) {
+                contador += 1
+            }
+        } 
 
-    //         let unidadDigito = parseInt(numero%10)
-    //          if (unidadDigito == digito) {
-    //             veces += 1
-    //          }
-    //     }
-
-    //     console.log("El digito " + digito + " aparece " + veces + " en el numero " + numero)
+        console.log("El digito aparece " + contador + " veces en el numero " + numero)
+        
     }
+
 
 </script>
