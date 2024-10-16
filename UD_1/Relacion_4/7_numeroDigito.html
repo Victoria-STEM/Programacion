@@ -38,18 +38,21 @@
             console.log("Numero incorrecto.")
             digito = prompt("Introduce un digito2: ")
         }
+        
+        let numeroOriginal = numero
+        contador = 0
 
         if (bucle == true) {
             digito = Number(digito)
             
-            while (numero >= digito || nuevoNumero >= digito) {
+            while (numero >= digito) {
                 digitoNumero = numero%10
                 if (digito == digitoNumero) {
                     contador += 1
                 }
                 numero = parseInt(numero/10)
             }
-            console.log("El digito aparece " + contador + " veces en el numero.")
+            console.log("El digito aparece " + contador + " veces en el numero " + numeroOriginal)
         } 
     }
 
