@@ -6,31 +6,51 @@
     let digitoNumero
     let contador = 0
     let bucle = true
+    let nuevoNumero
 
-    while (numero != "SALIR" || digito != "SALIR") {
+    while (bucle == true) {
     
         numero = prompt("Introduce un numero: ")
-        numero = Number(numero)
-        console.log("Introduce el numero: " + numero)
+        console.log("El numero introducido es " + numero)
 
-        digito = prompt("Introduce un digito: ")
-        digito = Number(digito)
-
-        if (digito < 0) {
-            console.log("Numero incorrecto.")
-        } 
-
-        while (numero >= digito) {
-            
-            digitoNumero = parseInt(digito%10)
-
-            if (digito = digitoNumero) {
-                contador += 1
-            }
-        } 
-
-        console.log("El digito aparece " + contador + " veces en el numero " + numero)
+        if (numero == "SALIR") {
+            bucle = false 
+        }
         
+        while (bucle == true && numero < 0) {
+            console.log("Numero incorrecto.")
+            numero = prompt("Introduce un numero2: ") 
+        } 
+        
+        if (bucle == true && numero > 0) {
+            numero = Number(numero)
+            digito = prompt("Introduce un digito: ")
+            console.log("El digito introducido es: " + digito)
+        }
+        
+        if (digito == "SALIR") {
+            bucle = false
+        }
+        
+        digito = Number(digito)
+        
+        while (bucle == true && (digito < 0 || digito >= 10)) {
+            console.log("Numero incorrecto.")
+            digito = prompt("Introduce un digito2: ")
+        }
+
+        if (bucle == true) {
+            digito = Number(digito)
+            
+            while (numero >= digito || nuevoNumero >= digito) {
+                digitoNumero = numero%10
+                if (digito == digitoNumero) {
+                    contador += 1
+                }
+                numero = parseInt(numero/10)
+            }
+            console.log("El digito aparece " + contador + " veces en el numero.")
+        } 
     }
 
 
