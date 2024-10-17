@@ -1,0 +1,17 @@
+<script>
+
+    let promedioAcademico = prompt("Introduzca su promedio academico:")
+    let ingresoMedio = prompt("Introduzca su ingreso medio anual: ")
+
+    promedioAcademico = Number(promedioAcademico)
+    ingresoMedio = Number(ingresoMedio)
+
+    if (promedioAcademico >= 9 && ingresoMedio < 20000) {
+        console.log("Recibe una beca.")
+    } else if (promedioAcademico >= 8 && ingresoMedio > 20000) {
+        console.log("Recibe beca parcial.")
+    } else {
+        console.log("No recibe beca.")
+    }
+
+</script>

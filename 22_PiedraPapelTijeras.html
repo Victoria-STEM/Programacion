@@ -1,0 +1,22 @@
+<script>
+
+    let jugadorUno = prompt ("Jugador1. Introduzca 'piedra', 'papel' o 'tijeras': ")
+    let jugadorDos = prompt ("Jugador2. Introduzca 'piedra', 'papel' o 'tijeras': ")
+
+    if(jugadorUno == "piedra" && jugadorDos == "tijeras"){
+        console.log("Gana Jugador1.")
+    } else if  (jugadorDos == "piedra" && jugadorUno == "tijeras"){
+        console.log("Gana el Jugador2.")
+    } else if (jugadorUno == "tijeras" && jugadorDos == "papel") {
+        console.log("Gana Jugador1.")
+    } else if (jugadorDos == "tijeras" && jugadorUno == "papel") {
+        console.log("Gana Jugador2.")
+    } else if (jugadorUno == "papel" && jugadorDos == "piedra") {
+        console.log("Gana Jugador1.")
+    } else if (jugadorDos == "papel" && jugadorUno == "piedra") {
+        console.log("Gana Jugador2.")
+    } else {
+        console.log("Empate.")
+    }
+
+</script>
