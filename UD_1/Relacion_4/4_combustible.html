@@ -1,0 +1,35 @@
+<script>
+
+    let cantidadLitrosInicial = prompt("Introduce el combustible inicial: ")
+    cantidadLitrosInicial = Number(cantidadLitrosInicial)
+
+    let precioLitro = prompt("Precio del litro de combustible: ")
+    precioLitro = Number(precioLitro)
+
+    let consumo = prompt("Consumo cada 100km: ")
+    consumo = Number(consumo)
+
+    let precioLitroKm = (consumo/100)*precioLitro
+
+    let numeroViaje = 1
+    let kmViaje = 0
+
+    let combustibleRestante
+
+    while (cantidadLitrosInicial > 0) {
+
+        kmViaje = prompt("Introduce los km del viaje" + numeroViaje)
+        console.log("Introduce los km del viaje " + numeroViaje + " : " + kmViaje)
+
+        numeroViaje ++
+        combustibleRestante = kmViaje * (consumo/100)
+        cantidadLitrosInicial -= combustibleRestante
+
+        console.log("El precio del viaje: " + (precioLitroKm * kmViaje))
+        console.log("Combustible restante: " + cantidadLitrosInicial)
+
+    }
+
+    console.log("Combustible insuficiente")
+
+</script>
