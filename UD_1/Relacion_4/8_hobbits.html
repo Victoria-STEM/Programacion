@@ -1,4 +1,5 @@
 18:45 - 20:20
+finalizacion sin fallos 20:43
 
 <script>
 
@@ -46,14 +47,11 @@
         puedeRepetir3 = false
     }
 
-
+    let sumaEdades = edad1 + edad2 + edad3
     
-
-        let sumaEdades = edad1 + edad2 + edad3
-    
-        let multiplo2 = sumaEdades % 2
-        let multiplo3 = sumaEdades % 3
-        let multiplo5 = sumaEdades % 5
+    let multiplo2 = sumaEdades % 2
+    let multiplo3 = sumaEdades % 3
+    let multiplo5 = sumaEdades % 5
 
         console.log("NOTA - La suma de las edad es: " + sumaEdades)
 
@@ -77,10 +75,33 @@
         console.log("El tercer Hobbit no puede repetir. :(")
     }  
 
+    console.log ("NOTA - Solo quedan 2 platos! ")
+
     // Cómo repartimos si toca a 3: compartimos!
     if ((multiplo2 == 0) && (multiplo3 == 0) && (multiplo5 == 0) && puedeRepetir1 == false && puedeRepetir2 == false && puedeRepetir3 == false) {
         console.log("Los tres Hobbit pueden repetir. :) ... Pero solo quedan 2 platos así que habra que compartir.")
     } 
+    if (puedeRepetir1 == true && puedeRepetir2 == true && puedeRepetir3 == true) {
+        console.log("Los tres Hobbit son menores de edad y pueden repetir. :) ... Pero solo quedan 2 platos así que habra que compartir.")
+    } 
+    if ((multiplo2 == 0) && (multiplo3 == 0) && puedeRepetir3 == true) {
+        console.log("Los tres Hobbit pueden repetir. :) ... Pero solo quedan 2 platos así que habra que compartir.")
+    }
+    if ((multiplo3 == 0) && (multiplo5 == 0) && puedeRepetir1 == true) {
+        console.log("Los tres Hobbit pueden repetir. :) ... Pero solo quedan 2 platos así que habra que compartir.")
+    }
+    if ((multiplo2 == 0) && (multiplo5 == 0) && puedeRepetir2 == true) {
+        console.log("Los tres Hobbit pueden repetir. :) ... Pero solo quedan 2 platos así que habra que compartir.")
+    }
+    if ((multiplo5 == 0) && puedeRepetir1 == true && puedeRepetir2 == true) {
+        console.log("Los tres Hobbit pueden repetir. :) ... Pero solo quedan 2 platos así que habra que compartir.")
+    }
+    if ((multiplo2 == 0) && puedeRepetir2 == true && puedeRepetir3 == true) {
+        console.log("Los tres Hobbit pueden repetir. :) ... Pero solo quedan 2 platos así que habra que compartir.")
+    }
+    if ((multiplo3 == 0) && puedeRepetir1 == true && puedeRepetir3 == true) {
+        console.log("Los tres Hobbit pueden repetir. :) ... Pero solo quedan 2 platos así que habra que compartir.")
+    }
     
     // Cómo repartimos si no toca: sobra!
     if ((multiplo2 != 0) && (multiplo3 != 0) && (multiplo5 != 0) && puedeRepetir1 == false && puedeRepetir2 == false && puedeRepetir3 == false) {
@@ -89,16 +110,14 @@
     
 
     // Cómo repartimos: si toca a 1 o 2 max.
-    console.log ("NOTA - Solo quedan 2 platos! ")
-
-    if ((multiplo2 == 0) || (multiplo3 == 0) && (multiplo5 != 0) && puedeRepetir1 == false && puedeRepetir2 == false && puedeRepetir3 == false) {
-         console.log("A comer!")
+    if ((multiplo2 == 0) && (multiplo3 == 0) && (multiplo5 != 0) && puedeRepetir1 == false && puedeRepetir2 == false && puedeRepetir3 == false) {
+         console.log("Sin problemas, a comer!")
     } 
      if ((multiplo2 == 0) && (multiplo5 == 0) && (multiplo3 != 0) && puedeRepetir1 == false && puedeRepetir2 == false && puedeRepetir3 == false) {
-         console.log("A comer!")
+         console.log("Sin problemas, a comer!")
     } 
      if ((multiplo3 == 0) && (multiplo5 == 0) && (multiplo2 != 0) && puedeRepetir1 == false && puedeRepetir2 == false && puedeRepetir3 == false) {
-         console.log("A comer!")
+         console.log("Sin problemas, a comer!")
     }
     
     
