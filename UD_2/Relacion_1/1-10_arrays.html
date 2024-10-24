@@ -1,0 +1,148 @@
+<script>
+
+    console.log()
+
+// 1. Crear un array y acceder a los elementos
+// Crea un array llamado numeros que contenga los números [5, 10, 15, 20]. Imprime en la consola el primer y el último elemento accediendo directamente por su índice.
+
+    const arrayNumeros = [5,10,15,20]
+    let numeroPosicion1 = arrayNumeros[0]
+    let ultimaposicion = arrayNumeros[arrayNumeros.length - 1]
+    console.log(numeroPosicion1)
+    console.log(ultimaposicion)
+    
+
+// 2. Añadir elementos
+// Crea un array vacío llamado colores.
+// Añade los colores "rojo", "verde" y "azul" al final del array utilizando y luego imprime el array.
+
+    const arrayColores = []
+    arrayColores.push ("rojo")
+    arrayColores.push ("verde")
+    arrayColores.push ("azul")
+    console.log(arrayColores)
+
+
+// 3. Eliminar el último elemento
+// Usando el array colores del ejercicio anterior, elimina el último color.
+// Muestra el array resultante y el valor del color eliminado.
+
+    let colorFinalBorrado = arrayColores.pop()
+    console.log(colorFinalBorrado)
+    console.log(arrayColores)
+
+
+// 4. Añadir elementos al inicio
+// Crea un array llamado animales que contenga los elementos "perro", "gato".
+// Añade "loro" y "tortuga" al inicio del array y luego imprime el array.
+
+    const arrayAnimales = ["perro", "gato"]
+    let anadoLoro = arrayAnimales.unshift("loro")
+    let anadoTortuga = arrayAnimales.unshift("tortuga")
+    console.log(arrayAnimales)
+
+//     5. Eliminar el primer elemento
+// Usando el array animales del ejercicio anterior, elimina el primer elemento.
+// Muestra el array después de la eliminación y el valor del elemento eliminado.
+
+    let eliminoTortuga = arrayAnimales.shift()
+    console.log(arrayAnimales)
+
+
+//     6. Añadir y eliminar elementos simultáneamente
+// Crea un array llamado frutas que contenga los elementos "manzana", "banana", "naranja".
+// Elimina el primer elemento y añade "fresa" al final.
+// Imprime el array resultante.
+
+    const arrayFrutas = ["manzana", "banana", "naranja"]
+    let eliminoMazana = arrayFrutas.shift()
+    let anadoFresa = arrayFrutas.push("fresa")
+    console.log(arrayFrutas)
+
+
+//     7. Acceso y modificación directa
+// Crea un array llamado dias que contenga los días de la semana de lunes a domingo.
+// Cambia el valor del día "domingo" por "Domingo (fin de semana)" accediendo directamente al índice.
+
+    const arrayDigitos = [100, 200, 300]
+    let eliminoPrimerDigito = arrayDigitos.shift()
+    let anadoPrimerDigito = arrayDigitos.unshift(300)
+    let eliminoUltimoDigito = arrayDigitos.pop()
+    let anadoUltimoDigito = arrayDigitos.push(100)
+
+    const arrayCola = []
+    let anandoCliente123 = arrayCola.push("cliente1", "cliente2", "cliente3")
+    let eliminoCliente1 = arrayCola.shift()
+    console.log(eliminoCliente1)
+    console.log(arrayCola)
+
+    const arrayPila = []
+    let anadoNumeros = arrayPila.push(10, 20, 30)
+    let extraigoUltimoNumero = arrayPila.pop()
+    console.log(extraigoUltimoNumero)
+    console.log(arrayPila)
+
+    // 11_
+    const arrayNombres = ["Ana", "Pedro"]
+    let anadoLauraFinal = arrayNombres.push("Laura")
+    let anadoCarlosPrincipio = arrayNombres.unshift("Carlos")
+    console.log(arrayNombres)
+
+    // 12_
+    let eliminoLauraFinal = arrayNombres.pop()
+    let eliminoCarlPrincipio = arrayNombres.shift()
+    console.log(arrayNombres)
+    console.log(eliminoLauraFinal)
+    console.log(eliminoCarlPrincipio)
+
+
+    // 13_
+    const arrayLetras = ["a", "b", "c", "d"]
+
+    let eliminoD = arrayLetras.pop()
+    let eliminoC = arrayLetras.pop()
+    let eliminoB = arrayLetras.pop()
+    let eliminoA = arrayLetras.pop()
+
+    let anadoA = arrayLetras.push("d")
+    let anadoB = arrayLetras.push("c")
+    let anadoC = arrayLetras.push("b")
+    let anadoD = arrayLetras.push("a")
+
+    console.log(arrayLetras)
+
+    // 14_
+    let elimino5 = arrayNumeros.shift()
+    let anado5 = arrayNumeros.push(5)
+    console.log(arrayNumeros)
+
+    // 15_
+    const arraySerie = [1,2,3,4,5]
+    console.log(arraySerie)
+    let eliminO5 = arraySerie.pop()
+    console.log(arraySerie)
+    let elimino4 = arraySerie.pop()
+    console.log(arraySerie)
+    let elimino3 = arraySerie.pop()
+    console.log(arraySerie)
+    let elimino2 = arraySerie.pop()
+    console.log(arraySerie)
+    let elimino1 = arraySerie.pop()
+    console.log(arraySerie)
+
+    // 16_
+    const arraySecuencia = []
+    let numero = 5
+    let anadoNumero = 0
+
+
+    for (let i = 0; i < numero; i++) {
+        anadoNumero ++
+        // console.log(anadoNumero)
+        let numeroNuevo = arraySecuencia.push(anadoNumero)
+        // console.log(arraySecuencia + "dentro del bucle")
+    }
+
+    console.log(arraySecuencia)
+
+</script>
