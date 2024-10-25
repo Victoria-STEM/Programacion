@@ -13,8 +13,7 @@
     
 
 // 2. Añadir elementos
-// Crea un array vacío llamado colores.
-// Añade los colores "rojo", "verde" y "azul" al final del array utilizando y luego imprime el array.
+// Crea un array vacío llamado colores. Añade los colores "rojo", "verde" y "azul" al final del array utilizando y luego imprime el array.
 
     const arrayColores = []
     arrayColores.push ("rojo")
@@ -37,45 +36,54 @@
 // Añade "loro" y "tortuga" al inicio del array y luego imprime el array.
 
     const arrayAnimales = ["perro", "gato"]
-    let anadoLoro = arrayAnimales.unshift("loro")
-    let anadoTortuga = arrayAnimales.unshift("tortuga")
+    arrayAnimales.unshift("loro")
+    arrayAnimales.unshift("tortuga")
     console.log(arrayAnimales)
 
-//     5. Eliminar el primer elemento
+// 5. Eliminar el primer elemento
 // Usando el array animales del ejercicio anterior, elimina el primer elemento.
 // Muestra el array después de la eliminación y el valor del elemento eliminado.
 
     let eliminoTortuga = arrayAnimales.shift()
+    console.log(eliminoTortuga)
     console.log(arrayAnimales)
 
 
-//     6. Añadir y eliminar elementos simultáneamente
+// 6. Añadir y eliminar elementos simultáneamente
 // Crea un array llamado frutas que contenga los elementos "manzana", "banana", "naranja".
 // Elimina el primer elemento y añade "fresa" al final.
 // Imprime el array resultante.
 
     const arrayFrutas = ["manzana", "banana", "naranja"]
-    let eliminoMazana = arrayFrutas.shift()
-    let anadoFresa = arrayFrutas.push("fresa")
+    arrayFrutas.shift()
+    arrayFrutas.push("fresa")
     console.log(arrayFrutas)
 
 
-//     7. Acceso y modificación directa
-// Crea un array llamado dias que contenga los días de la semana de lunes a domingo.
-// Cambia el valor del día "domingo" por "Domingo (fin de semana)" accediendo directamente al índice.
+    // 7. Acceso y modificación directa
+    // Crea un array llamado dias que contenga los días de la semana de lunes a domingo.
+    // Cambia el valor del día "domingo" por "Domingo (fin de semana)" accediendo directamente al índice.
 
+
+    // 8_
     const arrayDigitos = [100, 200, 300]
     let eliminoPrimerDigito = arrayDigitos.shift()
     let anadoPrimerDigito = arrayDigitos.unshift(300)
     let eliminoUltimoDigito = arrayDigitos.pop()
     let anadoUltimoDigito = arrayDigitos.push(100)
+    
+    let temporal = arrayDigitos[0]
+    arrayDigitos[0] = arrayDigitos[2]
+    arrayDigitos[2] = temportal
 
+    // 9_
     const arrayCola = []
-    let anandoCliente123 = arrayCola.push("cliente1", "cliente2", "cliente3")
+    arrayCola.push("cliente1", "cliente2", "cliente3")
     let eliminoCliente1 = arrayCola.shift()
     console.log(eliminoCliente1)
     console.log(arrayCola)
 
+    // 10_
     const arrayPila = []
     let anadoNumeros = arrayPila.push(10, 20, 30)
     let extraigoUltimoNumero = arrayPila.pop()
@@ -134,7 +142,6 @@
     const arraySecuencia = []
     let numero = 5
     let anadoNumero = 0
-
 
     for (let i = 0; i < numero; i++) {
         anadoNumero ++
