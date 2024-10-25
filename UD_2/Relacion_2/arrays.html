@@ -1,0 +1,48 @@
+<script>
+
+    let temperatura
+    let sumaTemperaturas = 0
+    const menuTemperaturas = []
+    let temperaturaAlta
+    let temperaturaBaja
+
+    for (let i = 1; i <= 7; i++) {
+        temperatura = Number(prompt("Introduce la temperatura del dia" + i))
+        console.log(temperatura)
+        menuTemperaturas.push(temperatura)
+        sumaTemperaturas += temperatura
+
+        // if (temperatura > menuTemperaturas.length) {
+        //     temperaturaAlta = temperatura
+        // }
+
+        // if (temperatura < menuTemperaturas.length) {
+        //     temperaturaBaja = temperatura
+        // }
+    }
+
+    for (let i = 1; i <= 7; i++) {}
+
+    let menu 
+
+    while (menu != "SALIR") {
+        menu = prompt("Selecciona alguna de las siguientes opciones: 1.-Mostrar la temperatura más alta registrada. 2.- Mostrar la temperatura más baja registrada. 3.- Calcular la temperatura promedio de la semana. 4.- Salir del programa.")
+        
+        if (menu == "1") {
+            console.log(temperaturaAlta)
+        }
+        console.log(menuTemperaturas)
+
+        if (menu == "2") {
+            console.log(temperaturaBaja)
+        }
+        
+        if(menu == "3") {
+            console.log("El promedio de la temperatura es " + (sumaTemperaturas / 7))
+        }
+        
+    }
+
+
+
+</script>
