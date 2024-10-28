@@ -7,7 +7,6 @@
     let temperaturaBaja = menuTemperaturas[0]
 
     for (let i = 1; i <= 7; i++) {
-
         temperatura = Number(prompt("Introduce la temperatura del dia " + i))
         console.log(temperatura)
         menuTemperaturas.push(temperatura)
@@ -15,7 +14,7 @@
 
     let menu
 
-    while (menu != "SALIR") {
+    while (menu != "4") {
         menu = prompt("Selecciona alguna de las siguientes opciones: \n 1.-Mostrar la temperatura más alta registrada. \n 2.- Mostrar la temperatura más baja registrada. \n 3.- Calcular la temperatura promedio de la semana. \n 4.- Salir del programa.")
 
         if (menu == "1") {
@@ -25,24 +24,19 @@
                 }
             }
             console.log(temperaturaAlta)
-        }
-
-        if (menu == "2") {
+        } else if (menu == "2") {
             for (let i = 1; i < menuTemperaturas.length; i++) {
                 if (temperaturaBaja < menuTemperaturas[i]) {
                     temperaturaBaja = menuTemperaturas[i]
                 }
             }
             console.log(temperaturaBaja)
-        }
-
-        if (menu == "3") {
+        } else if (menu == "3") {
             for (let i = 1; i < menuTemperaturas.length; i++) {
                 sumaTemperaturas += menuTemperaturas
             }
             console.log("El promedio de la temperatura es " + (sumaTemperaturas / temperaturas.length))
         }
-
     }
 
 </script>

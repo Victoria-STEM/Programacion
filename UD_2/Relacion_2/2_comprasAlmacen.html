@@ -1,5 +1,40 @@
 <script>
 
-const productos = ["manzanas", "leche", "pan", "huevos", "azucar", "harina", "arroz", "pasta"]
-const precios = [1.20, 0.80 1.50, 1.00, 2.00, 1.10, 0.90, 0.70, 1.30, 3.00]
+    const productos = ["manzanas", "leche", "pan", "huevos", "azucar", "harina", "arroz", "pasta"]
+    const precios = [1.20, 0.80, 1.50, 1.00, 2.00, 1.10, 0.90, 0.70, 1.30, 3.00]
+
+    let compra = ""
+    let cantidad = 0
+    let precio = 0
+    let precioCompra = 0
+    let precioCompraTotal = 0
+
+    while (compra != "FIN" && cantidad != "FIN") {
+
+        compra = prompt("Introduce nombre del producto a comprar: ")
+        console.log(compra)
+
+        if (compra != "FIN" && cantidad != "FIN") {
+
+            cantidad = Number(prompt("Introduce la cantidad: "))
+            console.log(cantidad)
+
+            if (cantidad != "FIN" && compra != "FIN") {
+
+                for (let i = 0; i <= productos.length; i++) {
+                    if (compra == productos[i]) {
+                        precio = precios[i]
+                    }
+                }
+
+                precioCompra = precio * cantidad
+                console.log("Compra " + compra + " ,veces " + cantidad + " y cuesta " + precioCompra)
+                precioCompraTotal += precioCompra
+                console.log("Precio total de compra: " + precioCompraTotal)
+            }
+        }
+    }
+
+    console.log("Precio total de la compra " + precioCompraTotal)
+
 </script>
