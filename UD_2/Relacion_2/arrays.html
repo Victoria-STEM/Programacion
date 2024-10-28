@@ -3,44 +3,46 @@
     let temperatura
     let sumaTemperaturas = 0
     const menuTemperaturas = []
-    let temperaturaAlta
-    let temperaturaBaja
+    let temperaturaAlta = menuTemperaturas[0]
+    let temperaturaBaja = menuTemperaturas[0]
 
     for (let i = 1; i <= 7; i++) {
-        temperatura = Number(prompt("Introduce la temperatura del dia" + i))
+
+        temperatura = Number(prompt("Introduce la temperatura del dia " + i))
         console.log(temperatura)
         menuTemperaturas.push(temperatura)
-        sumaTemperaturas += temperatura
-
-        // if (temperatura > menuTemperaturas.length) {
-        //     temperaturaAlta = temperatura
-        // }
-
-        // if (temperatura < menuTemperaturas.length) {
-        //     temperaturaBaja = temperatura
-        // }
     }
 
-    for (let i = 1; i <= 7; i++) {}
-
-    let menu 
+    let menu
 
     while (menu != "SALIR") {
-        menu = prompt("Selecciona alguna de las siguientes opciones: 1.-Mostrar la temperatura más alta registrada. 2.- Mostrar la temperatura más baja registrada. 3.- Calcular la temperatura promedio de la semana. 4.- Salir del programa.")
-        
+        menu = prompt("Selecciona alguna de las siguientes opciones: \n 1.-Mostrar la temperatura más alta registrada. \n 2.- Mostrar la temperatura más baja registrada. \n 3.- Calcular la temperatura promedio de la semana. \n 4.- Salir del programa.")
+
         if (menu == "1") {
+            for (let i = 1; i < menuTemperaturas.length; i++) {
+                if (temperaturaAlta > menuTemperaturas[i]) {
+                    temperaturaAlta = menuTemperaturas[i]
+                }
+            }
             console.log(temperaturaAlta)
         }
-        console.log(menuTemperaturas)
 
         if (menu == "2") {
+            for (let i = 1; i < menuTemperaturas.length; i++) {
+                if (temperaturaBaja < menuTemperaturas[i]) {
+                    temperaturaBaja = menuTemperaturas[i]
+                }
+            }
             console.log(temperaturaBaja)
         }
-        
-        if(menu == "3") {
-            console.log("El promedio de la temperatura es " + (sumaTemperaturas / 7))
+
+        if (menu == "3") {
+            for (let i = 1; i < menuTemperaturas.length; i++) {
+                sumaTemperaturas += menuTemperaturas
+            }
+            console.log("El promedio de la temperatura es " + (sumaTemperaturas / temperaturas.length))
         }
-        
+
     }
 
 </script>
