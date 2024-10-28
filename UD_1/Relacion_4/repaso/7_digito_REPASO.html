@@ -1,0 +1,50 @@
+15:28 - 16:01
+
+correcciones mas menos hasta 16:35
+
+<script>
+
+    let numero = ""
+    let digito = ""
+    let nuevoDigito = 0
+    let contador = 0
+    let numeroOriginal = 0
+
+    while (numero != "SALIR" && digito != "SALIR") {
+        numero = prompt("Introduce un numero: ")
+
+        if (numero != "SALIR" && digito != "SALIR") {
+            numero = Number(numero)
+            numeroOriginal = numero
+            
+            if (numero > 0) {
+                digito = prompt("Introduce un digito: ")
+
+                if (digito != "SALIR"){
+                    digito = Number(digito)
+
+                    if (digito > 0 && digito < 10) {
+                        contador = 0
+
+                        while (numero >= digito) {
+                            nuevoDigito = parseInt(numero%10)
+
+                            if (nuevoDigito == digito) {
+                                contador += 1
+
+                            }
+                            numero = parseInt(numero/10)
+
+                        } console.log("En " + numeroOriginal + " aparece " + contador + " vece/s el " + digito + ".")
+
+                    } if (digito < 0 && digito > 9) {
+                        console.log("Digito incorrecto.")
+                    }
+                }
+            }
+        } if (numero < 0) {
+            console.log("Numero incorrecto.")
+        }
+    }
+
+</script>

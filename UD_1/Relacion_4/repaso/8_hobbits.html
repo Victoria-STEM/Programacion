@@ -1,0 +1,160 @@
+17:00 - 17:18
+Extra 
+17:18 - 18:05
+
+<script>
+    
+    let hobbit1 = prompt("Introduce el nombre del primer hobbit:")
+    let edad1 = prompt("Introduce su edad: ")
+    edad1 = Number(edad1)
+
+    let hobbit2 = prompt("Introduce el nombre del segundo hobbit:")
+    let edad2 = prompt("Introduce su edad: ")
+    edad2 = Number(edad2)
+
+    let hobbit3 = prompt("Introduce el nombre del tercer hobbit:")
+    let edad3 = prompt("Introduce su edad: ")
+    edad3 = Number(edad3)
+
+    let puedeRepetir1 = true
+    let puedeRepetir2 = true
+    let puedeRepetir3 = true
+
+    let sumaEdades = 0
+
+    // Contabilizando si son menores de edad:
+    if(edad1 < 33) {
+        console.log("El primer hobbit puede repetir, es menor de edad. :)")
+    } else {
+        puedeRepetir1 = false
+    }
+
+    if(edad2 < 33) {
+        console.log("El segundo hobbit puede repetir, es menor de edad. :)")
+    } else {
+        puedeRepetir2 = false
+    }
+
+    if(edad3 < 33) {
+        console.log("El tercer hobbit puede repetir, es menor de edad. :)")
+    } else {
+        puedeRepetir3 = false
+    }
+
+    sumaEdades = edad1 + edad2 + edad3
+    console.log(sumaEdades)
+
+    // Siendo mayores de edad veremos quien puede repetir...
+    if (sumaEdades%2 == 0 && puedeRepetir1 == false){
+        console.log("El primer hobbit puede repetir. :)")
+    } else if (sumaEdades%2 != 0 && puedeRepetir1 == false) {
+        console.log("El primer hobbit NO puede repetir. :(")
+    }
+
+    if (sumaEdades%3 == 0 && puedeRepetir2 == false){
+        console.log("El segundo hobbit puede repetir. :)")
+    } else if (sumaEdades%3 != 0 && puedeRepetir2 == false){
+        console.log("El segundo hobbit NO puede repetir. :(")
+    }
+
+    if (sumaEdades%5 == 0 && puedeRepetir3 == false){
+        console.log("El tercer hobbit puede repetir. :)")
+    } else if (sumaEdades%5 != 0 && puedeRepetir3 == false){
+        console.log("El tercer hobbit NO puede repetir. :(")
+    }
+    
+    // Como dividir si NO toca a nadie...
+    if (sumaEdades%2 != 0 && sumaEdades%3 != 0 && sumaEdades%5 != 0 && puedeRepetir1 == false && puedeRepetir2 == false && puedeRepetir3 == false) {
+        console.log("Toca repartir la comida.")
+    }
+
+    // Como dividir si toca a los 3...
+    // menores de edad
+    if (puedeRepetir1 == true && puedeRepetir2 == true && puedeRepetir3 == true) {
+        console.log("Toca repartir la comida.")
+    }
+
+    // mayores de edad
+    if (sumaEdades%2 == 0 && sumaEdades%3 == 0 && sumaEdades%5 == 0 && puedeRepetir1 == false && puedeRepetir2 == false && puedeRepetir3 == false) {
+        console.log("Toca repartir la comida.")
+    }
+
+    // Mezclados!
+    if (sumaEdades%3 == 0 && sumaEdades%5 == 0 && puedeRepetir1 == true) {
+        console.log("Toca repartir la comida.")
+    }
+
+    if (sumaEdades%5 == 0 && puedeRepetir1 == true && puedeRepetir2 == true) {
+        console.log("Toca repartir la comida.")
+    }
+
+    if (sumaEdades%2 == 0 && puedeRepetir2 == true && puedeRepetir3 == true) {
+        console.log("Toca repartir la comida.")
+    }
+
+    if (sumaEdades%2 == 0 && sumaEdades%3 == 0 && puedeRepetir3 == true) {
+        console.log("Toca repartir la comida.")
+    }
+
+    if (sumaEdades%3 == 0 && puedeRepetir1 == true && puedeRepetir3 == true) {
+        console.log("Toca repartir la comida.")
+    }
+
+    if (sumaEdades%2 == 0 && sumaEdades%5 == 0 && puedeRepetir2 == true) {
+        console.log("Toca repartir la comida.")
+    }
+
+    // Si pueden uno o dos hobbits imprime "¡A comer!"
+    // Solo 1 o 2 SOLO menores de edad
+    if ((puedeRepetir1 == true || puedeRepetir2 == true) && puedeRepetir3 == false && sumaEdades%5 != 0) {
+        console.log("A comer!")
+    }
+
+    if ((puedeRepetir1 == true || puedeRepetir3 == true) && puedeRepetir2 == false && sumaEdades%3 != 0) {
+        console.log("A comer!.")
+    }
+
+    if ((puedeRepetir2 == true || puedeRepetir3 == true) && puedeRepetir1 == false && sumaEdades%2 != 0) {
+        console.log("A comer!.")
+    }
+
+    // Solo 1 o 2 SOLO mayores de edad    
+    if ((sumaEdades%2 == 0 || sumaEdades%3 == 0) && sumaEdades%5 != 0 && puedeRepetir1 == false && puedeRepetir2 == false && puedeRepetir3 == false) {
+        console.log("A comer!")
+    }
+
+    if ((sumaEdades%3 == 0 || sumaEdades%5 == 0) && sumaEdades%2 != 0 && puedeRepetir1 == false && puedeRepetir2 == false && puedeRepetir3 == false) {
+        console.log("A comer!")
+    }
+
+    if ((sumaEdades%2 == 0 || sumaEdades%5 == 0) && sumaEdades%3 != 0 && puedeRepetir1 == false && puedeRepetir2 == false && puedeRepetir3 == false) {
+        console.log("A comer!")
+    }
+
+    // 1 mayor de edad o 1 menor de edad
+    // %2
+    if ((sumaEdades%2 == 0 || puedeRepetir2 == true) && puedeRepetir1 == false && puedeRepetir3 == false && sumaEdades%3 != 0 && sumaEdades%5 != 0) {
+        console.log("A comer!")
+    }
+
+    if ((sumaEdades%2 == 0 || puedeRepetir3 == true) && puedeRepetir1 == false && puedeRepetir2 == false && sumaEdades%3 != 0 && sumaEdades%5 != 0) {
+        console.log("A comer!")
+    }
+    
+    // %3
+    if ((sumaEdades%3 == 0 || puedeRepetir3 == true) && puedeRepetir1 == false && puedeRepetir2 == false && sumaEdades%2 != 0 && sumaEdades%5 != 0) {
+        console.log("A comer!")
+    }
+    if ((sumaEdades%3 == 0 || puedeRepetir1 == true) && puedeRepetir3 == false && puedeRepetir2 == false && sumaEdades%2 != 0 && sumaEdades%5 != 0) {
+        console.log("A comer!")
+    }
+
+    // %5
+    if ((sumaEdades%5 == 0 || puedeRepetir1 == true) && puedeRepetir3 == false && puedeRepetir2 == false && sumaEdades%2 != 0 && sumaEdades%3 != 0) {
+        console.log("A comer!")
+    }
+    if ((sumaEdades%5 == 0 || puedeRepetir2 == true) && puedeRepetir3 == false && puedeRepetir1 == false && sumaEdades%2 != 0 && sumaEdades%3 != 0) {
+        console.log("A comer!")
+    }
+
+</script>

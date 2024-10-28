@@ -1,0 +1,115 @@
+<!-- <script>
+
+    let segundos = prompt("Introduce una cantidad de segundos")
+    segundos = Number(segundos)
+
+    console.log("Ha introducido " + segundos + " segundos. ")
+
+    let horas = segundos/60/60
+    let horasTotales = parseInt(segundos/60/60)
+    let minutos = (horas - horasTotales)*60
+    let minutosTotales = parseInt((horas - horasTotales)*60)
+    let segundosRestantes = parseInt((minutos - minutosTotales)*60)
+
+    console.log("Lo que significa " + horasTotales + " horas " + minutosTotales + " minutos y " + segundosRestantes + " segundos.")
+
+</script> -->
+
+
+<!-- <script>
+
+    let salario = prompt("Introduce tu salario anual: ")
+    salario = Number(salario)
+
+    console.log("Su salario es de " + salario)
+
+    let impuestos = ""
+
+    if (salario > 40000) {
+        impuestos = (salario - 40000)*0.3 + (20000*0.2) + (10000*0.1)
+        console.log("Tiene que pagar " + impuestos + " €.")
+    } else if (salario >= 20000 && salario <= 400000) {
+        impuestos = (salario - 20000)*0.2 +(10000*0.1)
+        console.log("Tiene que pagar " + impuestos + " €.")
+    } else if (salario >= 10000 && salario < 20000) {
+        impuestos = (salario -10000)*0.1 
+        console.log("Tiene que pagar " + impuestos + " €.")
+    } else {
+        console.log("Cobra menos de 10000 por lo que no paga Impuestos.")
+    }
+
+</script> -->
+
+
+<!-- <script>
+
+    let filas = prompt("Introduce un numero de filas: ")
+    filas = Number(filas)
+
+    let columnas = prompt("Introduce un numero de columnas: ")
+    columnas = Number(columnas)
+
+    console.log("Ha introducido " + filas + " filas y " + columnas + " columnas.")
+
+    let dibujoIzquierda = "x-"
+    let espacios = ""
+
+    for (let i = 0; i < columnas; i++) {
+        espacios += dibujoIzquierda
+    }
+
+    for (let j = 0; j < filas; j++) {
+        console.log("dentro del segundo for " + espacios + "x")
+        
+    }
+
+    console.log("fuera del bucle.")
+
+</script> -->
+
+
+<!-- <script>
+
+    let numero1 = prompt("Introduce un numero de numero1: ")
+    numero1 = Number(numero1)
+
+    let numero2 = prompt("Introduce un numero de numero2: ")
+    numero2 = Number(numero2)
+
+    console.log("Ha introducido " + numero1 + " y " + numero2)
+
+    let dibujoImpar = "x-"
+    let dibujoPar = "-x"
+
+    for (let i = 0; i < numero1; i++) {
+        let espacios = ""
+    }
+
+    for (let j = numero2; j > 0; j--) {
+        espacios = ""
+        if (numero1%2 == 0 || numero1 == 0) {
+            console.log(espacios += dibujoPar)
+        } else {
+            console.log(espacios += dibujoImpar)
+        }
+    }
+
+</script> -->
+
+
+<script>
+
+    let numero = prompt("Introduce un numero entero: ")
+    numero = Number(numero)
+
+    let i = 2
+
+    console.log("El numero introducido es: " + numero)
+    
+    while (numero%numero == 0 && numero%i == 0 && i != numero) {
+    i++
+    numero++
+    } console.log("El siguiente numero primo es: " + numero)
+        
+</script>
+

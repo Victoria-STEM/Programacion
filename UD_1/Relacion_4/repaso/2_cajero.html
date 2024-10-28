@@ -1,0 +1,28 @@
+17:07 - 17:37
+17:50 - 18:37
+
+<script>
+
+    let saldoInicial = 1000
+    console.log("Saldo: " + saldoInicial)
+    let retirada = 0
+
+    while (saldoInicial > 0) {
+        
+        retirada = prompt("Introduzca saldo a retirar: ")
+        retirada = Number(retirada)
+        
+        if (saldoInicial < retirada) {
+            alert("Saldo insuficiente.")
+        } else {
+            saldoInicial -= retirada
+            console.log("Saldo: " + saldoInicial + "€")
+        }
+             
+    }
+
+    if (saldoInicial == 0) {
+        console.log("Te has quedado sin saldo.")
+    }
+
+</script>

@@ -1,0 +1,36 @@
+16:45 - 17:05
+
+<script>
+
+    let precio = 1
+    let producto = 1
+    let personas
+    let propina
+    let totalSinPropina = 0
+    let totalConPropia = 0
+    let precioPorCabeza = 0
+
+    while (precio != 0) {
+        
+        precio = prompt("Precio del producto " + producto + " :")
+        precio = Number(precio)
+
+        producto ++
+        totalSinPropina += precio
+
+    }
+
+    propina = prompt("Cuanta propina quieres dejar: ")
+    propina = Number(propina)
+
+    personas = prompt("Cuantas personas sois: ")
+    personas = Number(personas)
+
+    totalConPropia = totalSinPropina + ((totalSinPropina * propina) / 100)
+    precioPorCabeza = totalConPropia / personas
+
+    console.log("Total sin propina: " + totalSinPropina + "€")
+    console.log("Total con propina del " + propina + "%" + ": " + totalConPropia)
+    console.log("Precio por cabeza: " + precioPorCabeza + "€")
+
+</script>

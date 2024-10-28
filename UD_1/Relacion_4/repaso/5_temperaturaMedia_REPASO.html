@@ -1,0 +1,28 @@
+11:30 - 11:45
+
+<script>
+
+    let temperaturaDiaria = 0
+    let dia = 1
+    let diaContado = 0
+    let temperaturaPromerio = 0
+    let sumaTemperaturas = 0
+
+    for (let i = 1; i <= 7; i++) {
+
+        temperaturaDiaria = prompt("Introduce la temparetura del dia " + dia + " :")
+        temperaturaDiaria = Number(temperaturaDiaria)
+        //console.log(temperaturaDiaria)
+        dia ++
+
+        if (temperaturaDiaria > -20 && temperaturaDiaria < 50) {
+        diaContado ++
+        sumaTemperaturas += temperaturaDiaria
+        } 
+
+    }
+
+    temperaturaPromerio = sumaTemperaturas / diaContado
+    console.log("La temperatura promedia es: " + temperaturaPromerio)
+
+</script>

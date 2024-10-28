@@ -1,0 +1,41 @@
+18:41 - 19:18
+
+<script>
+
+    let calificaciones = 0
+    let sumaCalificaciones = 0
+    let sumaEstudiantes = 0
+    let estudiantes = 1
+    let promedio = 0
+    let aprobados = 0
+    let suspensos = 0
+
+    while (calificaciones != (-1)) {
+
+        calificaciones = prompt("Introduce la calificacion del alumno " + estudiantes + " :")
+        calificaciones = Number(calificaciones) 
+            
+            if (calificaciones >= 5 && calificaciones != (-1)) {
+                aprobados ++
+            } 
+            if (calificaciones < 5 && calificaciones != (-1)) {
+                suspensos ++
+            }
+            if (calificaciones != (-1)) {
+                sumaEstudiantes += 1
+                sumaCalificaciones += calificaciones
+            }
+        
+        estudiantes ++
+        
+    }
+
+    console.log(sumaEstudiantes)
+    console.log(sumaCalificaciones)
+    
+    console.log("Hay " + aprobados + " alumnos y " + suspensos + " alumnos suspensos.")
+
+    promedio = sumaCalificaciones / sumaEstudiantes
+    console.log("La calificacion media es " + promedio)
+
+</script>

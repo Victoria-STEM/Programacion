@@ -1,0 +1,19 @@
+<script>
+
+    let numero = prompt("Introduce un numero: ")
+    numero = Number(numero)
+
+    let numero2 = prompt("Introduce el mismo numero: ")
+    numero2 = Number(numero2)
+
+    console.log("El numero introducido es " + numero)
+
+    while (numero != numero2){
+        numero2 = prompt("No es el mismo numero, repite: ")
+        console.log("El nuevo numero introducido es " + numero2)
+    }
+
+    console.log("El numero es correcto.")
+
+
+</script>

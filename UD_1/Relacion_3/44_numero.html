@@ -1,0 +1,44 @@
+<!-- <script>
+
+    let numero = prompt("Introduce un numero: ")
+    numero = Number(numero)
+
+    console.log("El numero introducido es " + numero)
+
+    let cifras = numero
+    let enteros
+    let siguienteEntero
+
+    while (cifras > 11) {
+
+        cifras = parseInt(numero/10)
+        siguienteEntero = numero%10
+
+        enteros *= siguienteEntero
+
+    } 
+    
+    console.log("El producto de los digitos es " + enteros)
+
+</script> -->
+
+<script>
+
+let numeroUsuario = prompt("Introduce un número:")
+numeroUsuario = Number(numeroUsuario)
+
+let cifrasRestantes = numeroUsuario
+let resto
+let multiplican = 1
+
+while (cifrasRestantes != 0) {
+    resto = cifrasRestantes % 10
+    cifrasRestantes = parseInt(cifrasRestantes / 10)
+
+    multiplican*=resto
+    
+}
+
+console.log("Los dígitos del número "+ numeroUsuario +" multiplican: " + multiplican)
+
+</script>

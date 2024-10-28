@@ -1,0 +1,48 @@
+12:05 - 13:08
+
+<script>
+
+    let cantidadLitrosInicial = 1
+    let precioxLitro
+    let consumo
+    let kmDia
+    let dia = 1
+    let precioViaje = 0
+    let combustibleRestante = 0
+
+    cantidadLitrosInicial = prompt("Introduce el combustible inicial: ")
+    cantidadLitrosInicial = Number(cantidadLitrosInicial)
+    //console.log(cantidadLitrosInicial)
+
+    precioxLitro = prompt("Introduce el precio del litro de combustible: ")
+    precioxLitro = Number(precioxLitro)
+    //console.log(precioxLitro)
+
+    consumo = prompt("Introduce el consumo cada 100km:")
+    consumo = Number(consumo)
+    //console.log(consumo)
+
+    while (combustibleRestante < cantidadLitrosInicial) {
+
+        kmDia = prompt("Introcue los km del viaje " + dia + " :")
+        kmDia = Number(kmDia)
+        
+        console.log("Los km del viaje " + dia + " : " + kmDia)
+
+        precioViaje = ((consumo * kmDia) / 100) * precioxLitro
+            
+        combustibleRestante = (consumo/100) * kmDia
+        cantidadLitrosInicial -= combustibleRestante 
+        dia++
+
+        if(combustibleRestante < cantidadLitrosInicial) {  
+            console.log("El precio del viaje " + dia + " : " + precioViaje + "€")
+            console.log("El combustible restante es: " + cantidadLitrosInicial + " litros")
+        
+        } else {
+            alert("Combustible insuficiente.")
+        }
+    
+    }
+
+</script>

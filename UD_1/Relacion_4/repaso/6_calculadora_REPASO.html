@@ -1,0 +1,54 @@
+11:00 - 11:30
+
+<script>
+
+    let numero1 = 0
+    let numero2 = 0
+    let operacion = ""
+
+    let suma = ""
+    let resta = ""
+    let multiplicacion = ""
+    let division = ""
+
+    while (numero1 != "SALIR" && numero2 != "SALIR" && operacion != "SALIR"){
+
+        numero1 = prompt("Introduce el primer numero: ")
+
+        if (numero1 != "SALIR") {
+
+            numero1 = Number(numero1)
+            numero2 = prompt("Introduce el segundo numero: ")
+
+            if(numero2 != "SALIR") {
+                
+                numero2 = Number(numero2)
+                operacion = prompt("Introduce la operacion (+,-,*,/):")
+
+                if(operacion != "SALIR") {
+
+                    if(operacion == "+") {
+                        suma = numero1 + numero2
+                        console.log("El resultado de " + numero1 + " " + operacion + " " + numero2 + " es " + suma)
+                    }
+
+                    if(operacion == "-") {
+                        resta = numero1 - numero2
+                        console.log("El resultado de " + numero1 + " " + operacion + " " + numero2 + " es " + resta)
+                    }
+
+                    if(operacion == "/") {
+                        division = numero1 / numero2
+                        console.log("El resultado de " + numero1 + " " + operacion + " " + numero2 + " es " + division)
+                    }
+
+                    if(operacion == "*") {
+                        multiplicacion = numero1 * numero2
+                        console.log("El resultado de " + numero1 + " " + operacion + " " + numero2 + " es " + multiplicacion)
+                    }
+                }
+            }
+        }
+    }
+    
+</script>
