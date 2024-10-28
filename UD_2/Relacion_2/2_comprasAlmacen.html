@@ -14,12 +14,12 @@
         compra = prompt("Introduce nombre del producto a comprar: ")
         console.log(compra)
 
-        if (compra != "FIN" && cantidad != "FIN") {
+        if (compra != "FIN") {
 
             cantidad = Number(prompt("Introduce la cantidad: "))
             console.log(cantidad)
 
-            if (cantidad != "FIN" && compra != "FIN") {
+            if (cantidad != "FIN") {
 
                 for (let i = 0; i <= productos.length; i++) {
                     if (compra == productos[i]) {
@@ -34,7 +34,5 @@
             }
         }
     }
-
-    console.log("Precio total de la compra " + precioCompraTotal)
 
 </script>
