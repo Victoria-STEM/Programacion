@@ -1,0 +1,46 @@
+<script>
+
+    const nombresTareas = ["Briefing", "Cafe Break", "Update Meeting"]
+    const estadoTarea = [false, false, true]
+    let menu = ""
+    let pendiente = false
+    let completada = true
+    let nuevaTarea
+    let tarea
+
+    while (menu != "5"){
+
+        menu = prompt("1. Añadir una nueva tarea. \n2. Marcar una tarea como completada. \n3. Ver la lista de tareas pendientes. \n4. Ver la lista de tareas completadas.\n5. Salir del programa.")
+
+        if(menu == "1"){
+            nuevaTarea = prompt("Introduce una nueva tarea: ")
+            nombresTareas.push(nuevaTarea)
+            estadoTarea.push(pendiente)
+
+        } else if (menu == "2"){
+            tarea = prompt("Introduce la tarea completada:")
+            for (let i = 0; i < nombresTareas.length; i++){
+                if (tarea == nombresTareas[i]){
+                    estadoTarea[i] = completada 
+                }
+            }
+
+        } else if (menu == "3"){
+            console.log("Lista de tareas pendientes: ")
+            for (let i = 0; i < estadoTarea.length; i++){
+                if (estadoTarea[i] == false){
+                    console.log(nombresTareas[i])
+                }
+            }
+
+        } else if (menu == "4") {
+            console.log("Lista de tareas completadas: ")
+            for (let i = 0; i < estadoTarea.length; i++){
+                if (estadoTarea[i] == true){
+                    console.log(nombresTareas[i])
+                }
+            }
+        }
+    }
+
+</script>

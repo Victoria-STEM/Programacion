@@ -1,0 +1,51 @@
+<script>
+
+    const estudientes = ["Marta", "Paola"]
+    const calificaciones = [10, 4]
+    let menu = ""
+    let estudienteNueva
+    let calificionNueva
+    let sumaCalificaciones = 0
+    let promedio = 0
+    let calificacionBaja = calificaciones[0]
+    let calificacionAlta = calificaciones[0]
+    let alumnaCalificacionAlta = ""
+    let alumnaCalificacionBaja = ""
+
+    while (menu != "5") {
+        menu = prompt("1. Añadir un estudiante y su calificación. \n2. Mostrar la calificación promedio de la clase. \n3. Mostrar la calificación más alta y el nombre del estudiante correspondiente. \n4. Mostrar la calificación más baja y el nombre del estudiante correspondiente.\n5. Salir del programa.")
+
+        if (menu == "1") {
+            estudienteNueva = prompt("Introduce a la nueva estudiente:")
+            calificionNueva = Number(prompt("Introduce su calificacion:"))
+            estudientes.push(estudienteNueva)
+            calificaciones.push(calificionNueva)
+
+        } else if (menu == "2") {
+            for (let i = 0; i < calificaciones.length; i++) {
+                sumaCalificaciones += calificaciones[i]
+            }
+            promedio = sumaCalificaciones / calificaciones.length
+            console.log("La calificacion promedio es: " + promedio)
+
+        } else if (menu == "3") {
+            for (let i = 0; i < calificaciones.length; i++) {
+                if (calificaciones[i] > calificacionAlta) {
+                    calificacionAlta = calificaciones[i]
+                    alumnaCalificacionAlta = estudientes[i]
+                }
+            }
+            console.log("La alumna " + alumnaCalificacionAlta + " tiene la calificacion mas alta: " + calificacionAlta)
+
+        } else if (menu == "4") {
+            for (let i = 0; i < calificaciones.length; i++) {
+                if (calificaciones[i] < calificacionBaja) {
+                    calificacionBaja = calificaciones[i]
+                    alumnaCalificacionBaja = estudientes[i]
+                }
+            }
+            console.log("La alumna " + alumnaCalificacionBaja + " tiene la calificacion mas baja: " + calificacionBaja)
+        }
+    }
+
+</script>
