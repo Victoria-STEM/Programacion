@@ -1,0 +1,61 @@
+<script>
+
+    const gastos = ["comida", "transporte"]
+    const precios = [200, 30]
+    let menu = ""
+    let gasto = ""
+    let precio = 0
+    let precioMayor = precios[0]
+    let precioMenor = precios[0]
+    let gastoMayor = gastos[0]
+    let gastoMenor = gastos[0]
+    let gastosTotales = 0
+    let gastoPromedio = 0
+
+    while (menu != "5") {
+        menu = prompt("1. Añadir un nuevo gasto (nombre y cantidad). \n"
+                    + "2. Ver el total de gastos hasta el momento. \n"
+                    + "3. Ver los gastos más altos y más bajos del mes. \n"
+                    + "4. Ver el promedio de gasto diario (suponiendo un mes de 30 días).\n"
+                    + "5. Salir del programa.")        
+
+        if(menu == "1"){
+            gasto = prompt("Introduce el nuevo gasto:")
+            precio = Number(prompt("Introduce el costo:"))
+
+            gastos.push(gasto)
+            precios.push(precio)
+
+        } else if (menu == "2"){
+            console.log("Gastos del mes: ")
+            for (let i = 0; i < gasto.length; i++) {
+                console.log(gastos[i] + " - " + precios[i])
+            }
+
+        } else if (menu == "3"){
+            for (let i = 0; i < gastos.length; i++){
+                if (precios[i] > precioMayor){
+                    precioMayor = precios[i]
+                    gastoMayor = gastos[i]
+                }
+            }
+            console.log(gastoMayor + " es el mayor gasto del mes: " + precioMayor)
+
+            for (let i = 0; i < gastos.length; i++){
+                if (precios[i] < precioMenor){
+                    precioMenor = precios[i]
+                    gastoMenor = gastos[i]
+                }
+            }
+            console.log(gastoMenor + " es el menor gasto del mes: " + precioMenor)
+
+        } else if (menu == "4") {
+            for(let i = 0; i < gastos.length; i++){
+                gastosTotales += precios[i]
+            }
+            gastoPromedio = gastosTotales/30
+            console.log("El gasto promedio diario es: " + gastoPromedio)
+        }
+    }
+
+</script>

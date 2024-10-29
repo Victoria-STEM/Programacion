@@ -1,0 +1,49 @@
+<script>
+
+    const nombresClientes = ["Ramon", "Filomena"]
+    const numeroPersonas = [2, 30]
+    let menu
+    let nombreNuevaReserva 
+    let numeroPersonasNuevaReserva
+    let totalPersonas = 0
+    let clienteCancelado
+    let reservaPersonasCancelada
+
+    while (menu != "5") {
+        menu = prompt("1. Añadir una nueva reserva (nombre del cliente y número de personas). \n"
+                    + "2. Ver la lista de reservas actuales. \n"
+                    + "3. Calcular el total de personas reservadas para ese día. \n"
+                    + "4. Cancelar una reserva existente (por nombre del cliente).\n"
+                    + "5. Salir del programa.")        
+
+        if(menu == "1"){
+            nombreNuevaReserva = prompt("Nombre del cliente:")
+            numeroPersonasNuevaReserva = Number(prompt("Numero de personas:"))
+            nombresClientes.push(nombreNuevaReserva)
+            numeroPersonas.push(numeroPersonasNuevaReserva)
+
+        } else if (menu == "2"){
+            console.log("Lista de reservas actuales:")
+            for (let i = 0; i < nombresClientes.length; i++) {
+                console.log(nombresClientes[i] + " - " + numeroPersonas[i])
+            }
+
+        } else if (menu == "3"){
+            totalPersonas = 0
+            for(let i = 0; i < numeroPersonas.length; i++){
+                totalPersonas += numeroPersonas[i]
+            }
+            console.log("El total de personas reservadas para hoy es: " + totalPersonas)
+            
+        } else if (menu == "4") {        
+            clienteCancelado = prompt("Introduce la reserva cancelada: ")
+            for (let i = 0; i < nombresClientes.length; i++){
+                if (clienteCancelado == nombresClientes[i]){
+                    nombresClientes[i] = "cancelado"
+                    numeroPersonas[i] = 0
+                }
+            }
+        }
+    }
+
+</script>
