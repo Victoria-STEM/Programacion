@@ -5,11 +5,10 @@
 
     let compra = ""
     let cantidad = 0
-    let precio = 0
     let precioCompra = 0
     let precioCompraTotal = 0
 
-    while (compra != "FIN" && cantidad != "FIN") {
+    while (compra != "FIN") {
 
         compra = prompt("Introduce nombre del producto a comprar: ")
         console.log(compra)
@@ -18,21 +17,22 @@
 
             cantidad = Number(prompt("Introduce la cantidad: "))
             console.log(cantidad)
+            let encontrado = false
 
             if (cantidad != "FIN") {
 
-                for (let i = 0; i <= productos.length; i++) {
+                for (let i = 0; i <= productos.length && !encontrado; i++) {
                     if (compra == productos[i]) {
-                        precio = precios[i]
+                        encontrado = true
+                        precioCompra = precios[i] * cantidad
+                        console.log("Compra " + compra + " ,veces " + cantidad + " y cuesta " + precioCompra)
+                        precioCompraTotal += precioCompra
+
                     }
                 }
-
-                precioCompra = precio * cantidad
-                console.log("Compra " + compra + " ,veces " + cantidad + " y cuesta " + precioCompra)
-                precioCompraTotal += precioCompra
-                console.log("Precio total de compra: " + precioCompraTotal)
             }
         }
     }
+    console.log("Precio total de compra: " + precioCompraTotal)
 
 </script>
