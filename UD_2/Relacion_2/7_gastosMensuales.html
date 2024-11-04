@@ -38,15 +38,13 @@
                     precioMayor = precios[i]
                     gastoMayor = gastos[i]
                 }
-            }
-            console.log(gastoMayor + " es el mayor gasto del mes: " + precioMayor)
-
-            for (let i = 0; i < gastos.length; i++){
+                
                 if (precios[i] < precioMenor){
                     precioMenor = precios[i]
                     gastoMenor = gastos[i]
                 }
             }
+            console.log(gastoMayor + " es el mayor gasto del mes: " + precioMayor)
             console.log(gastoMenor + " es el menor gasto del mes: " + precioMenor)
 
         } else if (menu == "4") {
