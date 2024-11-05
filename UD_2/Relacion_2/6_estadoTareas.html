@@ -18,11 +18,16 @@
             estadoTarea.push(pendiente)
 
         } else if (menu == "2"){
+            let encontrada = false
             tarea = prompt("Introduce la tarea completada:")
-            for (let i = 0; i < nombresTareas.length; i++){
+            for (let i = 0; i < nombresTareas.length && !encontrada; i++){
                 if (tarea == nombresTareas[i]){
+                    encontrada = true
                     estadoTarea[i] = completada 
                 }
+            }
+            if (!encontrada){
+                console.log("Tarea no encontrada.")
             }
 
         } else if (menu == "3"){

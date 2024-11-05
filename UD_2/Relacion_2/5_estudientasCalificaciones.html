@@ -6,14 +6,18 @@
     let estudienteNueva
     let calificionNueva
     let sumaCalificaciones = 0
-    let promedio = 0
+    let promedio
     let calificacionBaja = calificaciones[0]
     let calificacionAlta = calificaciones[0]
     let alumnaCalificacionAlta = ""
     let alumnaCalificacionBaja = ""
 
     while (menu != "5") {
-        menu = prompt("1. Añadir un estudiante y su calificación. \n2. Mostrar la calificación promedio de la clase. \n3. Mostrar la calificación más alta y el nombre del estudiante correspondiente. \n4. Mostrar la calificación más baja y el nombre del estudiante correspondiente.\n5. Salir del programa.")
+        menu = prompt("1. Añadir un estudiante y su calificación. \n"
+                    + "2. Mostrar la calificación promedio de la clase. \n"
+                    + "3. Mostrar la calificación más alta y el nombre del estudiante correspondiente. \n"
+                    + "4. Mostrar la calificación más baja y el nombre del estudiante correspondiente. \n"
+                    + "5. Salir del programa.")
 
         if (menu == "1") {
             estudienteNueva = prompt("Introduce a la nueva estudiente:")
@@ -22,6 +26,7 @@
             calificaciones.push(calificionNueva)
 
         } else if (menu == "2") {
+            promedio = 0
             for (let i = 0; i < calificaciones.length; i++) {
                 sumaCalificaciones += calificaciones[i]
             }
