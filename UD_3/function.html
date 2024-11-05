@@ -1,0 +1,47 @@
+<script>
+
+    // function pares(numero) {
+    //     const numerosPares = []
+
+    //     while (numero > 1) {
+    //         numero--
+    //         if (numero % 2 == 0) {
+    //             numerosPares.push(numero)
+    //         }
+    //     }
+    //     return numerosPares
+    // }
+
+    // console.log(pares(10))
+
+
+    // function primo(numero) {
+    //     let esPrimo = true
+
+    //     for (let i = 2; i < numero && esPrimo; i++) {
+    //         if (numero % i == 0) {
+    //             esPrimo = false
+    //         }
+    //     }
+    //     return esPrimo
+    // }
+    // let numero = prompt("Introduce un numero:")
+    // console.log(primo(numero))
+
+    
+    function listaNumerosPrimos (numero) {
+
+        const numerosPrimosDeNumero = []
+        
+        for (let i = 2; i < numero; i++) {
+            if (numero % i != 0){
+                numerosPrimosDeNumero.push(i)
+            }
+        }
+        return numerosPrimosDeNumero
+    }
+
+    let numero = Number(prompt("Introduce un numero: "))
+    console.log(numerosPrimosDeNumero)
+
+</script>
