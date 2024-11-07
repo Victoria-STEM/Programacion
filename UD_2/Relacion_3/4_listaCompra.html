@@ -1,0 +1,27 @@
+<script>
+
+    const listaCompra1 = ["leche", "huevos", "pan"]
+    const listaCompra2 = ["pan", "mantequilla", "queso"]
+    let guardoNuevoProducto
+    let noRepetido = true
+
+    for (let i = 0; i < listaCompra2.length; i++) {
+
+        for (let j = 0; j < listaCompra1.length && noRepetido; j++) {
+
+            if (listaCompra2[i] != listaCompra1[j]) {
+                guardoNuevoProducto = listaCompra2[i]
+            } else {
+                noRepetido = false
+            }
+        }
+        
+        if (noRepetido) {
+            listaCompra1.push(guardoNuevoProducto)
+        }
+
+    }
+
+    console.log(listaCompra1)
+
+</script>
