@@ -1,0 +1,25 @@
+<script>
+
+    const listaCompra1 = ["leche", "huevos", "pan"]
+    const listaCompra2 = ["pan", "mantequilla", "queso"]
+    let nuevoProducto = ""
+
+    for (let i = 0; i < listaCompra2.length; i++) {
+        // listaCompra2[i]
+
+        for (let j = 0; j < listaCompra1.length; j++) {
+
+            //listaCompra[j]
+            if (listaCompra2[i] != listaCompra1[j]) {
+                nuevoProducto = listaCompra2[i]
+            }
+        
+        }
+          
+        listaCompra1.push(nuevoProducto)
+    }
+        
+    console.log(listaCompra1)
+
+</script>
+

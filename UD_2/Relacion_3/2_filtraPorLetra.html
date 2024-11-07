@@ -1,0 +1,27 @@
+<script>
+
+function extraerPalabra (palabras, letra) {
+    
+}
+
+// ============================== MAIN ============================== //
+
+    const palabras = ["Alice", "Bob", "Amy", "David"]
+    const palabrasConLetra = []
+
+    let palabra
+    let palabraQueGuardo
+
+    let letra = prompt("Introduce la letra por la que deben empezar los nombre:")
+
+
+    for (let i = 0; i < palabras.length; i++) {
+            palabra = palabras[i]
+            if (letra == palabra[0]) {
+                //palabraQueGuardo = palabras[i]
+                palabrasConLetra.push(palabra)
+            }
+        }
+    console.log(palabrasConLetra)
+
+</script>

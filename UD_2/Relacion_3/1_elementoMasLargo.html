@@ -1,0 +1,17 @@
+<script>
+    // EJERCICIO 1
+
+    const palabras = ["apple", "banana", "kiwi", "watermelon", "caqui", "zana"]
+    let palabraMasLarga = palabras[0]
+    let palabraActual
+
+    for (let i = 0; i < palabras.length; i++) {
+        palabraActual = palabras[i]
+        if (palabraActual.length > palabraMasLarga.length) {
+            palabraMasLarga = palabras[i]
+        }
+    }
+    
+    console.log("La palabra más larga es: " + palabraMasLarga)
+
+</script>
