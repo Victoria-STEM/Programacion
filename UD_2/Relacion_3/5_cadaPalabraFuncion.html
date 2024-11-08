@@ -1,0 +1,32 @@
+<script>
+
+function contarLetras(palabras) {
+
+    const cantidadLetrasPorPalabra = []
+    let palabra 
+    let contadorLetrasEnPalabra
+
+    for (let i = 0; i < palabras.length; i++) {
+        palabra = palabras[i] 
+        contadorLetrasEnPalabra = 0
+
+        for (let j = 0; j < palabra.length; j++) {
+        contadorLetrasEnPalabra++
+        }
+
+        cantidadLetrasPorPalabra.push(contadorLetrasEnPalabra)
+    }
+
+    return cantidadLetrasPorPalabra
+
+}
+
+// ================================= MAIN ================================ //
+
+    const palabras = ["apple", "banana", "kiwi"]
+    
+
+    console.log(palabras)
+    console.log(cantidadLetrasPorPalabra)
+
+</script>
