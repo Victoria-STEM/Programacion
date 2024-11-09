@@ -1,0 +1,45 @@
+<script>
+    
+    function combinarListas (lista1, lista2) {
+        const listaFinal = copiarLista(lista1)
+
+        for (let valor of lista2) {
+            if(!entaEnLista(elemento, listaFinal)) {
+                listaFinal.push(valor)
+            }
+        }
+        return listaFinal
+    }
+
+    function copiarLista(copia) {
+        const copia = []
+
+        for (let valor of array) {
+            copia.push(valor)
+        }
+
+        return copia
+    }
+
+    function estaEnLista (elemento, lista) {
+        let encontrado = false
+
+        for (let i = 0; i < lista.length; i++) {
+            if(lista[i] == elemento) {
+                encontrado = true
+            }
+        }
+        
+        return encontrado
+    }
+
+
+    // =========================== MAIN =========================== //
+
+    const listaCompra1 = ["milk", "eggs", "bread"]
+    const listaCompra2 = ["bread", "butter", "cheese"]
+    let listaFinal = copiarLista(listaCompra1, listaFinal)
+
+    console.log(listaFinal)
+
+</script>

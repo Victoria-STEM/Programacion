@@ -2,5 +2,26 @@
 
     const listaCompra1 = ["milk", "eggs", "bread"]
     const listaCompra2 = ["bread", "butter", "cheese"]
+    const listaFinal = []
+
+    for (let i = 0; i < listaCompra1.length; i++) {
+        listaFinal.push(listaCompra1[i])
+    }
+
+    for (let elemento of listaCompra2) {
+
+        let encontrado = false
+        
+        for (let i = 0; i < listaFinal.length; i++) {
+            if(listaFinal[i] == elemento) {
+                encontrado = true
+            }
+        }
+        if(!encontrado){
+            listaFinal.push(elemento)
+        }
+    }
+
+    console.log(listaFinal)
 
 </script>
