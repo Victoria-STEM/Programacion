@@ -1,0 +1,16 @@
+<script>
+
+    const nombres = ["Alice", "Bob", "Amy", "David", "Amaia"]
+    let letraInicial = prompt("Introduce la letra inicial:")
+    const nombreLetraInical = []
+
+    for (let i = 0; i < nombres.length; i++) {
+        let nombreActual = nombres[i]
+        if (nombreActual[0] == letraInicial){
+            nombreLetraInical.push(nombres[i])
+        }
+    }
+
+    console.log(nombreLetraInical)
+
+</script>

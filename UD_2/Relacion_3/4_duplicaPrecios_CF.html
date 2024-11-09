@@ -1,0 +1,21 @@
+<script>
+
+    function duplicadorDePreciosEnArray (precios) {
+        
+        const preciosDuplicados = []
+
+        for (let i = 0; i < precios.length; i++) {
+            preciosDuplicados.push(precios[i] * 2)
+        }
+
+        return preciosDuplicados
+    }
+
+    // ======================= MAIN ======================= //
+    
+    const precios = [100, 200, 300]
+    let preciosDuplicados = duplicadorDePreciosEnArray (precios)
+
+    console.log(preciosDuplicados)
+
+</script>

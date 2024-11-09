@@ -1,0 +1,22 @@
+<script>
+
+    function contadorDeLetrasEnPalabras(palabras) {
+
+        const numeroLetrasPalabras = []
+
+        for (let i = 0; i < palabras.length; i++) {
+            let palabraActual = palabras[i]
+            numeroLetrasPalabras.push(palabraActual.length)
+        }
+
+        return numeroLetrasPalabras
+    }
+
+    // ======================= MAIN ======================= //
+    
+    console.log(".")
+    const palabras = ["apple", "banana", "kiwi"]
+    let numeroLetrasPalabras = contadorDeLetrasEnPalabras(palabras)
+    console.log(numeroLetrasPalabras)
+
+</script>

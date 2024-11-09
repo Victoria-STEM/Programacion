@@ -1,0 +1,47 @@
+<script>
+
+    // function extraerNombresPorLetra(listaPalabras, letraInicial) {
+        
+    //     const nombreLetraInical = []
+
+    //     for (let i = 0; i < listaPalabras.length; i++) {
+    //         let nombreActual = listaPalabras[i]
+    //         let primeraLetra = nombreActual[0]
+
+    //         if (primeraLetra == letraInicial) {
+    //             nombreLetraInical.push(nombreActual)
+    //         }
+    //     }
+    //     return nombreLetraInical
+    // }
+
+    // // ========================== MAIN ========================== //
+
+    // const nombres = ["Alice", "Bob", "Amy", "David", "Amaia"]
+    // let letraInicial = prompt("Introduce la letra inicial:")
+    // const nombreLetraInical = extraerNombresPorLetra(letraInicial, nombreLetraInical)
+    // console.log(nombreLetraInical)
+
+    function extraerNombresPorLetra(listaPalabras, letraInicial) {
+        
+        const nombreLetraInical = []
+
+        for (let i = 0; i < listaPalabras.length; i++) {
+            let nombreActual = listaPalabras[i]
+            let primeraLetra = nombreActual[0]
+
+            if (primeraLetra == letraInicial) {
+                nombreLetraInical.push(nombreActual)
+            }
+        }
+        return nombreLetraInical
+    }
+
+    // ========================== MAIN ========================== //
+
+    const nombres = ["Alice", "Bob", "Amy", "David", "Amaia"]
+    let letraInicial = prompt("Introduce la letra inicial:")
+    const nombreLetraInical = extraerNombresPorLetra(letraInicial, letraInical)
+    console.log(nombreLetraInical)
+
+</script>
