@@ -1,0 +1,23 @@
+<script>
+
+    const numeros = [1, 2, 2, 3, 4, 4, 5]
+    const numerosSinDuplicados = []
+
+    for (const elemento of numeros) {
+        let encontrado = false
+
+        for (let i = 0; i < numerosSinDuplicados.length && !encontrado; i++) {
+            if (numerosSinDuplicados[i] == elemento) {
+                encontrado = true
+            }
+        }
+
+        if (!encontrado) {
+            numerosSinDuplicados.push(elemento)
+        }
+
+    }
+
+    console.log(numerosSinDuplicados)
+
+</script>

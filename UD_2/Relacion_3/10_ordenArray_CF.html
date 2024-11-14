@@ -1,0 +1,18 @@
+<script>
+    function cambioOrdenArray(array) {
+        
+        const arrayInverso = []
+
+        for (let i = 0; i < palabras.length; i++) {
+            arrayInverso.push(palabras[(palabras.length - (i + 1))])
+            //console.log(palabras.length - (i+1))
+        }
+
+        return arrayInverso
+    }
+
+    const palabras = ["apple", "banana", "cherry"]
+    const palabrasInverso = cambioOrdenArray(palabras) 
+    console.log(palabrasInverso)
+
+</script>

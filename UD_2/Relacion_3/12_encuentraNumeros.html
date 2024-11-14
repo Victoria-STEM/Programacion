@@ -1,0 +1,21 @@
+<script>
+
+    const numeros = [12, 5, 7, 19, 1]
+    const numerospequenoGrande = []
+    let numeroMasGrande = numeros[0]
+    let numeroMasPequeno = numeros[0]
+
+    for (let i = 0; i < numeros.length; i++){
+        if(numeroMasGrande < numeros[i]){
+            numeroMasGrande = numeros[i]
+        }
+        if(numeroMasPequeno > numeros[i]){
+            numeroMasPequeno = numeros[i]
+        }
+    }
+
+    numerospequenoGrande.push(numeroMasGrande)
+    numerospequenoGrande.push(numeroMasPequeno)
+    console.log(numerospequenoGrande)
+    
+</script>

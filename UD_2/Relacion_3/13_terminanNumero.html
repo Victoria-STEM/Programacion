@@ -1,0 +1,16 @@
+<script>
+
+    const numeros = [23, 13, 33, 54, 73, 19]
+    let numero = 3
+    let contador = 0
+
+    for (let i = 0; i < numeros.length; i++) {
+        let comparo = parseInt(numeros[i]%10)
+        //console.log(comparo)
+        if (numero == comparo){
+            contador++
+        }
+    }
+    console.log(contador)
+    
+</script>
