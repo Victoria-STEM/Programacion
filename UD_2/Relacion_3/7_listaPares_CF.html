@@ -1,0 +1,25 @@
+<script>
+
+    function listaNumerosParesImpares(arrayNumeros) {
+
+        const numerosPares = []
+        const numerosImpares = []
+
+        for (let i = 0; i < numeros.length; i++) {
+            if (numeros[i] % 2 == 0) {
+                numerosPares.push(numeros[i])
+            } else {
+                numerosImpares.push(numeros[i])
+            }
+        }
+        return [numerosPares, numerosImpares]
+    }
+
+    const numeros = [1, 2, 3, 4, 5, 6]
+    const matrizPareImpares = listaNumerosParesImpares(numeros)
+
+    console.log(matrizPareImpares)
+    console.log(matrizPareImpares[0])
+    console.log(matrizPareImpares[1])
+
+</script>

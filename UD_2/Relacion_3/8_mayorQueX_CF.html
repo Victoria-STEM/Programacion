@@ -1,0 +1,23 @@
+<script>
+
+    function encontrarPrimerNumeroMayorQueX(x, arrayListaNumeros) {
+
+        let encontrado = false
+        let mayorQueX = null
+
+        for (let i = 0; i < numeros.length && !encontrado; i++) {
+            if (x < numeros[i]) {
+                mayorQueX = numeros[i]
+                encontrado = true
+            }
+        }
+        return mayorQueX
+    }
+
+    const numeros = [10, 20, 30, 40, 50]
+    let x = 25
+
+    let numeroMayorQueX = encontrarPrimerNumeroMayorQueX(x, numeros)
+    console.log(numeroMayorQueX)
+
+</script>

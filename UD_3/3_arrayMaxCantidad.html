@@ -1,0 +1,18 @@
+<script>
+
+    function arrayAleatorio (cantidad, numeroMax) {
+    
+        const array = []
+
+        for (let i = 0; i < cantidad; i++){
+            let aleationumeroMax = parseInt(Math.random() * (numeroMax + 1))
+            array.push(aleationumeroMax)
+        }
+    
+        return array
+    }
+
+    let arrayResultado = arrayAleatorio(20, 100)
+    console.log(arrayResultado)
+
+</script>

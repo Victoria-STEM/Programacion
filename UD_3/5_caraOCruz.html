@@ -1,0 +1,28 @@
+<script>
+
+    function caraOCruz () {
+        
+        let resultadoCaraOCruz = parseInt(Math.random() * 2)
+        let resultado = ""
+        if (resultadoCaraOCruz == 1) {
+            resultado = "cara"
+        } else {
+            resultado = "cruz"
+        }
+
+        return resultado
+    }
+
+    function arrayCaraCruz () {
+        const array = []
+        for (let i = 0; i < 10; i++) {
+            let resultadoAleatorio = caraOCruz()
+            array.push(resultadoAleatorio)
+        }
+        return array
+    }
+
+    let arrayResultadoAleatorio = arrayCaraCruz()
+    console.log(arrayResultadoAleatorio)
+
+</script>

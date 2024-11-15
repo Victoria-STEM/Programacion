@@ -1,0 +1,163 @@
+<script>
+
+// function mostrarEstadoGranja (estatusGranja) {
+
+//     console.log("********************************************")
+//     console.log("Felicidad: " + felicidad + " (0-4)")
+//     console.log("Alimentos disponibles: " + alimentosDisponibles + " (0-4)")
+//     console.log("Estado del establo: " + establo + " (0-6)")
+//     console.log("Contador de interacciones: " + contadorInteracciones)
+//     console.log("********************************************")
+
+// } return (estatusGranja)
+
+
+// ===================================== MAIN ===================================== // 
+
+    const felicidad = ["❤", "❤", "❤", "❤"]
+    const alimentosDisponibles = ["🌾", "🌾", "🌾", "🌾"]
+    const establo = ["💩", "💩", "💩", "💩"]
+    let alimentarForraje
+    let alimentarFruta
+    let establolimpio = true
+    let felicidadCompleta = true
+    let eliminoCaca
+    let contadorInteracciones = 0
+    let establoSucioCompleto = true
+
+    console.log("********************************************")
+    console.log("Felicidad: " + felicidad + " (0-4)")
+    console.log("Alimentos disponibles: " + alimentosDisponibles + " (0-4)")
+    console.log("Estado del establo: " + establo + " (0-6)")
+    console.log("Contador de interacciones: " + contadorInteracciones)
+    console.log("********************************************")
+    //console.log(establo.length)
+
+    let menu = ""
+
+    while (menu != "5") {
+
+        menu = prompt("1. Alimentar a los animales🥕 \n"
+            + "2. Jugar con los animales 😁 \n"
+            + "3. Limpiar el establo 🪣🧹\n"
+            + "4. Comprar comida 🛒 \n"
+            + "5. Salir de la granja 🏃‍♀️‍➡️ ")
+
+        if (menu == "1") {
+
+            if (establo.length < 3) {
+                contadorInteracciones++
+                alimentarForraje = prompt("1. Alimentar con forraje 🌾. \n"
+                    + "2. Alimentar con fruta 🍎.")
+
+                if (alimentarForraje == "1") {
+                    
+                    alimentosDisponibles.pop()
+
+                } else if (alimentarForraje == "2") {
+                    
+                    alimentosDisponibles.pop()
+                    if (felicidad.length < 4) {
+                        felicidad.push("❤")
+                    }
+                }
+
+                console.log("********************************************")
+                console.log("Felicidad: " + felicidad + " (0-4)")
+                console.log("Alimentos disponibles: " + alimentosDisponibles + " (0-4)")
+                console.log("Estado del establo: " + establo + " (0-6)")
+                console.log("Contador de interacciones: " + contadorInteracciones)
+                console.log("********************************************")
+
+            } else if (establo.length >= 3) {
+                establolimpio = false
+                alert("Los animales no pueden comer si el establo está demasiado sucio. \n" +
+                    "Limpia primero, guarro!")
+            }
+
+        } else if (menu == "2") {
+            contadorInteracciones++
+
+            if (felicidad.length <= 3) {
+                felicidad.push("❤")
+                alimentosDisponibles.pop()
+                alert("Felicidad: +1❤ \n" +
+                    "Comida: -1🌾")
+
+                console.log("********************************************")
+                console.log("Felicidad: " + felicidad + " (0-4)")
+                console.log("Alimentos disponibles: " + alimentosDisponibles + " (0-4)")
+                console.log("Estado del establo: " + establo + " (0-6)")
+                console.log("Contador de interacciones: " + contadorInteracciones)
+                console.log("********************************************")
+
+            } else if (felicidad.length == 4) {
+                // qué hacer cuando la felicidad ya está al maximo?
+                alert("Felicidad al maximo! \n" +
+                    "Comida: -1🌾")
+                alimentosDisponibles.pop()
+
+                console.log("********************************************")
+                console.log("Felicidad: " + felicidad + " (0-4)")
+                console.log("Alimentos disponibles: " + alimentosDisponibles + " (0-4)")
+                console.log("Estado del establo: " + establo + " (0-6)")
+                console.log("Contador de interacciones: " + contadorInteracciones)
+                console.log("********************************************")
+            }
+
+        } else if (menu == "3") {
+            contadorInteracciones++
+            let cantidadDeCacas = establo.length
+
+            for (let i = 0; i < cantidadDeCacas; i++) {
+                establo.pop()
+                //establo.pop()
+                // no se elimina la caca del todo... no se por qué!
+            }
+
+            console.log("********************************************")
+            console.log("Felicidad: " + felicidad + " (0-4)")
+            console.log("Alimentos disponibles: " + alimentosDisponibles + " (0-4)")
+            console.log("Estado del establo: " + establo + " (0-6)")
+            console.log("Contador de interacciones: " + contadorInteracciones)
+            console.log("********************************************")
+
+        } else if (menu == "4") {
+            contadorInteracciones++
+
+            // console.log(alimentosDisponibles)
+            if (alimentosDisponibles.length < 4) {
+                for (let i = alimentosDisponibles.length; i < 4; i++) {
+                    alimentosDisponibles.push("🌾")
+                }
+
+                alert("Menuda compra! \n" +
+                    "Tus alacena está llena.")
+                console.log("********************************************")
+                console.log("Felicidad: " + felicidad + " (0-4)")
+                console.log("Alimentos disponibles: " + alimentosDisponibles + " (0-4)")
+                console.log("Estado del establo: " + establo + " (0-6)")
+                console.log("Contador de interacciones: " + contadorInteracciones)
+                console.log("********************************************")
+
+            } else if (alimentosDisponibles.length == 4) {
+                alert("Ya estas al maximo de alimentos. \n" +
+                    "Prueba a jugar con los animales.")
+            }
+
+        }
+
+        //console.log(contadorInteracciones)
+        if (contadorInteracciones == 3) {
+            //qué pasa si estas al maximo???
+            if (establo.length < 6) {
+                establo.push("💩")
+            }
+
+            felicidad.pop()
+            contadorInteracciones = 0
+        }
+
+    }
+
+</script>

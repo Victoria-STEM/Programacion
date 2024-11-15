@@ -1,0 +1,19 @@
+<script>
+
+    function arrayAleatorioEnRango (cantidad, min, max) {
+        
+        const array = []
+
+        for (let i = 0; i < cantidad; i++){
+            let aleationumeroMax = parseInt((Math.random() * (max - min) + min))
+            array.push(aleationumeroMax)
+        }
+    
+        return array
+    }
+
+    let arrayResultado = arrayAleatorioEnRango(5, 10, 30)
+    console.log(arrayResultado)
+
+
+</script>
