@@ -1,0 +1,18 @@
+<script>
+
+    function juegoAdivinaNumero () {
+        let resultadoNumeroAleatorio = Number(parseInt(Math.random() * 11))
+        return resultadoNumeroAleatorio
+    }
+
+    let numeroAleatorio = juegoAdivinaNumero ()
+    //console.log(numeroAleatorio)
+    let consulta = Number(prompt("Adivina el numero aleatorio:"))
+
+    if (numeroAleatorio == consulta) {
+        console.log("Has adivinado el numero.")
+    } else {
+        console.log("No has adivinado el numero.")
+    }
+
+</script>
