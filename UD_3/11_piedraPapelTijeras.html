@@ -1,0 +1,12 @@
+<script>
+
+    function juegoPiedraPapelTijeras () {
+        const posibilidades = ["piedra", "papel", "tijeras"]
+        let resultadoAleatorio = posibilidades[parseInt(Math.random() * (posibilidades.length))]
+        return resultadoAleatorio
+    }
+    
+    let resultadoAleatorio = juegoPiedraPapelTijeras()
+    console.log(resultadoAleatorio)
+
+</script>

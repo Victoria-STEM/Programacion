@@ -1,0 +1,29 @@
+<script>
+
+    function simularLanzamientoHastaTresCaras() {
+
+        let contadorCara = 0
+        const posiblesLanzamientos = ["cara", "cruz"]
+        let lanzamientoAleatorio
+        const almacenResultados = []
+
+        while (contadorCara < 3) {
+
+            lanzamientoAleatorio = posiblesLanzamientos[parseInt(Math.random() * posiblesLanzamientos.length)]
+            almacenResultados.push(lanzamientoAleatorio)
+
+            if (lanzamientoAleatorio == "cara") {
+                contadorCara++
+            }
+
+        }
+
+        return almacenResultados
+    }
+
+    let almacenResultados = simularLanzamientoHastaTresCaras()
+
+    console.log(almacenResultados)
+    console.log("Veces que se lanzo la moneda: " + (almacenResultados.length))
+
+</script>

@@ -1,0 +1,16 @@
+<script>
+
+    function buscarElementoAleatorioEn (array) {
+
+        let posicionAleatoria = parseInt(Math.random() * (array.length))
+        let elementoSeleccionado = array[posicionAleatoria]
+        
+        return elementoSeleccionado
+    }
+    
+    const arrayX = ["a", "b", "c"]
+    
+    let elementoAleatorioEnArray = buscarElementoAleatorioEn (arrayX)
+    console.log(elementoAleatorioEnArray)
+
+</script>
