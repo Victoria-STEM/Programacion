@@ -1,18 +1,28 @@
 <script>
 
-    function juegoAdivinaNumero () {
-        let resultadoNumeroAleatorio = Number(parseInt(Math.random() * 11))
-        return resultadoNumeroAleatorio
-    }
+    function juegoAdivinaNumero(min, max) {
+        let numeroAleatorio = generarNumeroAleatorio()
 
-    let numeroAleatorio = juegoAdivinaNumero ()
-    //console.log(numeroAleatorio)
-    let consulta = Number(prompt("Adivina el numero aleatorio:"))
-
-    if (numeroAleatorio == consulta) {
+        while (consulta != numeroAleatorio) {
+            if (consulta < numeroAleatorio) {
+                console.log("El numero es mayor.")
+            } else if (consulta > numeroAleatorio) {
+                console.log("El numero es menor.")
+            }
+        }
         console.log("Has adivinado el numero.")
-    } else {
-        console.log("No has adivinado el numero.")
+
+        return resultadoJuego
     }
+
+    function generarNumeroAleatorio() {
+        return parseInt(Math.random() * (max - min + 1)) + min
+    }
+
+    let consulta = Number(prompt("Adivina el numero aleatorio:"))
+    let resultadoJuego = juegoAdivinaNumero(1, 10)
+    //console.log(numeroAleatorio)
+    
+
 
 </script>
