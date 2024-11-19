@@ -1,0 +1,29 @@
+<script>
+
+    function encontrarMayoresEdad(array) {
+        const listaMayoresEdad = []
+        let edadPersona = null
+        const nombreMayoresEdad = []
+
+        for (let i = 0; i < personas.length; i++) {
+            let edadPersona = personas[i][1]
+            if (edadPersona > 18) {
+                listaMayoresEdad.push(personas[i][0])
+            }
+        }
+        return listaMayoresEdad
+    }
+
+    const personas = [
+        ["Ana", 17],
+        ["Luis", 20],
+        ["Marta", 18],
+        ["Carlos", 15],
+        ["Elena", 25],
+        ["Amaia", 40]
+    ]
+
+    let nombreMayoresEdad = encontrarMayoresEdad(personas)
+    console.log(nombreMayoresEdad)
+
+</script>

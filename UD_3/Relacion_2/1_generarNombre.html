@@ -1,0 +1,23 @@
+<script>
+
+    function generarNombreUsuarioAleatorio(nombre, apellido) {
+        let nombreUsuario = ""
+
+        for (let i = 0; i < 3; i++) {
+            nombreUsuario += nombre[i]
+        }
+        for (let i = 0; i < 3; i++) {
+            nombreUsuario += apellido[i]
+        }
+        for (let i = 0; i < 3; i++) {
+            nombreUsuario += parseInt(Math.random() * 10)
+        }
+        
+        let nombreUsuarioMinuscula = nombreUsuario.toLowerCase()
+        return nombreUsuarioMinuscula
+    }
+
+    let nombreUsuarioMinuscula = generarNombreUsuarioAleatorio("Victoria", "Segovia")
+    console.log(nombreUsuarioMinuscula)
+
+</script>

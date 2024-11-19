@@ -1,0 +1,35 @@
+<script>
+
+    function busquedaCitasSolapadas (citas) {
+
+        let finCita = null
+        let inicioSiguienteCita = null
+        let seSolapan = false
+
+        for (let i = 0; i < citas.length && !seSolapan; i++) {
+            if (i % 2 != 0) {
+                finCita = citas[i]
+                inicioSiguienteCita = citas[(i + 1)]
+                // console.log("Fin cita: " + finCita)
+                // console.log("Inicio siguiente cita: " + inicioSiguienteCita)
+            }
+            if (finCita > inicioSiguienteCita) {
+                seSolapan = true
+            }
+        }
+
+        return seSolapan
+    }
+
+    const citas = ["14:00", "15:00", "15:00", "16:00", "16:00", "16:30", "16:00", "17:00"]
+    let seSolapan = busquedaCitasSolapadas (citas)
+    console.log(seSolapan)
+
+
+    // if (seSolapan) {
+    //     console.log("Se solapan " + finCita + " y " + inicioSiguienteCita)
+    // } else {
+    //     console.log("No se solapa ninguna cita.")
+    // }
+
+</script>
