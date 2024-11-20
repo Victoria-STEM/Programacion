@@ -1,0 +1,66 @@
+<script>
+
+    const productosMercado = ["0. Bebedero de Agua 🚰 - 200G \n",
+        "1. Refugio para Animales 🏚 - 500G \n",
+        "2. Juguetes para Animales 🧸 - 150G \n",
+        "3. Malla de Sombra 🏖 - 300G \n",
+        "4. Sistema de Riego 💧 - 400G \n",
+        "5. Herramientas de Limpieza 🧹 - 100G \n",
+        "6. Luz Solar Artificial 💡 - 350G \n",
+        "7. Cercado Mejorado 🚧 - 600G \n"]
+    const displayParaInventario = ["🚰", "🏚", "🧸", "🏖", "💧", "🧹", "💡", "🚧"]
+    const precioMercado = [200, 500, 150, 300, 400, 100, 350, 600]
+    const inventario = []
+    let opcionMercado = 0
+    let contadorInteracciones = 0
+
+
+    function irAlMercado() {
+        let productosMostrados = ""
+        let indiceProductoMercado = null
+
+        for (let i = 0; i < 4; i++) {
+            indiceProductoMercado = productosMercado[parseInt(Math.random() * 8)]
+            productosMostrados += indiceProductoMercado
+        }
+
+        return productosMostrados
+    }
+    // -------------------------
+
+
+    let productosDisponiblesEnMercado = irAlMercado()
+    let productosDisponiblesEnMercadoGuardado = productosDisponiblesEnMercado
+    let yaHeEstadoEnMercado = false
+
+    while (opcionMercado != 9) {
+
+        if (!yaHeEstadoEnMercado || contadorInteracciones % 5 == 0) {
+            yaHeEstadoEnMercado = true
+            opcionMercado = prompt("Bienvenida al mercado, hoy disponemos de: \n" + productosDisponiblesEnMercado)
+
+        } else if (yaHeEstadoEnMercado && contadorInteracciones % 5 != 0) {
+            opcionMercado = prompt("(X)Bienvenida al mercado, hoy disponemos de: \n" + productosDisponiblesEnMercadoGuardado)
+        }
+
+
+        let encontrado = false
+        for (let i = 0; i < inventario.length && !encontrado; i++) {
+            if (displayParaInventario[opcionMercado] == inventario[i]) {
+                encontrado = true
+            }
+
+        } if (!encontrado) {
+            inventario.push(displayParaInventario[opcionMercado])
+            contadorInteracciones ++
+
+        } else {
+            console.log("Ya tienes ese producto.")
+        }
+
+
+        console.log(inventario)
+        console.log(contadorInteracciones)
+    }
+
+</script>

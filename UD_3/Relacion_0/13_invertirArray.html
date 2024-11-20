@@ -1,0 +1,14 @@
+<script>
+
+    function invertirArray (array) {
+        const arrayInvertido = []
+        for (let i = 0; i < array.length; i++) {
+            arrayInvertido.push(array[(array.length - i)-1])
+        }
+        return arrayInvertido
+    }
+    const arrayX = [1,2,3,4]
+    const arrayInvertido = invertirArray(arrayX)
+    console.log(arrayInvertido)
+
+</script>

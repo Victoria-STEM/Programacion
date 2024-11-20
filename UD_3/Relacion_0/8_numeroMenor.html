@@ -1,0 +1,17 @@
+<script>
+
+    function menorDeTres (x, y, z) {
+        let numeroMenor
+        if (x < y && x < z) {
+            numeroMenor = x
+        } else if (y < x && y < z) {
+            numeroMenor = y 
+        } else if (z < x && z < y) {
+            numeroMenor = z
+        }
+        return numeroMenor
+    }
+    let numeroMenor = menorDeTres(20, 10, 400)
+    console.log(numeroMenor)
+
+</script>

@@ -1,0 +1,18 @@
+<script>
+
+    function esPositivo (numero) {
+        let positivo = true
+        if (numero > 0) {
+            positivo = true
+        } else if (numero < 0) {
+            positivo = false
+        } else if (numero == 0) {
+            positivo = "el numero es 0"
+        }
+        return positivo
+    }
+
+    let numero = esPositivo(0)
+    console.log(numero)
+
+</script>

@@ -1,0 +1,20 @@
+<script>
+
+    function obtenerImpares(array) {
+        const arrayImpares = []
+        for (let i = 0; i < array.length; i++) {
+
+            if(array[i] % 2 != 0){
+                arrayImpares.push(array[i])
+            }
+
+        }
+
+        return arrayImpares
+    }
+    
+    const arrayZ = [1,3,6,8,3]
+    const arrayImpares = obtenerImpares(arrayZ)
+    console.log(arrayImpares)
+
+</script>
