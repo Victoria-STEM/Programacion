@@ -1,0 +1,37 @@
+<script>
+
+    const nombreJugadores = ["Maria", "Jose", "JC", "Anabel", "Carla"]
+    const puntuacionesJugadores = [100, 20, 40, 50, 120]
+    let menu = 0
+
+    while (menu != "3") {
+
+        menu = prompt("1. Introducir un nuevo jugador y su puntuacion. \n" +
+            "2. Mostrar los jugadores y sus puntuaciones actuales. \n" +
+            "3. Salir del programa.")
+
+            if (menu == "1") {
+                let nuevoJugador = prompt("Introduce el nombre del nuevo jugador:")
+                let nuevaPuntuacion = prompt("Introduce la puntuacion del nuevo jugador:")
+
+                for (let i = 0; i < nombreJugadores.length; i++) {
+                    nombreJugadores[i] = nombreJugadores[(i+1)]
+                    puntuacionesJugadores[i] = puntuacionesJugadores[(i+1)]
+                }
+                nombreJugadores.pop()
+                puntuacionesJugadores.pop()
+                nombreJugadores.push(nuevoJugador)
+                puntuacionesJugadores.push(nuevaPuntuacion)
+                // console.log(nombreJugadores)
+            }
+
+            else if (menu == "2") {
+                console.log("Jugadores - Puntuacion")
+                for(let i = 0; i < nombreJugadores.length; i++){
+                    console.log(nombreJugadores[i] + " - " + puntuacionesJugadores[i])
+                }
+
+            }
+    }
+
+</script>

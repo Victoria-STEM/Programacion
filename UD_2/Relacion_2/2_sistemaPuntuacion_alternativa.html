@@ -1,0 +1,28 @@
+<script>
+    const jugadores = ["Jugador1", "Jugador2", "Jugador3", "Jugador4", "Jugador5"]
+    const puntuaciones = [120, 200, 150, 180, 220]
+
+    let opcion
+
+    while (opcion != "3") {
+
+        opcion = prompt("1. Añadir jugador \n2. Ver jugadores \n3. Salir")
+
+        if (opcion == 1) {
+            let nombreJugadorNuevo = prompt("Introduce el nombre del nuevo jugador:")
+            let puntuacionJugadorNuevo = Number(prompt("Introduce la puntuación del nuevo jugador:"))
+
+            jugadores.shift()
+            puntuaciones.shift()
+
+            jugadores.push(nombreJugadorNuevo)
+            puntuaciones.push(puntuacionJugadorNuevo)
+            
+        } else if (opcion == 2) {
+            console.log("Jugador - Puntuación") // Imprimo la "cabecera" de la tabla de puntuaciones
+            for (let i = 0; i < jugadores.length; i++) {
+                console.log(jugadores[i] + " - " + puntuaciones[i])
+            }
+        }
+    }
+</script>

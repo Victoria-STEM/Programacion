@@ -1,0 +1,58 @@
+<script>
+
+    const nombreGastos = []
+    const cantidadGastos = []
+    let totalGastos = 0
+
+    let menu
+
+    while (menu != 5) {
+
+        menu = prompt("1. Añadir un nuevo gasto (nombre y cantidad).\n"
+            + "2. Ver el total de gastos hasta el momento.\n"
+            + "3. Ver los gastos más altos y más bajos del mes.\n"
+            + "4. Ver el promedio de gasto diario (suponiendo un mes de 30 días).\n"
+            + "5. Salir del programa.\n")
+
+        if (menu == 1) {
+            let nuevoGasto = prompt("Nombre gasto:")
+            let cantidadGastoNuevo = Number(prompt("Precio:"))
+            nombreGastos.push(nuevoGasto)
+            cantidadGastos.push(cantidadGastoNuevo)
+        }
+
+        else if (menu == 2) {
+            gastoPromedio = 0
+            for (let i = 0; i < nombreGastos.length; i++) {
+                totalGastos += cantidadGastos[i]
+            }
+            console.log(totalGastos)
+        }
+
+        else if (menu == 3) {
+            let gastoMasBajo = nombreGastos[0]
+            let precioGastoMasBajo = cantidadGastos[0]
+
+            for (let i = 1; i > nombreGastos.length; i++) {
+                if (precioGastoMasBajo > cantidadGastos[i]) {
+                    gastoMasBajo = nombreGastos[i]
+                    precioGastoMasBajo = nombres[i]
+                }
+            }
+            console.log(gastoMasBajo)
+            console.log(precioGastoMasBajo)
+        }
+
+        else if (menu == 4) {
+            gastoPromedio = 0
+            for (let i = 0; i < nombreGastos.length; i++) {
+                totalGastos += cantidadGastos[i]
+            }
+            let gastoPromedio = totalGastos / 30
+            console.log (gastoPromedio)
+        }
+    }
+
+
+
+</script>

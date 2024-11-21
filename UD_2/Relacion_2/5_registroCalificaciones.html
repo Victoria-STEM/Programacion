@@ -1,0 +1,61 @@
+<script>
+
+    const nombres = []
+    const calificaciones = []
+    let menu = ""
+
+    while (menu != "5") {
+        menu = prompt("1. Añadir un estudiante y su calificación.\n"
+        + "2. Mostrar la calificación promedio de la clase.\n"
+        + "3. Mostrar la calificación más alta y el nombre del estudiante correspondiente.\n"
+        + "4. Mostrar la calificación más baja y el nombre del estudiante correspondiente.\n"
+        + "5. Salir del programa.")
+
+        if (menu == "1") {
+            let nuevoEstudiante = prompt("Nombre estudiante:")
+            let nuevaCalificacion = Number(prompt("Nueva calificacion:"))
+            nombres.push(nuevoEstudiante)
+            calificaciones.push(nuevaCalificacion)
+        }
+
+        else if (menu == "2") {
+            let calificacionPromedio = 0
+            let sumatorioCalificaciones = 0
+            for (let i = 0; i < calificaciones.length; i++) {
+                sumatorioCalificaciones += calificaciones[i]
+            }
+            calificacionPromedio = sumatorioCalificaciones / calificaciones.length
+            console.log(calificacionPromedio)
+        }
+
+        else if (menu == "3") {
+            let calificacionMasAlta = calificaciones[0]
+            let alumnoCalificacionMasAlta = nombres[0]
+            for (let i = 0; i < calificaciones.length; i++) {
+                if (calificacionMasAlta < calificaciones[i]){
+                    calificacionMasAlta = calificaciones[i]
+                    alumnoCalificacionMasAlta = nombres[i]
+                }
+            }
+            console.log(calificacionMasAlta)
+            console.log(alumnoCalificacionMasAlta)
+        }
+
+        else if (menu == "4") {
+            let calificacionMasBaja = calificaciones[0]
+            let alumnoCalificacionMasBaja = nombres[0]
+            for (let i = 0; i > calificaciones.length; i++) {
+                if (calificacionMasBaja > calificaciones[i]){
+                    calificacionMasBaja = calificaciones[i]
+                    alumnoCalificacionMasBaja = nombres[i]
+                }
+            }
+            console.log(calificacionMasBaja)
+            console.log(alumnoCalificacionMasBaja)
+
+        }
+
+    }
+    
+
+</script>

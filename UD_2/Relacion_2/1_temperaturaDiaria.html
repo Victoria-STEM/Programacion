@@ -1,0 +1,54 @@
+<script>
+
+    let menu = 0
+    const temperaturaSemana = []
+    let temperaturaPromedioSemanal = 0
+    let sumatorioTemperaturas = 0
+    let temperaturaMasBaja = 0
+    let temperaturaMasAlta = 0
+
+    while (temperaturaSemana.length != 7) {
+        let temperaturaDiaria = Number(prompt("Introduce la temperatura del dia:"))
+        temperaturaSemana.push(temperaturaDiaria)
+    }
+
+    while (menu != 4) {
+        menu = prompt("1. Mostrar la temperatura más alta registrada.\n" +
+            "2. Mostrar la temperatura más baja registrada. \n" +
+            "3. Calcular la temperatura promedio de la semana.\n" +
+            "4. Salir del programa.")
+
+        if (menu == "1") {
+            temperaturaMasAlta = temperaturaSemana[0]
+            for (let i = 1; i < temperaturaSemana.length; i++) {
+                if (temperaturaMasAlta < temperaturaSemana[i]) {
+                    temperaturaMasAlta = temperaturaSemana[i]
+                }
+            }
+            console.log("La temperatura mas alta es: " + temperaturaMasAlta)
+
+        }
+
+        else if (menu == "2") {
+            temperaturaMasBaja = temperaturaSemana[0]
+            for (let i = 1; i < temperaturaSemana.length; i++) {
+                if (temperaturaMasBaja > temperaturaSemana[i]) {
+                    temperaturaMasBaja = temperaturaSemana[i]
+                }
+            }
+            console.log("La temperatura mas baja es: " + temperaturaMasBaja)
+
+        }
+
+        else if (menu == "3") {
+            for (let i = 0; i < temperaturaSemana.length; i++) {
+                sumatorioTemperaturas += temperaturaSemana[i]
+            }
+            temperaturaPromedioSemanal = sumatorioTemperaturas / temperaturaSemana.length
+            console.log("La temperatura promedio es: " + temperaturaPromedioSemanal)
+
+        }
+
+    }
+
+</script>

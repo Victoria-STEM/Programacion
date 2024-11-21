@@ -1,0 +1,48 @@
+<script>
+
+    const productos = ["Manzanas", "Plátanos", "Leche", "Pan", "Huevos", "Azúcar", "Harina", "Arroz", "Pasta", "Café"]
+    const precios = [1.20, 0.80, 1.50, 1.00, 2.00, 1.10, 0.90, 0.70, 1.30, 3.00]
+    const compra = []
+    const cantidades = []
+    let precioTotalCompra = 0
+    let nombreProducto = ""
+    let cantidadProducto = null
+    let precioProducto = 0
+    const precioSegunCantidad = []
+
+    console.log("productos - precios")
+    for (let i = 0; i < productos.length; i++) {
+        console.log(productos[i] + " - " + precios[i])
+    }
+
+    while (nombreProducto != "FIN") {
+        nombreProducto = prompt("Introduce el producto a comprar:")
+
+        if (nombreProducto != "FIN") {
+            cantidadProducto = Number((prompt("Introduce la cantidad:")))
+            let encontrado = false
+            for (let i = 0; i < productos.length && !encontrado; i++) {
+                if (nombreProducto == productos[i]) {
+                    encontrado = true
+                    precioProducto = precios[i]
+                }
+            }
+
+            precioProducto *= cantidadProducto
+            precioSegunCantidad.push(precioProducto)
+            compra.push(nombreProducto)
+            cantidades.push(cantidadProducto)
+
+        }
+    }
+
+    console.log("Productos - Cantidad ")
+    for (let i = 0; i < compra.length; i++) {
+        console.log(compra[i] + " - " + cantidades[i])
+        precioTotalCompra += precioSegunCantidad[i]
+    }
+
+    console.log("Precio total de compra es: " + precioTotalCompra)
+
+
+</script>

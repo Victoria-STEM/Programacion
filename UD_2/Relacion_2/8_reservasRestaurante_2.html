@@ -1,0 +1,61 @@
+<script>
+
+    const nombreReservas = ["Laura", "Victoria", "Pedro", "Alejandro"]
+    const cantidadPersonas = [2, 5, 3, 7]
+
+    let menu
+
+    while (menu != 5) {
+
+        menu = prompt("1. Añadir una nueva reserva (nombre del cliente y número de personas).\n"
+            + "2. Ver la lista de reservas actuales.\n"
+            + "3. Calcular el total de personas reservadas para ese día.\n"
+            + "4. Cancelar una reserva existente (por nombre del cliente).\n"
+            + "5. Salir del programa.")
+
+        if (menu == "1") {
+            let nuevaReserva = prompt("Nuevo cliente:")
+            let numeroPersonas = Number(prompt("Numero:"))
+            nombreReservas.push(nuevaReserva)
+            cantidadPersonas.push(numeroPersonas)
+        }
+
+        else if (menu == "2") {
+            console.log("Nombre - Cantidad personas")
+            for (let i = 0; i < nombreReservas.length; i++) {
+                console.log(nombreReservas[i] + " - " + cantidadPersonas[i])
+            }
+
+        }
+
+        else if (menu == "3") {
+            let totalpersonas = 0
+            for (let i = 0; i < cantidadPersonas.length; i++) {
+                totalpersonas += cantidadPersonas[i]
+            }
+            console.log(totalpersonas)
+        }
+
+        else if (menu == "4") {
+            let cancelarReserva = prompt("Reserva a cancelar:")
+            let encontrado = false
+            for (let i = 0; i < nombreReservas.length && !encontrado; i++) {
+                if (nombreReservas[i] == cancelarReserva) {
+                    encontrado = true
+                    while (i != nombreReservas.length) {
+                        nombreReservas[i] = nombreReservas[i + 1]
+                        cantidadPersonas[i] = cantidadPersonas[i + 1]
+                        i++
+                    }
+                }
+            }
+            if (!encontrado) {
+                alert("Reserva no encontrada.")
+            }
+
+            nombreReservas.pop()
+            cantidadPersonas.pop()
+        }
+    }
+
+</script>

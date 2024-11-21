@@ -1,0 +1,65 @@
+<script>
+    
+    const nombreReservas = ["Laura", "Victoria", "Pedro", "Alejandro"]
+    const cantidadPersonas = [2, 5, 3, 7]
+
+    let opcion
+
+    while (opcion != 5) {
+        opcion = prompt("1. Añadir una nueva reserva (nombre del cliente y número de personas).\n"
+            + "2. Ver la lista de reservas actuales.\n"
+            + "3. Calcular el total de personas reservadas para ese día.\n"
+            + "4. Cancelar una reserva existente (por nombre del cliente).\n"
+            + "5. Salir del programa.")
+
+        if (opcion == 1) {
+
+            let nombreNuevaReserva = prompt("Nombre de la reserva:")
+            let personasNuevaReserva = Number(prompt("Número de personas:"))
+
+            nombreReservas.push(nombreNuevaReserva)
+            cantidadPersonas.push(personasNuevaReserva)
+
+        } else if (opcion == 2) {
+
+            console.log("Nombre reserva - Cantidad personas")
+            for (let i = 0; i < nombreReservas.length; i++) {
+                console.log(nombreReservas[i] + " - " + cantidadPersonas[i])
+            }
+
+        } else if (opcion == 3) {
+
+            let totalPersonas = 0
+            for (let i = 0; i < cantidadPersonas.length; i++) {
+                totalPersonas += cantidadPersonas[i]
+            }
+
+            console.log("Hay reservas para " + totalPersonas + " personas")
+
+        } else if (opcion == 4) {
+            let nombreReservaCancelada = prompt("Nombre de la reserva:")
+
+            let encontrado = false
+            let estoyUltimaPosicion = false
+            for (let i = 0; i < nombreReservas.length && !encontrado; i++) {
+
+                encontrado = (nombreReservas[i] == nombreReservaCancelada)
+                estoyUltimaPosicion = (i == nombreReservas.length - 1)
+
+                // Si encuentro la reserva que quiero borrar, quito la última 
+                // reserva y la inserto en la posición de la reserva que quiero borrar
+                if (encontrado && !estoyUltimaPosicion) {
+                    nombreReservas[i] = nombreReservas.pop()
+                    cantidadPersonas[i] = cantidadPersonas.pop()
+
+                    // Si la reserva que quiero eliminar está en la última posición,
+                    // la elimino pero no la almaceno en ninguna parte
+                } else if (encontrado && estoyUltimaPosicion) {
+                    nombreReservas.pop()
+                    cantidadPersonas.pop()
+                }
+            }
+        }
+    }
+
+</script>
