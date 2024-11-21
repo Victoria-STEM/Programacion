@@ -1,0 +1,15 @@
+<script>
+
+    function verificarNumeroEnArray (numero, array) {
+        let presente = false
+        for (let i = 0; i < array.length; i++){
+            if (numero == array[i])
+            presente = true
+        }
+        return presente
+    }
+    const arraX = [1, 3, 6, 0]
+    let presente = verificarNumeroEnArray(10, arraX)
+    console.log(presente)
+
+</script>

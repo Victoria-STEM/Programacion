@@ -1,0 +1,19 @@
+<script>
+
+    function capitalizarPrimeraLetra(palabra) {
+        let palabraPrimeraLetraMayuscula = ""
+        for (let i = 0; i < palabra.length; i++) {
+            if (i == 0) {
+                palabraPrimeraLetraMayuscula = palabra[0].toUpperCase()
+            } else if (i > 0) {
+                palabraPrimeraLetraMayuscula += palabra[i]
+            }
+        }
+        return palabraPrimeraLetraMayuscula
+    }
+
+    let palabra = "marionetas"
+    let palabraPrimeraLetraMayuscula = capitalizarPrimeraLetra(palabra)
+    console.log(palabraPrimeraLetraMayuscula)
+
+</script>

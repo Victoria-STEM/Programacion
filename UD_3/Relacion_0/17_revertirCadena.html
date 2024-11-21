@@ -1,0 +1,14 @@
+<script>
+
+    function revertirCadena (texto) {
+        let textoRevertido = ""
+        for (let i = 0; i < texto.length; i++){
+            textoRevertido += texto[(texto.length - i) - 1]
+        }
+        return textoRevertido
+    }
+    let cadenaTexto = "hola"
+    let textoRevertido = revertirCadena(cadenaTexto)
+    console.log(textoRevertido)
+
+</script>

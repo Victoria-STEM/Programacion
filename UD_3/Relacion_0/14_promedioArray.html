@@ -1,0 +1,14 @@
+<script>
+
+    function promedioArray (array) {
+        let promedio = array[0]
+        for (let i = 1; i < array.length; i++) {
+            promedio += array[i]
+        }    
+        return promedio
+    }
+    const arrayX = [9,1,1,1]
+    let promedio = promedioArray(arrayX)
+    console.log(promedio)
+
+</script>

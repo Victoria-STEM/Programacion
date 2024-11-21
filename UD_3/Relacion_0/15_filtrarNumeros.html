@@ -1,0 +1,16 @@
+<script>
+
+    function filtrarNumeroMayores (array, valor) {
+        const nuevoArray = []
+        for (let i = 0; i < array.length; i++) {
+            if(array[i] > valor){
+                nuevoArray.push(array[i])
+            }
+        }
+        return nuevoArray
+    }
+    const arraX = [20, 30, 50, 8, 2]
+    const nuevoArray = filtrarNumeroMayores(arraX, 20)
+    console.log(nuevoArray)
+
+</script>

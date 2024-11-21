@@ -1,0 +1,15 @@
+<script>
+
+    function contarVocalesEnCadena (texto) {
+        let numeroVocalesEnTexto = 0
+        for (let i = 0; i < texto.length; i++){
+            if(texto[i] == "a" || texto[i] == "e" || texto[i] == "i" || texto[i] == "o" || texto[i] == "u")
+            numeroVocalesEnTexto++
+        }
+        return numeroVocalesEnTexto
+    }
+    let texto = "Hola"
+    let numeroVocalesEnTexto = contarVocalesEnCadena(texto)
+    console.log(numeroVocalesEnTexto)
+
+</script>
