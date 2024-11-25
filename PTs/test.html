@@ -1,0 +1,33 @@
+<script>
+
+    const tableroInterno = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    const tableroVisible = ["🦷", "🦷", "🦷", "🦷", "🦷", "🦷", "🦷", "🦷", "🦷", "🦷"]
+
+    let noDanado = 0
+    let danado = 1
+
+    let indiceDanados = parseInt(Math.random() * 2)
+    let indiceNoDanados = 9 - indiceDanados
+    console.log(indiceDanados)
+    console.log(indiceNoDanados)
+
+
+    // for (let i = 0; i < 5; i++) {
+    //     tableroInterno.push(parseInt(Math.random() * 2))
+    // }
+    // for (let i = 0; i < 5; i++) {
+    //     tableroInterno.push(parseInt(Math.random() * 1))
+    // }
+
+    // danado += parseInt(Math.random() * 2)
+
+    // console.log(parseInt(Math.random() * 2))
+
+    for (let i = 0; i < 5; i++) {
+        tableroInterno[parseInt(Math.random() * 10)] = 1
+    }
+
+    console.log(tableroInterno)
+
+
+</script>

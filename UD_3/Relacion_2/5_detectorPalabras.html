@@ -1,0 +1,27 @@
+<script>
+
+    function contarPalabras(texto, palabrasClave) {
+
+        return
+    }
+
+    let contadorPalabras = 0
+    let texto = "Me gusta programar en Python y Java"
+    const palabrasClave = ["python", "java", "c++"]
+    result = texto.split(" ")
+
+    console.log(result)
+
+    for (let elemento of result) {
+
+        for (let i = 0; i < palabrasClave.length; i++) {
+            if (elemento == palabrasClave[i]) {
+                contadorPalabras++
+            }
+        }
+
+    }
+
+    console.log(contadorPalabras)
+
+</script>

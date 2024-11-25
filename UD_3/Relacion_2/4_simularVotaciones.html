@@ -1,13 +1,9 @@
 <script>
 
-    // function simularVotacion(candidatos) {
-
-    // }
-
     const candidatos = ["Juan", "Sofia", "Carlos"]
 
-    // for (let i = 0; i < candidatos.length; i++) {
-    //     candidatos[i][1].push()
+    // function simularVotaciones(array) {
+    //     return arrayVotaciones
     // }
 
     const votos = []
@@ -20,15 +16,19 @@
         voto1 = parseInt(Math.random() * 100)
         voto2 = parseInt(Math.random() * (101 - voto1))
         voto3 = 100 - voto1 - voto2
-        // sumatorio += voto1 + voto2 + voto3
-        
+        sumatorio += voto1 + voto2 + voto3
     }
 
-    candidatos[0] = candidatos[candidatos[0],votos1]
+    candidatos[0] = [candidatos[0],voto1]
+    candidatos[1] = [candidatos[1],voto2]
+    candidatos[2] = [candidatos[2],voto3]
 
-
+    console.log(voto1)
+    console.log(voto2)
+    console.log(voto3)
     console.log(candidatos)
+    console.log(candidatos[2][0])
 
-    console.log(sumatorio + " = " + voto1 + voto2 + voto3)
+
 
 </script>
