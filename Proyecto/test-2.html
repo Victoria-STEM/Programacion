@@ -1,19 +1,50 @@
 <script>
 
-    function consola() {
-        let linea1 = "********************************************"
-        let linea2 = "Felicidad: " + " (0-4)"
-        let linea3 = "Alimentos disponibles: " + " (0-4)"
-        let linea4 = "Estado del establo: " + " (0-6)"
-        let linea5 = "Contador de interacciones: "
-        let linea6 = "********************************************"
+    // function consola() {
+    //     let linea1 = "********************************************"
+    //     let linea2 = "Felicidad: " + " (0-4)"
+    //     let linea3 = "Alimentos disponibles: " + " (0-4)"
+    //     let linea4 = "Estado del establo: " + " (0-6)"
+    //     let linea5 = "Contador de interacciones: "
+    //     let linea6 = "********************************************"
 
-        return linea1 + "\n" + linea2 + "\n" + linea3 + "\n" + linea4 + "\n" + linea5 + "\n" + linea6
+    //     return linea1 + "\n" + linea2 + "\n" + linea3 + "\n" + linea4 + "\n" + linea5 + "\n" + linea6
+    // }
+
+    // // =================== MAIN ================== //
+
+    // let mostrarConsola = consola()
+    // console.log(mostrarConsola)
+
+    const productosMercado = ["0. Bebedero de Agua 💧 - 200🪙 \n",
+        "1. Refugio para Animales 🏠 - 500🪙 \n",
+        "2. Juguetes para Animales 🧸 - 150🪙 \n",
+        "3. Malla de Sombra ⛱️ - 300🪙 \n",
+        "4. Sistema de Riego 🫗 - 400🪙 \n",
+        "5. Herramientas de Limpieza 🧹 - 100🪙 \n",
+        "6. Luz Solar Artificial 💡 - 350🪙 \n",
+        "7. Cercado Mejorado 🪜 - 600🪙 \n"]
+
+    function irAlMercado() {
+        const productosMostrados = []
+        for (let i = 0; i < 4; i++) {
+            indiceProductoMercado = parseInt(Math.random() * 8)
+            // productosMostrados += indiceProductoMercado
+            productosMostrados.push(productosMercado[indiceProductoMercado])
+            console.log(indiceProductoMercado)
+        }
+        console.log(indiceProductoMercado)
+        console.log(productosMostrados)
+        return productosMostrados
     }
 
-    // =================== MAIN ================== //
+    const productosDisponiblesEnMercado = irAlMercado()
+    const productosDisponiblesEnMercadoGuardado = productosDisponiblesEnMercado
 
-    let mostrarConsola = consola()
-    console.log(mostrarConsola)
+    console.log(productosDisponiblesEnMercadoGuardado)
+    console.log(productosDisponiblesEnMercado)
+
+    let menuMercado = prompt("Compra: \n" + productosDisponiblesEnMercadoGuardado.join(" "))
+
 
 </script>

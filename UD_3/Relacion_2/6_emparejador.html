@@ -1,0 +1,30 @@
+<script>
+
+    const amigos = ["Ana", "Luis", "Marta", "Pedro", "Elena", "Carlos"];
+    //emparejarAmigos(amigos)
+
+    const parejas = []
+    const amigosEmparejados = []
+
+    for (let elemento of amigos) {
+        let elementoEncontrada = false
+        for (let i = 0; i < amigos.length && !elementoEncontrada; i++) {
+            //console.log(elemento)
+            //console.log(amigos[i])
+            if (elemento != amigos[i] && elemento != parejas[i, 1] && elemento != parejas[0, i] && amigos[i] != parejas[i, 1] && amigos[i] != parejas[0, i]) {
+                elementoEncontrada = true
+                // console.log("Elemento " + elemento)
+                // console.log("Amigos " + amigos[i])
+                parejas.push([elemento, amigos[i]])
+                //parejas.push(amigos[i])
+            }
+            //amigosEmparejados.push[parejas]
+        }
+    }
+
+    //parejas.push(["Ana", "Luis"])
+    //parejas.push("Luis")
+    
+    console.log(parejas)
+
+</script>
