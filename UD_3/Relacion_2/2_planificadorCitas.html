@@ -1,0 +1,21 @@
+<script>
+
+    function seSolapanoNo(citas) {
+        let seSolapan = true
+
+        if (citas[1] < citas[2]) {
+            seSolapan = false
+        } 
+        
+        if (citas[2] < citas[0] && citas[3] < citas[1]) {
+            seSolapan = false
+        }
+        
+        return seSolapan
+    }
+
+    const citas = ["14:00", "15:30", "16:00", "17:00"]
+    let consultaHorarios = seSolapanoNo (citas)
+    console.log("Los horarios consultado se solapan: " + consultaHorarios)
+
+</script>

@@ -1,0 +1,37 @@
+<script>
+
+    function generarNombreUsuario(nombre, apellido) {
+        
+        let nombreRecortado = recortarPalabra(nombre, 3)
+        let apellidoRecortado = recortarPalabra(apellido, 3)
+        
+        let cantidadNumeros = 3
+        let numerosAleatorio = 0
+
+        let nombreUsuarioAleatorio = nombreRecortado + apellidoRecortado
+
+        for (let i = 0; i < cantidadNumeros; i++) {
+            nombreUsuarioAleatorio += parseInt(Math.random() * 10)
+        }
+
+        return nombreUsuarioAleatorio
+    }
+
+    function recortarPalabra (palabra, numeroLetras) {
+        let palabraRecortada = ""
+        palabra.toLowerCase()
+        
+        for (let i = 0; i < numeroLetras; i++) {
+            palabraRecortada += palabra[i]
+        }
+        return palabraRecortada
+    }
+
+
+    // ------------------------ MAIN ------------------------ //
+
+
+    let nombreUsuario = generarNombreUsuario("Juan", "Fernandez")
+    console.log(nombreUsuario)
+
+</script>
