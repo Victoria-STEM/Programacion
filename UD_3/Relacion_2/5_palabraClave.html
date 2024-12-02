@@ -1,7 +1,25 @@
 <script>
 
- function generarPalabraClave (texto, listaPalabras) {
-    return 
- }
+    function generarPalabraClave(texto, listaPalabras) {
+
+        const textoComparar = texto.toLowerCase().split(" ")
+
+        let contadorPalabrasClave = 0
+        
+        for (const elemento of textoComparar) {
+            for (let i = 0; i < listaPalabras.length; i++) {
+                if (listaPalabras[i] == elemento) {
+                    contadorPalabrasClave++
+                }
+            }
+        }
+
+        return contadorPalabrasClave
+    }
+
+    const texto = "Me gusta programar en Python y Java"
+    const palabrasClave = ["python", "java", "c++", "programar"]
+    let contadorPalabrasClave = generarPalabraClave(texto, palabrasClave)
+    console.log(contadorPalabrasClave)
 
 </script>

@@ -1,0 +1,52 @@
+<script>
+
+    function climaSemanal(numeroDias) {
+
+        const climaDeLaSemana = []
+        for (let i = 0; i < numeroDias; i++) {
+            let climaAleatorio = generarClima("invierno")
+            climaDeLaSemana.push(climaAleatorio)
+        }
+        return climaDeLaSemana
+    }
+
+    function generarClima(estacion) {
+
+        let temperaturaMax
+        let temperaturaMin
+        let probabilidadLluvia
+
+        if (estacion == "invierno") {
+            temperaturaMax = numeroAleatorio(-5, 15)
+            temperaturaMin = numeroAleatorio(-15, 5)
+            probabilidadLluvia = numeroAleatorio(50, 100)
+        }
+
+        else if (estacion == "verano") {
+            temperaturaMax = numeroAleatorio(25, 40)
+            temperaturaMin = numeroAleatorio(15, 25)
+            probabilidadLluvia = numeroAleatorio(0, 50)
+        }
+
+        // if (temperaturaMin > temperaturaMax){
+        //     temperaturaMin = parseInt(Math.random() * (max - min + 1)) + min
+        // }
+
+        const clima = [temperaturaMax, temperaturaMin, probabilidadLluvia]
+
+        return clima
+    }
+
+    function numeroAleatorio(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+    }
+
+    // ================================= MAIN ================================= //
+
+    let climaAleatorio = generarClima("invierno")
+    console.log(climaAleatorio)
+    
+    let climaDeLaSemana = climaSemanal(7)
+    console.log(climaDeLaSemana)
+
+</script>

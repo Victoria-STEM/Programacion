@@ -1,0 +1,28 @@
+<script>
+    
+    function emparejarAmigos(amigos) {
+        
+        let primerNombre 
+        let segundoNombre
+
+        const listaEmparejados = []
+        
+        while (amigos.length != 0) {
+            primerNombre = amigos[0]
+            indiceAleatorio = (parseInt(Math.random()* (amigos.length -1)) + 1)
+            segundoNombre = amigos[indiceAleatorio]
+            listaEmparejados.push( [primerNombre, segundoNombre] )
+            
+            amigos.splice(indiceAleatorio, 1)
+            amigos.splice(0, 1)
+
+        }
+
+        return listaEmparejados
+    }
+
+    const amigos = ["Ana", "Luis", "Marta", "Pedro", "Elena", "Carlos"]
+    let listaEmparejados = emparejarAmigos(amigos)
+    console.log(listaEmparejados)
+
+</script>

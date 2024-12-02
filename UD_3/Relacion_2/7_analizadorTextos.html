@@ -1,0 +1,34 @@
+<script>
+
+    let cantidadPalabras
+    let longitudPromedioPalabra = 0
+    let cantidadCaracteres = 0
+
+    const texto = "Hola mundo mundo programacion es increible increible increible";
+
+    function analizarTexto(texto) {
+
+        // texto a array:
+        const arrayTexto = texto.split(" ")
+
+        // cantidad palabras:
+        cantidadPalabras = arrayTexto.length
+
+        // cantidad caracteres:
+        for (let i = 0; i < arrayTexto.length; i++) {
+            cantidadCaracteres += arrayTexto[i].length
+        }
+
+        // promedio palabra:
+        longitudPromedioPalabra = cantidadCaracteres / arrayTexto.length
+
+        let textoAnalizado = []
+        textoAnalizado.push(cantidadCaracteres, cantidadPalabras, longitudPromedioPalabra)
+
+        return textoAnalizado
+    }
+
+    let textoAnalizado = analizarTexto(texto)
+    console.log(textoAnalizado)
+
+</script>

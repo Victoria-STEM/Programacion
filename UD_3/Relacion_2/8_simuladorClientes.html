@@ -1,0 +1,34 @@
+<script>
+
+    const arrayNombres = ["Jose", "Lucía", "Marina", "Sergio", "Rafa", "Pedro", "Alejandro", "Ana"]
+    const arrayApellidos = ["López", "Castillo", "Moreno", "Sánchez", "González", "Adarve"]
+
+    function generarCola(numeroClientes) {
+        
+        let cola = []
+        
+        for (let i = 0; i < numeroClientes; i++) {
+            let nombreApellidoAleatorio = generarNombre()
+            let tiempoEspera = parseInt((Math.random() * 19) + 1)
+            cola.push ([nombreApellidoAleatorio, tiempoEspera]) 
+        }
+
+        return cola
+    }
+
+    function generarNombre() {
+
+        let nombreAleatorio = arrayNombres[parseInt(Math.random() * arrayNombres.length)]
+        let apellidoAleatorio = arrayApellidos[parseInt(Math.random() * arrayApellidos.length)]
+        let nombreApellidoAleatorio = nombreAleatorio + " " + apellidoAleatorio
+        
+        return nombreApellidoAleatorio
+    }
+
+    let nombreApellidoAleatorio = generarNombre()
+    console.log(nombreApellidoAleatorio)
+
+    let cola = generarCola(3)
+    console.log(cola)
+
+</script>
