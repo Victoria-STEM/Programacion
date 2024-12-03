@@ -1,0 +1,37 @@
+<script>
+
+    const nombres = ["Ana", "Luis", "Pedro", "María"];
+    const tareas = [
+        "Lavar platos",
+        "Limpiar baño",
+        "Hacer compras",
+        "Barrer",
+        "Cortar césped",
+        "Cocinar",
+        "Organizar estantes",
+        "Limpiar ventanas",
+        "Poner la mesa",
+        "Recoger ropa"
+    ]
+
+    // function repartirTareas(nombres, tareas) {
+    //     return
+    // }
+
+    const tareasParaPersonas = []
+    const tareasOrdenadasPorPersonas = []
+
+    // construyo el array para repartir tareas, con los nombre de las personas a repartir las tareas: 
+    for (const nombre of nombres) {
+        tareasOrdenadasPorPersonas.push( [nombre,[]] )
+        
+    }
+
+    // reparto tareas por orden:
+    for (let i = 0; i < tareas.length; i++) {
+        tareasOrdenadasPorPersonas[i % nombres.length][1].push(tareas[i])
+    }
+
+    console.log(tareasOrdenadasPorPersonas)
+
+</script>
