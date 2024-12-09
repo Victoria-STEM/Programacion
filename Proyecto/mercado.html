@@ -1,0 +1,46 @@
+<script>
+
+    const productosMercado = ["0. Bebedero de Agua 💧 - 200🪙 \n",
+        "1. Refugio para Animales 🏠 - 500🪙 \n",
+        "2. Juguetes para Animales 🧸 - 150🪙 \n",
+        "3. Malla de Sombra ⛱️ - 300🪙 \n",
+        "4. Sistema de Riego 🫗 - 400🪙 \n",
+        "5. Herramientas de Limpieza 🧹 - 100🪙 \n",
+        "6. Luz Solar Artificial 💡 - 350🪙 \n",
+        "7. Cercado Mejorado 🪜 - 600🪙 \n"]
+    const displayParaInventario = ["💧", "🏠", "🧸", "⛱️", "🫗", "🧹", "💡", "🪜"]
+    const precioMercado = [200, 500, 150, 300, 400, 100, 350, 600]
+    const inventario = []
+    let indiceProductoMercado = 0
+
+    const indiceProductos = []
+
+    function irAlMercado() {
+        const productosMostrados = []
+
+        while (indiceProductos.length < 4) {
+            indiceProductoMercado = parseInt(Math.random() * 8)
+            let encontrado = false
+
+            for (let j = 0; j < indiceProductos.length; j++) {
+                if (indiceProductos[j] == indiceProductoMercado) {
+                    encontrado = true
+                }
+            }
+
+            if (!encontrado) {
+                indiceProductos.push(indiceProductoMercado)
+                productosMostrados.push(productosMercado[indiceProductoMercado])
+            }
+            
+        }
+
+        return productosMostrados
+    }
+
+    let productosDisponiblesEnMercado = irAlMercado()
+    let productosDisponiblesEnMercadoGuardado = productosDisponiblesEnMercado
+    console.log(productosDisponiblesEnMercadoGuardado)
+    console.log(indiceProductos)
+
+</script>
