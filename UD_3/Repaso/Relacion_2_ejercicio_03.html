@@ -1,0 +1,26 @@
+<script>
+
+    const personas = [
+        ["Ana", 17],
+        ["Luis", 20],
+        ["Marta", 18],
+        ["Carlos", 15],
+        ["Elena", 25],
+    ]
+
+    function generarListaMayoresDeEdad(personas) {
+        
+        const listaMayoresEdad = []
+        for (let i = 0; i < personas.length; i++) {
+            if (personas[i][1] >= 18) {
+                listaMayoresEdad.push(personas[i][0])
+            }
+        }
+
+        return listaMayoresEdad
+    }
+
+    let listaMayoresEdad = generarListaMayoresDeEdad(personas)
+    console.log(listaMayoresEdad)
+
+</script>

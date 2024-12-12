@@ -1,0 +1,69 @@
+<script>
+
+    function generadorClimas(dias, estacion) {
+
+        const arrayClima = []
+        for (let i = 0; i < dias; i++) {
+            let medicionesDiarias = generadorClimaDiario(estacion)
+            arrayClima.push(medicionesDiarias)
+        }
+
+        return arrayClima
+    }
+
+    function generadorClimaDiario(estacion) {
+
+        let max = []
+        let min = []
+        let lluvia = []
+        let temperaturaMaxima
+        let temperaturaMinima
+        let probLluvia
+        let medicionesDiarias = []
+
+        if (estacion == "invierno") {
+            max = [-5, 15]
+            min = [-15, 5]
+            lluvia = [50, 100]
+            medicionesDiarias = generadorMediciones(max, min, lluvia)
+        }
+
+        else if (estacion == "verano") {
+            max = [25, 40]
+            min = [15, 25]
+            lluvia = [0, 50]
+            medicionesDiarias = generadorMediciones(max, min, lluvia)
+        }
+
+        return medicionesDiarias
+    }
+
+    function generadorMediciones(max, min, lluvia) {
+
+        const clima = []
+        temperaturaMaxima = 0
+        temperaturaMinima = 1
+
+        while (temperaturaMaxima < temperaturaMinima) {
+            temperaturaMaxima = parseInt(Math.random() * (max[1] - max[0] + 1)) + max[0]
+            temperaturaMinima = parseInt(Math.random() * (min[1] - min[0] + 1)) + min[0]
+        }
+        
+        probLluvia = parseInt(Math.random() * (lluvia[1] - lluvia[0] + 1)) + lluvia[0]
+        clima.push(temperaturaMaxima, temperaturaMinima, probLluvia)
+
+        return clima
+    }
+
+    // =============================== MAIN =============================== //
+
+    let maxMinLluviaDiaria = generadorClimaDiario("invierno")
+    console.log(maxMinLluviaDiaria)
+
+    let climaSemanal = generadorClimas(7, "verano")
+    console.log(climaSemanal)
+
+    let climaSemanal2 = generadorClimas(7, "invierno")
+    console.log(climaSemanal2)
+
+</script>

@@ -1,0 +1,40 @@
+<script>
+
+    const amigos = ["Ana", "Luis", "Marta", "Pedro", "Elena", "Carlos"]
+
+    // function emparejarAmigos(amigos) {
+    //     return
+    // }
+
+    // const parejas = []
+
+    // for (let i = 0; i < amigos.length; i++) {
+    //     for (let j = 1; j < amigos.length; j++) {
+    //         parejas.push([amigos[i], amigos[j]])
+    //         amigos.splice(j, 1)
+    //         amigos.splice(i, 1)
+    //         console.log(amigos)
+    //     }
+    // }
+
+    // console.log(amigos)
+    // console.log(parejas)
+
+    const parejas = []
+
+    while (amigos.length != 0) {
+
+        let primerIndividuo = amigos[0]
+        let indice = parseInt(Math.random() * (amigos.length - 1)) + 1 
+        console.log(indice)
+        let segundoIndividuo = amigos[indice]
+
+        parejas.push( [primerIndividuo , segundoIndividuo] )
+        amigos.splice(indice, 1)
+        amigos.shift()
+        
+    }
+
+    console.log(parejas)
+
+</script>

@@ -1,0 +1,59 @@
+<script>
+
+    const nombres = ["Ana", "Luis", "Pedro", "María"]
+    const tareas = [
+        "Lavar platos",
+        "Limpiar baño",
+        "Hacer compras",
+        "Barrer",
+        "Cortar césped",
+        "Cocinar",
+        "Organizar estantes",
+        "Limpiar ventanas",
+        "Poner la mesa",
+        "Recoger ropa"
+    ]
+
+    function repartirTareas(nombres, tareas) {
+
+        const nombresCopia = copiarArray(nombres)
+        const tareasCopia = copiarArray(tareas)
+        const listaTareasRepartidas = []
+
+        while (nombresCopia.length != 0) {
+            let indice = parseInt(Math.random() * nombresCopia.length)
+            listaTareasRepartidas.push([nombresCopia[indice], []])
+            nombresCopia.splice(indice, 1)
+        }
+
+        while (tareasCopia.length != 0) {
+            for (let i = 0; i < nombres.length && tareasCopia.length != 0; i++) {
+                let indice = parseInt(Math.random() * (tareasCopia.length))
+                listaTareasRepartidas[i][1].push(tareasCopia[indice])
+
+                // console.log(indice)
+                // console.log(tareasCopia[indice])
+                tareasCopia.splice(indice, 1)
+                // console.log(tareasCopia)
+            }
+        }
+
+        console.log(tareas)
+        console.log(tareasCopia)
+        return listaTareasRepartidas
+    }
+
+    function copiarArray(array) {
+
+        const arrayCopia = []
+        for (let i = 0; i < array.length; i++) {
+            arrayCopia.push(array[i])
+        }
+
+        return arrayCopia
+    }
+
+    let listaTareasRepartidas = repartirTareas(nombres, tareas)
+    console.log(listaTareasRepartidas)
+
+</script>

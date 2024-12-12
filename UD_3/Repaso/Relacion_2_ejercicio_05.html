@@ -1,0 +1,26 @@
+<script>
+
+    const texto = "Me gusta programar en Python y Java y C++"
+    const palabrasClave = ["python", "java", "c++"]
+
+    function detectarPalabrasClave(texto, palabrasClave) {
+        const arrayTexto = texto.toLowerCase().split(" ")
+        console.log(arrayTexto)
+        let contador = 0
+        for (let elemento of arrayTexto) {
+            let encontrado = false
+            for (let i = 0; i < palabrasClave.length && !encontrado; i++) {
+                if (elemento == palabrasClave[i]) {
+                    contador++
+                    encontrado = true
+                }
+            }
+        }
+
+        return contador
+    }
+    
+    let palabrasEnTexto = detectarPalabrasClave(texto, palabrasClave)
+    console.log("Hay " + palabrasEnTexto + " palabra/s clave en el texto.")
+
+</script>

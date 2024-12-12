@@ -1,0 +1,26 @@
+<script>
+
+    function seSolapan(citas) {
+        let seSolapanCitas = false
+
+        let inicioPrimeraCita = citas[0]
+        let finPrimeraCita = citas[1]
+        let inicioSegundaCita = citas[2]
+        let finSegundaCita = citas[3]
+
+        if (inicioPrimeraCita < inicioSegundaCita && finPrimeraCita < inicioSegundaCita) {
+            seSolapanCitas = true
+        } if (finSegundaCita > inicioPrimeraCita && inicioSegundaCita < inicioPrimeraCita) {
+            seSolapanCitas = true
+        } else {
+            seSolapanCitas = false
+        }
+
+        return seSolapanCitas
+    }
+
+    const citas = ["14:00", "15:30", "16:00", "17:30"]
+    let seSolapanCitas = seSolapan(citas)
+    console.log("Se solapan: " + seSolapanCitas)
+
+</script>

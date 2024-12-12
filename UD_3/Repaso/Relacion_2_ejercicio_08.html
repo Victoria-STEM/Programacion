@@ -1,0 +1,22 @@
+<script>
+
+    const arrayNombres = ["Jose", "Lucía", "Marina", "Sergio", "Rafa", "Pedro", "Alejandro", "Ana"]
+    const arrayApellidos = ["López", "Castillo", "Moreno", "Sánchez", "González", "Adarve"]
+
+    function crearListaEspera(numeroClientes) {
+        const cola = []
+
+        for (let i = 0; i < numeroClientes; i++) {
+            let indiceNombres = parseInt(Math.random() * arrayNombres.length)
+            let indiceApellidos = parseInt(Math.random() * arrayApellidos.length)
+            let tiempoEspera = parseInt(Math.random() * 20) + 1
+            cola.push([arrayNombres[indiceNombres], arrayApellidos[indiceApellidos], tiempoEspera])
+        }
+        
+        return cola
+    }
+    
+    let listaClientes = crearListaEspera(5)
+    console.log(listaClientes)
+
+</script>

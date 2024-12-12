@@ -1,0 +1,32 @@
+<script>
+
+    const candidatos = ["Juan", "Sofia", "Carlos", "Maria"]
+
+    function simularVotaciones(candidatos) {
+        return
+    }
+    
+    const votacionesCandidatos = []
+
+    let votosRestantes = 100
+    let votoAleatorio
+
+    for (let i = 0; i < candidatos.length; i++) {
+        
+        votoAleatorio = parseInt(Math.random() * (votosRestantes + 1))
+        console.log("La siguiente votacion es: " + votoAleatorio)
+
+        votosRestantes -= votoAleatorio
+        votacionesCandidatos.push( [candidatos[i] , votoAleatorio] )
+        
+    }
+
+    // let sumaVotaciones = 0
+    // for (let i = 0; i < candidatos.length; i++) {
+    //     sumaVotaciones += votacionesCandidatos[i][1]
+    // }
+
+    // console.log(sumaVotaciones)
+    console.log(votacionesCandidatos)
+
+</script>

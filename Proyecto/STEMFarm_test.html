@@ -1,0 +1,287 @@
+<!-- Presiona F12 para ver la consola.
+Introduce el numero de la acción que desees realizar. -->
+
+<script>
+
+    let menu = ""
+    const felicidad = []
+    const alimentosDisponibles = []
+    const establo = ["💩", "💩", "💩", "💩", "💩", "💩"]
+    let alimentarForraje
+    let contadorInteracciones = 0
+    let avanceContadorInteracciones = 0
+    let numeroNacimientosAnimales = 0
+    let numeroMuertesAnimales = 0
+    let numeroTotalAnimales = 0
+    let estadoSalud
+    let saludables = true
+    let dinero = 400
+    let opcionMercado = ""
+    const productosMercado = ["0. Bebedero de Agua 💧 - 200🪙 \n",
+        "1. Refugio para Animales 🏠 - 500🪙 \n",
+        "2. Juguetes para Animales 🧸 - 150🪙 \n",
+        "3. Malla de Sombra ⛱️ - 300🪙 \n",
+        "4. Sistema de Riego 🫗 - 400🪙 \n",
+        "5. Herramientas de Limpieza 🧹 - 100🪙 \n",
+        "6. Luz Solar Artificial 💡 - 350🪙 \n",
+        "7. Cercado Mejorado 🪜 - 600🪙 \n"]
+    const displayParaInventario = ["💧", "🏠", "🧸", "⛱️", "🫗", "🧹", "💡", "🪜"]
+    const precioMercado = [200, 500, 150, 300, 400, 100, 350, 600]
+    const inventario = []
+    let indiceProductoMercado = 0
+    let yaHeEstadoEnMercado = false
+
+    function consola() {
+
+        let linea1 = "********************************************"
+        let linea2 = "Felicidad: " + felicidad + " (0-4)"
+        let linea3 = "Alimentos disponibles: " + alimentosDisponibles + " (0-4)"
+        let linea4 = "Estado del establo: " + establo + " (0-6)"
+        let linea5 = "Estado de salud: " + estadoSalud
+        let linea6 = "Dinero: " + dinero + "🪙"
+        let linea7 = "Inventario: " + inventario
+        let linea8 = "********************************************"
+
+        return linea1 + "\n" + linea2 + "\n" + linea3 + "\n" + linea4 + "\n" + linea5 + "\n" + linea6 + "\n" + linea7 + "\n" + linea8
+    }
+
+    function irAlMercado() {
+        const productosMostrados = []
+        const indiceProductos = []
+
+        for (let i = 0; i < 4; i++) {
+            indiceProductoMercado = parseInt(Math.random() * 8)
+            indiceProductos.push(indiceProductoMercado)
+            // productosMostrados += indiceProductoMercado
+            productosMostrados.push(productosMercado[indiceProductoMercado])
+
+            for (let elemento of indiceProductos) {
+                if (indiceProductos[elemento] == indiceProductoMercado) {
+                    indiceProductoMercado = parseInt(Math.random() * 8)
+                }
+            }
+        }
+
+
+
+        return productosMostrados
+    }
+
+
+    let productosDisponiblesEnMercado = irAlMercado()
+    let productosDisponiblesEnMercadoGuardado = productosDisponiblesEnMercado
+
+    function generarDinero() {
+        dinero += parseInt(Math.random() * (200 - 100 + 1) + 100)
+        return dinero
+    }
+
+
+    // ================================== MAIN ================================== //
+
+    let nombreGranja = prompt("Introduce el nombre de tu granja: ")
+
+    while (menu != "8" && numeroTotalAnimales < 99) {
+
+        menu = prompt("1. 🥕Alimentar a los animales🥕 \n"
+            + "2. 🐑Jugar con los animales🐑 \n"
+            + "3. 🧹Limpiar el establo🪣 \n"
+            + "4. 🌾Comprar comida🛒 \n"
+            + "5. ⛪Ir al mercado⛪ \n"
+            + "6. 🩺Curar los animales🩺 \n"
+            + "******************************************* \n"
+            + "7. 🧐Informacion sobre la granja🔎 \n"
+            + "8. ❌Salir de la granja❌ ")
+
+        // para compronar si ha habido un incremento de las interacciones al final del script y anadir o no animales.
+        avanceContadorInteracciones = contadorInteracciones
+        if (contadorInteracciones % 5 == 0 && contadorInteracciones != 0) {
+            productosDisponiblesEnMercado = irAlMercado()
+            productosDisponiblesEnMercadoGuardado = productosDisponiblesEnMercado
+        }
+
+        // Menu 1. Alimentar los animales:
+        if (menu == "1") {
+            if (alimentosDisponibles.length > 0) {
+
+                if (establo.length <= 3) {
+                    contadorInteracciones++
+                    alimentarForraje = prompt("1. Alimentar con forraje 🌾. \n" + "2. Alimentar con fruta 🍎.")
+
+                    if (alimentarForraje == "1") {
+                        alimentosDisponibles.pop()
+                        console.log("-1🌾")
+
+                    } else if (alimentarForraje == "2" && estadoSalud == "😊") {
+                        alimentosDisponibles.pop()
+                        if (felicidad.length < 4) {
+                            felicidad.push("❤")
+                            console.log("-1🌾")
+                            console.log("+1❤")
+                        }
+                    }
+
+                } else if (establo.length > 3) {
+                    console.log("Los animales no pueden comer si el establo está demasiado sucio. \n" + "Limpia primero, guarro!")
+                }
+
+            } else {
+                console.log("No tienes alimentos.")
+            }
+
+            // Menu 2. jugar con los animales:
+        } else if (menu == "2") {
+            if (alimentosDisponibles.length > 0) {
+                if (felicidad.length <= 3 && establo.length < 4 && saludables == true) {
+                    contadorInteracciones++
+                    felicidad.push("❤")
+                    alimentosDisponibles.pop()
+                    if (dinero < 9999) {
+                        dinero += generarDinero()
+                    }
+                    console.log("Felicidad: +1❤ \n" + "Comida: -1🌾\n" + "Dinero: +🪙")
+
+                } else if (felicidad.length == 4 && establo.length < 4 && saludables == true) {
+                    contadorInteracciones++
+                    console.log("Felicidad al maximo! \n" + "Comida: -1🌾\n" + "Dinero: " + dinero + "🪙")
+                    alimentosDisponibles.pop()
+                    if (dinero < 9999) {
+                        dinero += generarDinero()
+                    }
+
+                } else if (establo.length >= 4) {
+                    console.log("No puedes jugar con los animales con el establo tan sucio. \n" + "Limpia, guarro!")
+
+                } else if (saludables == false) {
+                    console.log("No puedes jugar con los animales si están enfermos.")
+                }
+
+            } else {
+                console.log("No tienes alimentos suficientes para jugar con los animales.")
+            }
+
+            // Menu 3. Limpiar las cacas:
+        } else if (menu == "3") {
+            contadorInteracciones++
+            let cantidadCacasEnEstablo = establo.length
+
+            for (let i = 0; i <= cantidadCacasEnEstablo; i++) {
+                establo.pop()
+            }
+            console.log("Has limpiado el establo.")
+
+            // Menu 4. Comprar comida:
+        } else if (menu == "4") {
+            if (dinero >= 100) {
+                if (alimentosDisponibles.length < 4) {
+                    contadorInteracciones++
+
+                    for (let i = alimentosDisponibles.length; i < 4; i++) {
+                        alimentosDisponibles.push("🌾")
+                    }
+                    dinero -= 100
+                    console.log("Menuda compra! \n" + "Tus alacena está llena. \n" + "Dinero: -100🪙")
+
+                } else if (alimentosDisponibles.length == 4) {
+                    console.log("Ya estas al maximo de alimentos.")
+                }
+            } else {
+                console.log("No tienes suficiente dinero.")
+            }
+        }
+
+        // Menu 5. Ir al mercado:
+        else if (menu == "5") {
+
+            opcionMercado = prompt("Bienvenida al mercado, hoy disponemos de: \n" + productosDisponiblesEnMercadoGuardado.join(""))
+
+            let productoEncontrado = false
+            for (let i = 0; i < productosDisponiblesEnMercadoGuardado.length && !productoEncontrado; i++) {
+                if (productosDisponiblesEnMercadoGuardado[i] == productosMercado[opcionMercado]) {
+                    productoEncontrado = true
+                }
+            }
+            if (productoEncontrado) {
+
+                if (dinero < precioMercado[opcionMercado]) {
+                    console.log("No tienes suficiente dinero.")
+                }
+
+                else if (dinero > precioMercado[opcionMercado]) {
+                    let encontrado = false
+                    for (let i = 0; i < inventario.length && !encontrado; i++) {
+                        if (displayParaInventario[opcionMercado] == inventario[i]) {
+                            encontrado = true
+                        }
+
+                    } if (!encontrado) {
+                        contadorInteracciones++
+                        inventario.push(displayParaInventario[opcionMercado])
+                        dinero -= precioMercado[opcionMercado]
+                        console.log("Producto comprado: " + displayParaInventario[opcionMercado])
+
+                    } else {
+                        console.log("Ya tienes ese producto.")
+                    }
+                }
+            }
+
+            else {
+                console.log("Ese producto no está disponible hoy en el mercado. \n" + "Pásate otro día.")
+            }
+
+            // Menu 6. curar animales:
+        } else if (menu == "6") {
+            if (establo.length == 0 && saludables == false) {
+                contadorInteracciones++
+                saludables = true
+                console.log("Tus animales ya están sanos.")
+
+            } else if (establo.length > 0) {
+                console.log("Limpia el establo para poder curar a los animales.")
+
+            } else if (establo.length == 0 && saludables == true) {
+                console.log("Tus animales ya están sanos.")
+            }
+
+
+            // Menu 7. ver la info del establo:
+        } else if (menu == "7") {
+            console.log("El nombre de tu granja es: " + nombreGranja)
+            console.log("Tienes " + numeroTotalAnimales + " animale/s.")
+        }
+
+        // solo anado animales si ha habido un cambio en el contador.
+        if (contadorInteracciones == (avanceContadorInteracciones + 1)) {
+            numeroNacimientosAnimales += Math.floor(Math.random() * 11)
+            numeroMuertesAnimales = Math.floor(Math.random() * 6)
+            numeroTotalAnimales = numeroNacimientosAnimales - numeroMuertesAnimales
+        }
+
+        if (contadorInteracciones % 3 == 0 && contadorInteracciones != 0 && contadorInteracciones != avanceContadorInteracciones) {
+            if (establo.length < 6) {
+                establo.push("💩")
+            }
+            felicidad.pop()
+            console.log("+1💩 \n" + "-1❤️")
+        }
+
+        // Para ver el estado de salud de la granja miro las cacas del establo y lo hago al final 
+        if (establo.length > 3) {
+            saludables = false
+        }
+
+        if (saludables) {
+            estadoSalud = "😊"
+        } else if (!saludables) {
+            estadoSalud = "🤒"
+        }
+
+        console.log(consola())
+    }
+
+    if (numeroTotalAnimales >= 99) {
+        console.log("El juego ha terminado. La granja está llena 🥳")
+    }
+
+</script>
