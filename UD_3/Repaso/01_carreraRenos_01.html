@@ -1,0 +1,70 @@
+<script>
+
+    // Info Reno 1
+    let colorReno1 = prompt("Introduce el color del primer reno:")
+    let longitudSaltoReno1 = prompt("Introduce la longitud de salto del reno " + colorReno1 + ":")
+    let frecuenciaSaltoReno1 = prompt("Introduce la frecuencia de salto en segundos del reno " + colorReno1 + ":")
+
+    const reno1 = []
+    reno1.push(colorReno1, longitudSaltoReno1, frecuenciaSaltoReno1)
+    console.log(reno1)
+
+    // Info Reno 2
+    let colorReno2 = prompt("Introduce el color del segundo reno:")
+    let longitudSaltoReno2 = prompt("Introduce la longitud de salto del reno " + colorReno2 + ":")
+    let frecuenciaSaltoReno2 = prompt("Introduce la frecuencia de salto en segundos del reno " + colorReno2 + ":")
+
+    const reno2 = []
+    reno2.push(colorReno2, longitudSaltoReno2, frecuenciaSaltoReno2)
+    console.log(reno2)
+
+    // Info Reno 3
+    let colorReno3 = prompt("Introduce el color del tercer reno:")
+    let longitudSaltoReno3 = prompt("Introduce la longitud de salto del reno " + colorReno3 + ":")
+    let frecuenciaSaltoReno3 = prompt("Introduce la frecuencia de salto en segundos del reno " + colorReno3 + ":")
+
+    const reno3 = []
+    reno3.push(colorReno3, longitudSaltoReno3, frecuenciaSaltoReno3)
+    console.log(reno3)
+
+    // Info carrera
+    let metrosCarrera = prompt("Introduce los metros de la carrera:")
+
+    // Funciones
+    function ganadorCarrera(metrosCarrera, caracteristicasRenos) {
+        return
+    }
+
+    function calcularSegundosHastaLaMeta(reno, metros) {
+        let segundosHastaMeta = (metros * reno[2]) / reno[1]
+        return segundosHastaMeta
+    }
+
+    function calcularGanadorSegunVelocidad() {
+        return
+    }
+
+
+    // Calculo velocidades individuales:
+    let velocidadReno1 = calcularSegundosHastaLaMeta(reno1, metrosCarrera)
+    let velocidadReno2 = calcularSegundosHastaLaMeta(reno2, metrosCarrera)
+    let velocidadReno3 = calcularSegundosHastaLaMeta(reno3, metrosCarrera)
+
+    console.log("# Info sobre los renos: \n" +
+        "El reno " + reno1[0] + " tarda " + velocidadReno1 + " segundos. \n" +
+        "El reno " + reno2[0] + " tarda " + velocidadReno2 + " segundos. \n" +
+        "El reno " + reno3[0] + " tarda " + velocidadReno3 + " segundos."
+    )
+
+    // Comparo velocidades e imprimo el ganador por pantalla:
+    if (velocidadReno1 < velocidadReno2 && velocidadReno1 < velocidadReno3) {
+        console.log("Gana el reno " + reno1[0])
+    }
+    else if (velocidadReno2 < velocidadReno1 && velocidadReno2 < velocidadReno3) {
+        console.log("Gana el reno " + reno2[0])
+    }
+    else if (velocidadReno3 < velocidadReno1 && velocidadReno3 < velocidadReno2) {
+        console.log("Gana el reno" + reno3[0])
+    }
+
+</script>

@@ -1,0 +1,42 @@
+<script>
+
+    // const entradas = [
+    //     ["Reno!", "Qué bonito!"]
+    //     ["Duende!", "Qué bonito!"]
+    //     ["Reno!", "Qué bonito!"]
+    //     ["Muñeco de nieve!", "Qué bonito!"]
+    // ]
+
+    let gritos = "Reno! Qué bonito! Duende! Qué bonito! Reno! Qué bonito! Muñeco de nieve! Qué bonito!"
+
+    console.log(gritos)
+
+    const gritosDivididos = gritos.split("! ")
+    const criaturas = []
+
+    console.log(gritosDivididos)
+
+    // Anado las criaturas al array si el indice es par:
+    for (let i = 0; i < gritosDivididos.length; i++) {
+
+        if (i % 2 == 0) {
+            criaturas.push(gritosDivididos[i])
+        }
+    }
+
+    console.log(criaturas)
+
+    // Depuro criaturas:
+    for (let i = 0; i < criaturas.length; i++) {
+
+        for (let j = i+1; j < criaturas.length; j++) {
+            
+            if (criaturas[i] == criaturas[j]) {
+                criaturas.splice(j, 1)
+            }
+        }
+    }
+
+    console.log(criaturas)
+
+</script>

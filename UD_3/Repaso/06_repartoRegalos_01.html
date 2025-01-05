@@ -1,0 +1,64 @@
+<script>
+
+    // Creo una funcion que genera regalos por casa segun un maximo de relagos:
+    function repartirRegalos(cantidadTotalRegalosRepartidos) {
+        const cantidadRegalosPorHogar = []
+
+        while (cantidadTotalRegalosRepartidos >= 10) {
+
+            let numeroMaximoRegalosPorHogar = 10
+            let cantidadAleatorioRegalos = parseInt(Math.random() * numeroMaximoRegalosPorHogar + 1)
+            // console.log(cantidadAleatorioRegalos)
+
+            cantidadRegalosPorHogar.push(cantidadAleatorioRegalos)
+            cantidadTotalRegalosRepartidos -= cantidadAleatorioRegalos
+        }
+
+        // console.log("cantidad total relagos que sobran: " + cantidadTotalRegalosRepartidos)
+        cantidadRegalosPorHogar.push(cantidadTotalRegalosRepartidos)
+
+        return cantidadRegalosPorHogar
+    }
+
+    // LLamo a la funcion y declaro un maximo:
+    let cantidadTotalRegalos = 85
+    let cantidadTotalRegalosRepartidos = cantidadTotalRegalos
+    let listaRegalosPorCasa = repartirRegalos(cantidadTotalRegalosRepartidos)
+
+    console.log("Total de regalos: " + cantidadTotalRegalos)
+    console.log("Total de casas: " + listaRegalosPorCasa.length)
+    console.log(listaRegalosPorCasa)
+
+    // Hago un recuento de regalos por casa:
+    let cantidadRegalos = 10
+    let numeroCasas
+
+    // Copio la lista de regalos:
+    const copiaListaRegalos = [...listaRegalosPorCasa]
+
+    while (copiaListaRegalos.length > 0) {
+
+        numeroCasas = 0
+
+        for (let j = 0; j < listaRegalosPorCasa.length; j++) {
+
+            if (copiaListaRegalos[0] == listaRegalosPorCasa[j]) {
+                numeroCasas++
+            }
+        }
+
+        console.log("Hay " + numeroCasas + " casa/s con " + copiaListaRegalos[0] + " regalo/s.")
+
+        // Si el numero de regalos está contado lo elimino de la lista:
+        let regaloActual = copiaListaRegalos[0]
+        for (let i = 0; i < copiaListaRegalos.length; i++) {
+            if (copiaListaRegalos[i] == regaloActual) {
+                copiaListaRegalos.splice(i, 1)
+            }
+        }
+    }
+
+
+
+
+</script>

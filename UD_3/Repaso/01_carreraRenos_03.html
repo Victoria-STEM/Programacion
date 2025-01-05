@@ -1,0 +1,113 @@
+<script>
+
+    // Info Reno 1
+    let colorReno1 = prompt("Introduce el color del primer reno:")
+    let longitudSaltoReno1 = parseInt(Math.random() * (7 - 3 + 1)) + 3
+    let frecuenciaSaltoReno1 = parseInt(Math.random() * (15 - 5 + 1)) + 5
+
+    const reno1 = []
+    reno1.push(colorReno1, longitudSaltoReno1, frecuenciaSaltoReno1)
+    console.log(reno1)
+
+    // Info Reno 2
+    let colorReno2 = prompt("Introduce el color del segundo reno:")
+    let longitudSaltoReno2 = parseInt(Math.random() * (7 - 3 + 1)) + 3
+    let frecuenciaSaltoReno2 = parseInt(Math.random() * (15 - 5 + 1)) + 5
+
+    const reno2 = []
+    reno2.push(colorReno2, longitudSaltoReno2, frecuenciaSaltoReno2)
+    console.log(reno2)
+
+    // Info Reno 3
+    let colorReno3 = prompt("Introduce el color del tercer reno:")
+    let longitudSaltoReno3 = parseInt(Math.random() * (7 - 3 + 1)) + 3
+    let frecuenciaSaltoReno3 = parseInt(Math.random() * (15 - 5 + 1)) + 5
+
+    const reno3 = []
+    reno3.push(colorReno3, longitudSaltoReno3, frecuenciaSaltoReno3)
+    console.log(reno3)
+
+    // Unificación de renos:
+    const renos = []
+    renos.push(reno1, reno2, reno3)
+    console.log(renos)
+
+    // Info carrera:
+    let metrosCarrera = prompt("Introduce los metros de la carrera:")
+    console.log("Los metros de la carrera son: " + metrosCarrera)
+
+    // Funciones:
+    function calcularGanadorCarrera(metrosCarrera, numeroRenosQueParticipan) {
+
+        const velocidadesRenos = []
+        const ganador = []
+        let indice
+
+        for (let i = 0; i < numeroRenosQueParticipan; i++) {
+            let velocidadReno = calcularSegundosHastaLaMeta(renos[0 + i], metrosCarrera)
+            velocidadesRenos.push([renos[0 + i][0], velocidadReno])
+        }
+
+        let velocidadMayor = velocidadesRenos[0][1]
+        for (let i = 0; i < velocidadesRenos.length; i++) {
+            if (velocidadMayor > velocidadesRenos[i][1]) {
+                velocidadMayor = velocidadesRenos[i][1]
+                indice = i
+            }
+            else if (velocidadMayor < velocidadesRenos[i][1]) {
+                indice = 0
+            }
+        }
+
+        console.log("Indice es: " + indice)
+        console.log("Array velocidadesRenos: " + velocidadesRenos)
+        console.log(velocidadesRenos)
+
+        ganador.push(velocidadesRenos[indice])
+
+        console.log("Dentro de la funcion el ganador es: " + ganador)
+
+        return ganador
+    }
+
+    function calcularSegundosHastaLaMeta(reno, metros) {
+        let segundosHastaMeta = (metros * reno[2]) / reno[1]
+        return segundosHastaMeta
+    }
+
+    // function calcularGanadorSegunVelocidad() {
+    //     return
+    // }
+
+    // // Calculo velocidades individuales:
+    // let velocidadReno1 = calcularSegundosHastaLaMeta(reno1, metrosCarrera)
+    // let velocidadReno2 = calcularSegundosHastaLaMeta(reno2, metrosCarrera)
+    // let velocidadReno3 = calcularSegundosHastaLaMeta(reno3, metrosCarrera)
+
+    // console.log("# Info sobre los renos: \n" +
+    //     "El reno " + reno1[0] + " tarda " + velocidadReno1 + " segundos. \n" +
+    //     "El reno " + reno2[0] + " tarda " + velocidadReno2 + " segundos. \n" +
+    //     "El reno " + reno3[0] + " tarda " + velocidadReno3 + " segundos."
+    // )
+
+    // // Comparo velocidades e imprimo el ganador por pantalla:
+    // if (velocidadReno1 < velocidadReno2 && velocidadReno1 < velocidadReno3) {
+    //     console.log("Gana el reno " + reno1[0])
+    // }
+    // else if (velocidadReno2 < velocidadReno1 && velocidadReno2 < velocidadReno3) {
+    //     console.log("Gana el reno " + reno2[0])
+    // }
+    // else if (velocidadReno3 < velocidadReno1 && velocidadReno3 < velocidadReno2) {
+    //     console.log("Gana el reno " + reno3[0])
+    // }
+
+    // El usuario escoge los renos que participan en la carrera:
+    let numeroRenosQueParticipan = prompt("Introduce el numero de renos que participan:")
+    console.log("Los renos que participan son: " + numeroRenosQueParticipan)
+
+    // Calculamos ganador segun los participantes elegidos:
+    let ganadorSegunParticipantes = calcularGanadorCarrera(metrosCarrera, numeroRenosQueParticipan)
+    console.log(ganadorSegunParticipantes)
+    console.log("Gana el reno " + ganadorSegunParticipantes[0][0])
+
+</script>

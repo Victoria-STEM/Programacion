@@ -1,0 +1,92 @@
+<script>
+
+    // Funciones:
+    function calcularGanadorCarrera(velocidadEquipo1, velocidadEquipo2, velocidadEquipo3) {
+
+        let resultado
+
+        if (velocidadEquipo1 <= velocidadEquipo2 && velocidadEquipo1 <= velocidadEquipo3) {
+            resultado = "El ganador de la ronda " + numeroRonda + " es el " + infoRenoEquipo1[0]
+        }
+
+        else if (velocidadEquipo2 <= velocidadEquipo1 && velocidadEquipo2 <= velocidadEquipo3) {
+            resultado = "El ganador de la ronda " + numeroRonda + " es el " + infoRenoEquipo2[0]
+        }
+
+        else if (velocidadEquipo3 <= velocidadEquipo1 && velocidadEquipo3 <= velocidadEquipo2) {
+            resultado = "El ganador de la ronda " + numeroRonda + " es el " + infoRenoEquipo3[0]
+        }
+
+        return resultado
+    }
+
+    function calcularSegundosHastaLaMeta(reno, metros) {
+        let segundosHastaMeta = (metros * reno[2]) / reno[1]
+        return segundosHastaMeta
+    }
+
+    function generarInfoReno(color) {
+
+        let longitudSaltoReno = parseInt(Math.random() * (7 - 3 + 1)) + 3
+        let frecuenciaSaltoReno = parseInt(Math.random() * (15 - 5 + 1)) + 5
+
+        const reno = [color]
+        reno.push(longitudSaltoReno, frecuenciaSaltoReno)
+
+        return reno
+    }
+
+
+    // ====================================== MAIN ====================================== //
+
+
+    // Se piden los 3 colores de los equipos:
+    let colorEquipo1 = prompt("Introduce el color del primer equipo:")
+    let colorEquipo2 = prompt("Introduce el color del segundo equipo:")
+    let colorEquipo3 = prompt("Introduce el color del tercer equipo:")
+    console.log("Los equipo elegidos son: " + colorEquipo1 + ", " + colorEquipo2 + ", " + colorEquipo3)
+
+    // Se piden los metros de la carrera:
+    let metrosCarrera = prompt("Introduce los metros de la carrera:")
+    console.log("Los metros de la carrera son: " + metrosCarrera)
+
+    // Se define el numero de rondas:
+    let numeroRondas = prompt("Introduce el numero de rondas:")
+
+    // Generamos 5 rondas de renos y calculamos la velocidad de cada uno y el ganador de cada ronda, en cada vuelta:
+    const rondas = []
+    const ganadores = []
+    let numeroRonda = 1
+
+    let infoRenoEquipo1, infoRenoEquipo2, infoRenoEquipo3 
+
+    for (let i = 0; i < numeroRondas; i++) {
+
+        // Generamos la informacion aleatoria de los renos:
+        infoRenoEquipo1 = generarInfoReno(colorEquipo1)
+        infoRenoEquipo2 = generarInfoReno(colorEquipo2)
+        infoRenoEquipo3 = generarInfoReno(colorEquipo3)
+
+        console.log(infoRenoEquipo1)
+        console.log(infoRenoEquipo2)
+        console.log(infoRenoEquipo3)
+        rondas.push(infoRenoEquipo1, infoRenoEquipo2, infoRenoEquipo3)
+
+        // Calculamos las velocidades de cada reno:
+        let velocidadEquipo1 = calcularSegundosHastaLaMeta(infoRenoEquipo1, metrosCarrera)
+        let velocidadEquipo2 = calcularSegundosHastaLaMeta(infoRenoEquipo2, metrosCarrera)
+        let velocidadEquipo3 = calcularSegundosHastaLaMeta(infoRenoEquipo3, metrosCarrera)
+
+        // Calculamos ganador segun las velocidades e imprimimos por pantalla:
+        let ganadorRonda = calcularGanadorCarrera(velocidadEquipo1, velocidadEquipo2, velocidadEquipo3)
+        console.log(ganadorRonda)
+
+        ganadores.push(ganadorRonda)
+        numeroRonda++
+
+    }
+
+    // console.log(rondas)
+    // console.log(ganadores)
+
+</script>

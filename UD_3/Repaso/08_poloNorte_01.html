@@ -1,0 +1,76 @@
+<script>
+
+    // Defino el tamano del laberinto:
+    let n = prompt("Introduce el tamano del laberinto:")
+    const tamanoLaberinto = [n, n]
+
+    console.log("Tamano del laberinto:")
+    console.log(tamanoLaberinto)
+
+    // Defino la posicion inicial del duende:
+    const posicionDuende = [0, 0]
+
+    console.log("Posicion inicial:")
+    console.log(posicionDuende)
+
+    let pasoArribaAbajo = 0
+    let pasoIzquierdaDerecha = 0
+
+    // Comienzo a dar pasos:
+    while (posicionDuende[0] != tamanoLaberinto[0] || posicionDuende[1] != tamanoLaberinto[1]) {
+
+        // Defino los maximos del movimeinto del primer numero de la posicion del duende:
+        let arriba = 1
+        let abajo = -1
+
+        // Defino los maximo del segundo numero:
+        let izquierda = -1
+        let derecha = 1
+
+        // Condiciono los pasos al tamano maximo del laberinto:
+        if (posicionDuende[0] <= 0) {
+            abajo = 0
+        }
+        if (posicionDuende[1] <= 0) {
+            izquierda = 0
+        }
+        if (posicionDuende[0] >= tamanoLaberinto[0]){
+            arriba = 0
+        }
+        if (posicionDuende[1] >= tamanoLaberinto[1]) {
+            derecha = 0
+        }
+
+        // Genero los pasos aleatoriamente:
+        pasoArribaAbajo = parseInt(Math.random() * (arriba - abajo + 1)) + abajo
+        pasoIzquierdaDerecha = parseInt(Math.random() * (derecha - izquierda + 1)) + izquierda
+        
+        // Anado los pasos a la posicion del duende:
+        posicionDuende[0] += pasoArribaAbajo
+        posicionDuende[1] += pasoIzquierdaDerecha
+
+        // Imprimo los pasos que ha dado el duende:
+        console.log("Movimiento del duende:")
+        console.log(posicionDuende)
+
+        if (pasoArribaAbajo == 1) {
+            console.log("Duede va hacia arriba.")
+        }
+
+        if (pasoArribaAbajo == -1) {
+            console.log("Duede va hacia abajo.")
+        }
+
+        if (pasoIzquierdaDerecha == 1) {
+            console.log("Duede va hacia la derecha.")
+        }
+
+        if (pasoIzquierdaDerecha == -1) {
+            console.log("Duede va hacia la izquierda.")
+        }
+
+    }
+
+    console.log("El duende ha salido del laberinto!")
+
+</script>

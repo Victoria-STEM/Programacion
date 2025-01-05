@@ -1,0 +1,22 @@
+<script>
+
+    let cuentaAtras = parseInt(Math.random() * (450 - 240)) + 240
+    console.log("Tienes " + cuentaAtras + " segundos.") 
+
+    while (cuentaAtras != 0) {
+        
+        if (cuentaAtras % 50 == 0) {
+            console.log("Quedan " + cuentaAtras + " segundos...")
+        }
+
+        if (cuentaAtras <= 10) {
+            console.log("... " + cuentaAtras + " segundos...")
+        }
+
+        cuentaAtras --
+    
+    }
+
+    console.log("SALIDA!")
+
+</script>

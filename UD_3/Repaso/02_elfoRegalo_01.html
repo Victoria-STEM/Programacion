@@ -1,0 +1,39 @@
+<script>
+
+    // Numero total de bolas aleatorio (500 - 400):
+    let numeroTotalBolas = parseInt(Math.random() * (500 - 400 + 1)) + 400
+    console.log("Hay " + numeroTotalBolas + " bolas en la piscina.")
+
+    // Se defino aleatoriamente la bola con el anillo:
+    let bolaAnillo = parseInt(Math.random() * numeroTotalBolas + 1)
+    console.log("Es un secreto, pero la bola con el anillo es: " + bolaAnillo)
+
+    // Los 8 elfos son:
+    const nombresElfos = [
+        "Eryndor Sylvarius",
+        "Lythien Faelar",
+        "Calenith Arandor",
+        "Aerindor Thalorien",
+        "Naerys Lúthien",
+        "Fenris Aelorin",
+        "Elladriel Moonshade",
+        "Thalion Galathil"
+    ]
+
+    let encontrada
+    let elfo
+    let ronda = 1
+    
+    // Comenzamos a buscar de forma aleatoria el anillo y guardamos la ronda:
+    while (encontrada != bolaAnillo) {
+
+        encontrada = parseInt(Math.random() * numeroTotalBolas)
+        ronda++
+
+    }
+
+    // Según la ronda en la que se ha encontrado el anillo sabemos el elfo al que le ha tocado: 
+    elfo = nombresElfos[ronda % 8]
+    console.log("Al sacar la bola " + encontrada + ": el elfe " + elfo + " se quedó con el anillo.")
+
+</script>

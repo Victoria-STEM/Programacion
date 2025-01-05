@@ -1,0 +1,20 @@
+<script>
+
+    function calculadorImpuestoTravieso (edad, salario) {
+        
+        let porcentajeImpuesto = (parseInt(edadDuende / 100)) * 2
+        let impuestoTravieso = (salarioDuende * porcentajeImpuesto) / 100 
+
+        return impuestoTravieso
+    }
+
+    let edadDuende = Number(prompt("Introduce la edad del duende: "))
+    let salarioDuende = Number(prompt("Introduce el salario del duente:"))
+
+    console.log("La edad del duende es: " + edadDuende)
+    console.log("El salario del duende es: " + salarioDuende)
+
+    let impuestoDuende = calculadorImpuestoTravieso(edadDuende, salarioDuende)
+    console.log("Debe pagar un " + (parseInt(edadDuende / 100) * 2) + "% -> " + impuestoDuende + " caramelos.")
+
+</script>

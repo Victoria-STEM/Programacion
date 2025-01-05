@@ -1,0 +1,46 @@
+<script>
+
+    let nivelesArbol = prompt("Introduce el numero de niveles:")
+    let estrella = "*"
+    let cuspide = "X"
+    let salida = ""
+    let espacio = " "
+    let bola = "O"
+    let mas = "+"
+
+    for (let i = 0; i < nivelesArbol; i++) {
+
+        salida = ""
+
+        // Se crea la base reasignando los valores:
+        if (i == nivelesArbol - 1) {
+            bola = "*"
+            mas = "*"
+        }
+        
+        // Se altera el relleno del arbol cambiando los valores:
+        if (i == nivelesArbol % 2) {
+            bola = "+"
+            mas = "O"
+        }
+
+        // Se crean los espacios
+        for (let j = 0; j < nivelesArbol - i; j++) {
+            salida += espacio
+        }
+
+        // Se cre la cuspide
+        for (let k = 0; k < 1; k++) {
+            salida += cuspide
+            cuspide = ""
+        }
+
+        // Se crea el relleno del arbol
+        for (let l = 1; l < 1 + i; l++) {
+            salida += bola + mas + estrella
+        }
+
+        console.log(salida)
+    }
+
+</script>

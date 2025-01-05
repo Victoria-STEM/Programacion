@@ -1,0 +1,29 @@
+<script>
+
+    let totalSegundosCuentaAtras = parseInt(Math.random() * (450 - 240)) + 240
+    let minutosCuentaAtras = parseInt(totalSegundosCuentaAtras / 60)
+    let segundosCuentaAtras = parseInt(((totalSegundosCuentaAtras / 60) - parseInt(totalSegundosCuentaAtras / 60)) * 60)
+
+    console.log("Tienes " + totalSegundosCuentaAtras + " segundos.")
+    console.log("Eso son " + minutosCuentaAtras + " minutos y " + segundosCuentaAtras + " segundos.")
+
+    while (totalSegundosCuentaAtras != 0) {
+
+        minutosCuentaAtras = parseInt(totalSegundosCuentaAtras / 60)
+        segundosCuentaAtras = parseInt(((totalSegundosCuentaAtras / 60) - parseInt(totalSegundosCuentaAtras / 60)) * 60)
+
+        if (totalSegundosCuentaAtras % 50 == 0) {
+            console.log("Quedan " + minutosCuentaAtras + " minutos y " + segundosCuentaAtras + " segundos...")
+        }
+
+        if (totalSegundosCuentaAtras <= 10) {
+            console.log("... " + totalSegundosCuentaAtras + " segundos...")
+        }
+
+        totalSegundosCuentaAtras--
+
+    }
+
+    console.log("SALIDA!")
+
+</script>
