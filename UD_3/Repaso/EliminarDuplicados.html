@@ -1,0 +1,25 @@
+<script>
+
+    const lista = [1, 2, 2, 3, 4, 4, 5]
+
+    function eliminarDuplicados (lista) {
+
+        const eliminados = [...lista]
+
+        for (let i = 0; i < eliminados.length; i++) {
+            for (let j = i+1; j < eliminados.length; j++) {
+                if (eliminados[i] == eliminados[j]) {
+                    eliminados.splice(j, 1)
+                }
+            }
+        }
+
+        return eliminados
+    }
+    
+    let listaSinDuplicados = eliminarDuplicados(lista)
+    
+    console.log(lista)
+    console.log(listaSinDuplicados)
+
+</script>

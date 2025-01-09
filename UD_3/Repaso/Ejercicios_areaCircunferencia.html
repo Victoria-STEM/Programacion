@@ -1,0 +1,20 @@
+<script>
+
+    function calcularAreaCirculo (radio) {
+        let area = 3.14 * radio * radio
+        return area 
+    }
+
+    function calcularPerimetroCirculo (radio) {
+        let perimetro = 2 * 3.14 * radio
+        return perimetro
+    }
+
+    let radio = prompt("Introduce el radio de una circunferencia:")
+    
+    let mostrarArea = calcularAreaCirculo(radio)
+    let mostrarPerimetro = calcularPerimetroCirculo(radio)
+
+    console.log("El area es: " + mostrarArea + " y el perimetro es: " + mostrarPerimetro)
+
+</script>

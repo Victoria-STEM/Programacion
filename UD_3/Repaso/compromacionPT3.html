@@ -1,0 +1,53 @@
+<script>
+
+    // function mostrarProgreso(palabra, letrasAdivinadas) {
+    //         // TO-DO:
+    //         let progreso = []
+
+    //         for (let i = 0; i < palabra.length; i++) {
+    //             progreso.push("_")
+    //         }
+
+    //         for (let i = 0; i < palabra.length; i++) {
+    //             console.log(palabra[i])
+    //             for (let j = 0; j < letrasAdivinadas.length; j++) {
+    //                 console.log(letrasAdivinadas[j])
+    //                 if (palabra[i] == letrasAdivinadas[j]) {
+    //                     progreso[i] = palabra[i]
+    //                 }   
+    //             }
+    //         }
+
+    //         return progreso
+    //     }
+
+    //     let cosa = "NAVIDAD"
+    //     let eso = ["N","D"]
+    //     let mostrar = mostrarProgreso(cosa, eso)
+
+    //     console.log(mostrar)
+
+    function comprobarGanador(palabra, letrasAdivinadas) {
+        // TO-DO:
+        let resultado = false
+
+        for (let elemento of palabra) {
+            for (let i = 0; i < letrasAdivinadas.length; i++) {
+                if (elemento == letrasAdivinadas[i]) {
+                    resultado = true
+                }
+                else {
+                    resultado = false
+                }
+            }
+        }
+
+        return resultado
+    }
+
+    const palabra = ["N", "O"]
+    const letrasAdivinadas = ["N", "O"]
+    let comprobacion = comprobarGanador(palabra, letrasAdivinadas)
+    console.log(comprobacion)
+
+</script>

@@ -1,0 +1,118 @@
+<script>
+
+    // 1. Función para seleccionar una palabra aleatoria de un array de palabras
+    function seleccionarPalabra(listaPalabras) {
+        // TO-DO:
+        let indice = parseInt(Math.random() * listaPalabras.length)
+        let palabraSecreta = listaPalabras[indice]
+
+        return palabraSecreta
+    }
+
+    // 2. Función para mostrar el progreso de la palabra
+    // Recibe: la palabra secreta y el array de letras adivinadas (las letras correctas introducidas por el ususario)
+    // Devuelve: un string que muestra la palabra secreta con las letras adivinadas y "_" en las letras no adivindas
+    // Por ejemplo: "PE__O", "C_S_", "N_VID_D", etc
+    function mostrarProgreso(palabra, letrasAdivinadas) {
+        // TO-DO:
+        let progreso = []
+
+        for (let i = 0; i < palabra.length; i++) {
+            progreso.push("_")
+        }
+
+        for (let i = 0; i < palabra.length; i++) {
+
+            for (let j = 0; j < letrasAdivinadas.length; j++) {
+
+                if (palabra[i] == letrasAdivinadas[j]) {
+                    progreso[i] = palabra[i]
+                }
+            }
+        }
+
+        return progreso
+    }
+
+    // 3. Función para verificar si una letra está en una lista de letras
+    function comprobarLetraEnLista(letra, lista) {
+        // TO-DO:
+        let comprobacion = false
+        for (let i = 0; i < lista.length; i++) {
+            if (letra == lista[i]) {
+                comprobacion = true
+            }
+        }
+
+        return comprobacion
+    }
+
+    // 5. Función para comprobar si el jugador ha ganado.
+    // Recibe: la palabra secreta y el array de letras adivinadas (las letras correctas introducidas por el ususario)
+    // Devuelve: true si ha adivinado todas las letras de la balabra o false si no
+    function comprobarGanador(palabra, letrasAdivinadas) {
+        // TO-DO:
+        let resultado = false
+
+        for (let i = 0; i < palabra.length; i++) {
+            if (palabra[i] != letrasAdivinadas[i] && palabra.length != letrasAdivinadas.length) {
+                resultado = false
+            }
+            else {
+                resultado = true
+            }
+        }
+
+
+        return resultado
+    }
+
+    // ================================== MAIN ================================== //
+
+    let listaPalabras = ["ESTRELLA", "REGALOS", "ARBOL", "NAVIDAD", "REYES", "VILLANCICO", "NIEVE", "TRINEO", "GUIRNALDA", "VELAS", "BELEN", "POSADA", "TURRON", "PASTORES", "LUZ", "CAMELLO", "CHIMENEA", "CALCETINES", "NATIVIDADDENUESTROSEÑORJESUCRISTO"]
+    let palabraSecreta = seleccionarPalabra(listaPalabras)
+    let arrayLetrasPalabraSecreta = palabraSecreta.split("")
+    let letrasAdivinadas = []
+    let letrasErroneas = []
+    let maxIntentos = 6
+    let intentosRestantes = maxIntentos
+    let ganador = false
+
+    console.log(palabraSecreta) // eliminar
+    console.log("¡Bienvenido al juego de Ahorcado!")
+    console.log("La palabra tiene " + palabraSecreta.length + " letras.")
+
+    while (intentosRestantes > 0 && !ganador) {
+        console.log("\nProgreso: " + mostrarProgreso(palabraSecreta, letrasAdivinadas))
+        console.log("Intentos restantes: " + intentosRestantes)
+        console.log("Letras erróneas: " + letrasErroneas)
+
+        let letra = prompt("Adivina una letra:").toUpperCase()
+
+        let letraYaUsada = comprobarLetraEnLista(letra, letrasAdivinadas) || comprobarLetraEnLista(letra, letrasErroneas)
+        if (letraYaUsada) {
+            console.log("Ya intentaste esa letra. Intenta con otra.")
+        } else {
+            if (comprobarLetraEnLista(letra, arrayLetrasPalabraSecreta)) {
+                console.log("¡Correcto!")
+                letrasAdivinadas.push(letra)
+                console.log(letrasAdivinadas) // eliminar
+            } else {
+                console.log("Letra incorrecta.")
+                letrasErroneas.push(letra)
+                intentosRestantes--
+            }
+        }
+
+        ganador = comprobarGanador(palabraSecreta, letrasAdivinadas)
+
+    }
+
+    if (ganador) {
+        console.log("¡Felicidades! Adivinaste la palabra: " + palabraSecreta)
+    } else {
+        console.log("\nTe quedaste sin intentos.")
+        console.log("La palabra era: " + palabraSecreta)
+    }
+
+</script>

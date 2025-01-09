@@ -1,0 +1,36 @@
+<script>
+
+    function multiplicarX2 (lista) {
+
+        const listaDoblada = []
+
+        for (let i = 0; i < lista.length; i++){
+            listaDoblada.push(lista[i] * 2)
+        }
+        
+        return listaDoblada
+    }
+
+    function unirListas (lista1, lista2) {
+        
+        const unificadas = [...lista1]
+
+        for (let i = 0; i < lista2.length; i++) {
+            unificadas.push(lista2[i])
+        }
+
+        return unificadas
+    }
+
+    const numeros = [2, 3, 5, 6]
+    const longitudes = [10, 20, 30, 40]
+
+    const numeroX2 = multiplicarX2(numeros)
+    const longitudesX2 = multiplicarX2(longitudes)
+    let listasUnidas = unirListas(numeroX2, longitudesX2)
+
+    console.log(numeroX2)
+    console.log(longitudesX2)
+    console.log(listasUnidas)
+
+</script>
