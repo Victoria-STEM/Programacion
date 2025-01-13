@@ -16,9 +16,9 @@ public class Ejercicio39 {
             siguienteNumero = scanner.nextInt();
 
             if (primerNumero < siguienteNumero) {
-                System.out.println("El numero debe ser menor.");
-            } else {
-                System.out.println("El numero debe ser mayor.");
+                System.out.print("El numero debe ser menor. ");
+            } else if (primerNumero > siguienteNumero) {
+                System.out.print("El numero debe ser mayor. ");
             }
         }
 

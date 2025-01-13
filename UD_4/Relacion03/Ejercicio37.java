@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Ejercicio37 {
     public static void main(String[] args) {
         Scanner miScanner = new Scanner(System.in);
-        String primeraPalabra = "c";
-        String siguientePalabra = "x";
+        String primeraPalabra;
+        String siguientePalabra = "";
 
         System.out.println("Introduce una palabra:");
         primeraPalabra = miScanner.next();

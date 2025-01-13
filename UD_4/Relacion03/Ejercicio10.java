@@ -14,13 +14,16 @@ public class Ejercicio10 {
         System.out.println("Introduce el segundo numero entero:");
         segundoNumero = miScanner.nextInt();
 
-        if (primerNumero >= segundoNumero) {
-            System.out.println("Error: el primer numero debe ser menor que el segundo.");
+        if (primerNumero < segundoNumero) {
+            for (int i = primerNumero; i <= segundoNumero; i++) {
+                System.out.println(i);
+            }
         }
-
-        while (primerNumero <= segundoNumero) {
-            System.out.println(primerNumero);
-            primerNumero++;
+        else {
+            System.out.println("El primer numero es mayor. Le damos la vuelta a los numeros.");
+            for (int i = segundoNumero; i <= primerNumero; i++) {
+                System.out.println(i);
+            }
         }
 
         miScanner.close();

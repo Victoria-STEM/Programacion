@@ -14,7 +14,7 @@ public class Ejercicio25 {
 
         for (int i = 0; i < numeroFilas; i++) {
             
-            // Dibujo las estrallas 
+            // Dibujo los espacios 
             for (int j = 0; j < (numeroFilas - i); j++) {
                 espacios += " ";
             }
