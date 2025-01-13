@@ -20,5 +20,7 @@ public class Ejercicio44 {
         }
 
         System.out.println("El producto de los digitos del numero es " + resultado);
+
+        scanner.close();
     }
 }
