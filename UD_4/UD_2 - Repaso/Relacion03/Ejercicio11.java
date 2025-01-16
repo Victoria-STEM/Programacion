@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Ejercicio11 {
     public static void main(String[] args) {
         int[] arrayNumeros = {1, 2, 2, 3, 4, 4, 5};
-        ArrayList<Integer> arrayNumerosSinRepetir = new ArrayList<>();
+        ArrayList<Integer> arrayNumerosSinRepetir = new ArrayList<Integer>();
         boolean anadido = false;
         boolean encontrado = false;
 
