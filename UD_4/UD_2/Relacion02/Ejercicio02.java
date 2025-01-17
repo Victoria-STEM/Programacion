@@ -10,23 +10,30 @@ public class Ejercicio02 {
         ArrayList<Integer> puntuaciones = new ArrayList<>();
         ArrayList<String> nombreJugadores = new ArrayList<>();
         String nombre;
-        int menu = 1;
+        int menu = 0;
         int puntuacion;
 
         while (menu != 3) {
 
-            System.out.println("1. Añadir un nuevo jugador y su puntuación. %n2. Mostrar los jugadores y sus puntuaciones actuales. %n3. Salir del programa.");
+            System.out.println("1. Añadir un nuevo jugador y su puntuación. \n2. Mostrar los jugadores y sus puntuaciones actuales. \n3. Salir del programa.");
             menu = miScanner.nextInt();
+
+            miScanner.nextLine();
 
             if (menu == 1) {
                 System.out.println("Introduce el nombre:");
-                nombre = miScanner.next();
+                nombre = miScanner.nextLine();
+                
+                miScanner.nextLine();
                 
                 System.out.println("Introduce su puntuacion:");
                 puntuacion = miScanner.nextInt();
 
-                nombreJugadores.add(0, nombre);
-                puntuaciones.add(0, puntuacion);
+                nombreJugadores.add(nombre);
+                puntuaciones.add(puntuacion);
+
+                nombreJugadores.removeFirst();
+                puntuaciones.removeFirst();
             }
 
             else if (menu == 2) {
@@ -36,7 +43,11 @@ public class Ejercicio02 {
                 for (int puntuacionJugador : puntuaciones) {
                     System.out.print(puntuacionJugador);
                 }
+                System.out.println(nombreJugadores);
             }
         }
+
+        miScanner.close();
+    
     }
 }

@@ -1,10 +1,9 @@
-package UD_2.Relacion02;
+package Relacion02;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ejercicio03 {
-
     public static void main(String[] args) {
 
         Scanner miScanner = new Scanner(System.in);
@@ -15,8 +14,9 @@ public class Ejercicio03 {
         boolean encontrado = false;
         int indice = 0;
 
-        String[] productos = {"Manzanas", "Plátanos", "Leche", "Pan", "Huevos", "Azúcar", "Harina", "Arroz", "Pasta", "Café"};
-        Double[] precios = {1.20, 0.80, 1.50, 1.00, 2.00, 1.10, 0.90, 0.70, 1.30, 3.00};
+        String[] productos = { "Manzanas", "Plátanos", "Leche", "Pan", "Huevos", "Azúcar", "Harina", "Arroz", "Pasta",
+                "Café" };
+        Double[] precios = { 1.20, 0.80, 1.50, 1.00, 2.00, 1.10, 0.90, 0.70, 1.30, 3.00 };
 
         ArrayList<Integer> cantidadesAdquiridas = new ArrayList<>();
         ArrayList<String> productosAdquiridos = new ArrayList<>();
@@ -24,10 +24,10 @@ public class Ejercicio03 {
         while (!producto.equals("Salir")) {
 
             System.out.println("Introduce el producto que desee comprar:");
-            producto = miScanner.next();
+            producto = miScanner.nextLine();
 
             encontrado = false;
-            
+
             for (int i = 0; i < productos.length && !encontrado; i++) {
                 if (producto.equals(productos[i])) {
                     indice = i;
@@ -41,6 +41,8 @@ public class Ejercicio03 {
             } else if (encontrado) {
                 System.out.println("Introduce la cantidad:");
                 cantidad = miScanner.nextInt();
+                miScanner.nextLine();
+
                 cantidadesAdquiridas.add(cantidad);
                 productosAdquiridos.add(producto);
                 coste = precios[indice] * cantidad;
@@ -48,9 +50,13 @@ public class Ejercicio03 {
             }
         }
 
-        System.out.println(cantidadesAdquiridas);
-        System.out.println(productosAdquiridos);
-        System.out.println(costeTotal);
+        System.out.println("Productos - Cantidad");
+
+        for (int i = 0; i < cantidadesAdquiridas.size(); i++) {
+            System.out.println(productosAdquiridos.get(i) + " - " + cantidadesAdquiridas.get(i));
+        }
+
+        System.out.println("Coste total: " + costeTotal);
 
         miScanner.close();
 
