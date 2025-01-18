@@ -25,6 +25,11 @@ public class Ejercicio13 {
         for (String palabra : palabras) {
             System.out.print(palabra);
         }
+
+        for (char letra : arrayLetras) {
+            arrayLetras.addFirst(letra);
+        }
+        System.out.println(arrayLetras);
         
     }
 }
