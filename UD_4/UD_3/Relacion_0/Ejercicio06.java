@@ -7,6 +7,6 @@ public class Ejercicio06 {
     }
 
     public static void main(String[] args) {
-        System.out.println("Es: " + esPositivo(-0));
+        System.out.println("Es: " + esPositivo(0));
     }
 }
