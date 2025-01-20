@@ -6,17 +6,26 @@ import java.util.Scanner;
 
 public class PT2 {
 
+    static final int cantidadDientesDanados = 5;
+
+    static final int sano = 0;
+    static final int danado = 1;
+
+    static final int turno1 = sano;
+    static final int turno2 = sano;
+
     public static void main(String[] args) {
 
         // Declaracion de variables:
         Scanner miScanner = new Scanner(System.in);
 
-        String[] visible = {"W", "W", "W", "W", "W", "W", "W", "W", "W", "W"};
+        String[] visible = { "W", "W", "W", "W", "W", "W", "W", "W", "W", "W" };
         ArrayList<String> tableroVisible = new ArrayList<String>(Arrays.asList(visible));
 
-        Integer[] invisible = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        Integer[] invisible = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         ArrayList<Integer> tableroInvisible = new ArrayList<Integer>(Arrays.asList(invisible));
 
+        int cantidadDientesDanados = 5;
         int sano = 0;
         int danado = 1;
 
@@ -24,14 +33,16 @@ public class PT2 {
         int turno2 = sano;
 
         // Creacion del tablero aleatorio:
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < cantidadDientesDanados; i++) {
             int dienteAleatorio = (int) (Math.random() * 2);
             int indiceAleatorio = (int) (Math.random() * 10);
 
             // System.out.println("Diente: " + dienteAleatorio);
             // System.out.println("Indice aleatorio: " + indiceAleatorio);
-            tableroInvisible.remove(indiceAleatorio);
-            tableroInvisible.add(indiceAleatorio, dienteAleatorio);
+            if (tableroInvisible.get(indiceAleatorio) != danado) {
+                tableroInvisible.remove(indiceAleatorio);
+                tableroInvisible.add(indiceAleatorio, dienteAleatorio);
+            }
         }
 
         System.out.println(tableroVisible);
@@ -39,6 +50,7 @@ public class PT2 {
 
         while (tableroInvisible.get(turno1) == sano && tableroInvisible.get(turno2) == sano) {
 
+            
             // Jugador 1 introduce un indice:
             System.out.println("Jugador 1 - Introduce un indice (1-10):");
             turno1 = miScanner.nextInt() - 1;
@@ -62,7 +74,7 @@ public class PT2 {
 
             // Jugador 2:
             if (tableroInvisible.get(turno1) == sano) {
-                
+
                 // Jugador 2 introduce un indice:
                 System.out.println("Jugador 2 - Introduce un indice:");
                 turno2 = miScanner.nextInt() - 1;
