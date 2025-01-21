@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -30,52 +31,35 @@ public class CifradoCesar {
         while (menu != 3) {
 
             // Menu:
-            System.out.println("Menu:\r\n" + //
-                    "1. Cifrar mensaje\r\n" + //
-                    "2. Descifrar mensaje\r\n" + //
+            System.out.println("Menu:\r\n"
+                    + //
+                    "1. Cifrar mensaje\r\n"
+                    + //
+                    "2. Descifrar mensaje\r\n"
+                    + //
                     "3. Salir");
 
             menu = miScanner.nextInt();
             miScanner.nextLine();
 
             if (menu == 1) {
+
                 System.out.println("Ingresa el mensaje a cifrar: ");
                 mensaje = miScanner.next().toUpperCase();
-                // System.out.println(mensaje)
 
-                for (int i = 0; i < mensaje.length(); i++) {
-                    System.out.println(mensaje.charAt(i));
-                    System.out.println(alfabetoDesplazado.get(i));
-                    
-                    for (int j = 0; j < alfabeto.size(); j++) {
-
-                        if (mensaje.charAt(i) == alfabeto.get(j)) {
-                            mensajeCifrado += alfabetoDesplazado.get(j);
-                        }
-                    }       
-                }
-
+                mensajeCifrado = desencriptar(mensaje, alfabeto, alfabetoDesplazado);
                 System.out.println("Mensaje cifrado: " + mensajeCifrado);
-                mensaje = ""; // limpio mensaje 
+ 
                 mensajeCifrado = ""; // limpio mensaje cifrado
-            }
 
-            else if (menu == 2) {
+            } else if (menu == 2) {
+
                 System.out.println("Ingresa el mensaje a descifrar: ");
                 mensajeADescifrar = miScanner.next().toUpperCase();
 
-                for (int i = 0; i < mensajeADescifrar.length(); i++) {
-                    for (int j = 0; j < alfabetoDesplazado.size(); j++) {
-
-                        if (mensajeADescifrar.charAt(i) == alfabetoDesplazado.get(j)) {
-                            mensajeDescifrado += alfabeto.get(i);
-                        }
-                    }       
-                }
-
+                mensajeDescifrado = encriptar (mensajeADescifrar, alfabeto, alfabetoDesplazado);
                 System.out.println("Mensaje descifrado: " + mensajeDescifrado);
 
-                mensajeADescifrar = ""; // limpio mensaje cifrado
                 mensajeDescifrado = ""; // limpio mensaje 
             }
         }
@@ -84,34 +68,68 @@ public class CifradoCesar {
 
     }
 
-    // // Función que debes implementar
+    // Función que debes implementar
     public static ArrayList<Character> generarAlfabetoDesplazado(ArrayList<Character> alfabetoOriginal,
             int desplazamiento) {
 
         // Esta función debe devolver un nuevo ArrayList con el alfabeto desplazado.
-
         ArrayList<Character> alfabetoDesplazado = new ArrayList<>();
+        
+        System.out.println(alfabetoOriginal.size());
 
-        // Relleno el array con el abecedario original
-        for (char c = 'A'; c <= 'Z'; c++) {
-            alfabetoDesplazado.add(c);
-        }
+        int indice = 0;
 
-        // Desplazo desde la tercera posicion
-        for (int i = 0; i < alfabetoOriginal.size() - desplazamiento; i++) {
-            int indice = i + desplazamiento;
-            alfabetoDesplazado.remove(indice);
-            alfabetoDesplazado.add(indice, alfabetoOriginal.get(i));
+        for (int i = 0; i < alfabetoOriginal.size(); i++) {
 
-        }
+            if (i < alfabetoOriginal.size() - desplazamiento) {
+                alfabetoDesplazado.add(i, alfabetoOriginal.get(desplazamiento + i));
+            }
 
-        // Relleno los 3 primeros numero con los 3 ultimos (X, Y, Z):
-        for (int i = 0; i < 3; i++) {
-            int indice = alfabetoOriginal.size() - desplazamiento;
-            alfabetoDesplazado.set(i, alfabetoOriginal.get(indice));
-            desplazamiento--;
+            else {
+                alfabetoDesplazado.addLast(alfabetoOriginal.get(indice));
+                indice ++;
+            }
+
         }
 
         return alfabetoDesplazado;
+
     }
+
+    public static String desencriptar(String mensaje, ArrayList<Character> alfabeto, ArrayList<Character> alfabetoDesplazado) {
+
+        String mensajeCifrado = "";
+
+        for (int i = 0; i < mensaje.length(); i++) {
+            System.out.println(mensaje.charAt(i));
+            System.out.println(alfabetoDesplazado.get(i));
+
+            for (int j = 0; j < alfabeto.size(); j++) {
+
+                if (mensaje.charAt(i) == alfabeto.get(j)) {
+                    mensajeCifrado += alfabetoDesplazado.get(j);
+                }
+            }
+        }
+
+        return mensajeCifrado;
+    }
+
+    public static String encriptar(String mensaje, ArrayList<Character> alfabeto, ArrayList<Character> alfabetoDesplazado) {
+        
+        String mensajeDescifrado = "";
+
+        for (int i = 0; i < mensaje.length(); i++) {
+            for (int j = 0; j < alfabetoDesplazado.size(); j++) {
+
+                if (mensaje.charAt(i) == alfabetoDesplazado.get(j)) {
+                    mensajeDescifrado += alfabeto.get(j);
+                }
+            }
+        }
+
+        return mensajeDescifrado;
+
+    }
+
 }
