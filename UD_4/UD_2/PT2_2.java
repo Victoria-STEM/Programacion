@@ -23,66 +23,42 @@ public class PT2_2 {
     public static void main(String[] args) {
 
         int numeroBalas = 6;
-        int turno = 1;
-        
+        int turno = 0;
+        int numeroELfos = 3;
         int elfosMuertos = 0;
-        int elfosVivos = 3;
+
+        ArrayList<Boolean> elfosVivos = new ArrayList<>();
+        for (int i = 0; i < numeroELfos; i++) {
+            elfosVivos.add(true);
+        }
+        System.out.println(elfosVivos);
 
         ArrayList<Integer> ruletaRusa = generarRuleta(numeroBalas);
         System.out.println("Camara del revolver: " + ruletaRusa);
-        System.out.println(ruletaRusa.get(turno - 1 ) == 0);
-        System.out.println(ruletaRusa.get(turno - 1 ) == 1);
 
-        // while (elfosMuertos < elfosVivos) {
+        while (elfosMuertos < 2) {
 
-        //     if (ruletaRusa.get(turno - 1) == 0) {
+            if (ruletaRusa.get(turno) == 0) {
+                System.out.println("EL elfo " + (turno + 1) + " sigue vivo.");
 
-        //         System.out.println("El Elfo " + turno + " ha sobrevivido.");
-        //     } 
-            
-        //     else if (ruletaRusa.get(turno - 1) == 1) {
+            } else if (ruletaRusa.get(turno) == 1) {
+                System.out.println("El elfo " + (turno + 1) + " ha muerto");
+                elfosVivos.set(turno, false);
 
-        //         System.out.println("El Elfo " + turno + " cae al suelo mientras su gorro rojo queda empapado en carmesí.");
-        //         System.out.println("Cámara reiniciada.");
-        //         ruletaRusa = generarRuleta(numeroBalas);
-        //         System.out.println("Nueva camara del revolver: " + ruletaRusa);
+                elfosMuertos++;
+                ruletaRusa = generarRuleta(numeroBalas);
+                System.out.println("La pisto se carga: " + ruletaRusa);
+            }
 
-        //         elfosMuertos++;
+            turno ++;
 
-        //     }
+            if (turno > 2) {
+                turno = 0;
+            }
 
-        //     // Se organizan los turnos de los elfos:
-        //     if (elfosMuertos == 0) {
-
-        //         if (turno == 1) {
-        //             turno = 2;
-        //         } else if (turno == 2) {
-        //             turno = 3;
-        //         } else {
-        //             turno = 1;
-        //         }
-
-        //     }
-
-        //     else if (elfosMuertos == 1) {
-
-        //         if (turno == 1) {
-        //             turno = 2;
-        //         } 
-        //         else if (turno == 2) {
-        //             turno = 1;
-        //         }
-        //         else {
-        //             turno = 1;
-        //         }
-
-        //     }
-
-        //     System.out.println("ELfos vivos: " + (elfosVivos - elfosMuertos));
-
-        // }
-
-        System.out.println("¡Felicidades! Elfo " + (turno + 1) + ". Eres el líder del taller, pero cada risa de Santa te recordará lo que has hecho.");
+        }
 
     }
+
+    // System.out.println("¡Felicidades! Elfo " + (turno + 1) + ". Eres el líder del taller, pero cada risa de Santa te recordará lo que has hecho.");
 }
