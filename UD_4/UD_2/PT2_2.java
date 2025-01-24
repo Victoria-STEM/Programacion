@@ -24,41 +24,71 @@ public class PT2_2 {
 
         int numeroBalas = 6;
         int turno = 0;
-        int numeroELfos = 3;
+        int numeroElfos = 3;
         int elfosMuertos = 0;
+        int disparo = 0;
 
         ArrayList<Boolean> elfosVivos = new ArrayList<>();
-        for (int i = 0; i < numeroELfos; i++) {
+        for (int i = 0; i < numeroElfos; i++) {
             elfosVivos.add(true);
         }
-        System.out.println(elfosVivos);
+        System.out.println("Elfos vivos: " + elfosVivos);
 
         ArrayList<Integer> ruletaRusa = generarRuleta(numeroBalas);
         System.out.println("Camara del revolver: " + ruletaRusa);
 
         while (elfosMuertos < 2) {
 
-            if (ruletaRusa.get(turno) == 0) {
-                System.out.println("EL elfo " + (turno + 1) + " sigue vivo.");
+            if (elfosVivos.get(turno) == true) {
 
-            } else if (ruletaRusa.get(turno) == 1) {
-                System.out.println("El elfo " + (turno + 1) + " ha muerto");
-                elfosVivos.set(turno, false);
+                if (ruletaRusa.get(disparo) == 0) {
+                    System.out.println("Turno: " + turno);
+                    System.out.println("Elfo " + (turno + 1) + " dispara y sobrevive.");
+                    turno++;
+                }
 
-                elfosMuertos++;
-                ruletaRusa = generarRuleta(numeroBalas);
-                System.out.println("La pisto se carga: " + ruletaRusa);
+                else {
+                    System.out.println("Elfo " + (turno + 1) + " dispara y MUERE.");
+                    elfosVivos.set(turno, false); // un elfo muere
+                    elfosMuertos++;
+
+                    turno = 0; // empezamos desde 0
+
+                    if (elfosMuertos < 2) {
+                        ruletaRusa = generarRuleta(numeroBalas);
+                        System.out.println("¡Revolver recargado! " + ruletaRusa);
+                        System.out.println("Turno: " + turno);
+                    }
+                }
+
+                disparo++;
+
             }
 
-            turno ++;
+            else {
+                System.out.println("Elfos muertos no puede jugar con los vivos.");
+                turno++;
+            }
 
-            if (turno > 2) {
+            if (turno >= numeroElfos) {
+                System.out.println("Turno: " + turno);
                 turno = 0;
+            }
+
+            if (disparo >= numeroBalas) {
+                System.out.println("Disparo numero: " + disparo);
+                disparo = 0;
             }
 
         }
 
+        for (int i = 0; i < elfosVivos.size(); i++) {
+            if (elfosVivos.get(i) == true) {
+                System.out.println("¡Felicidades! Elfo " + (i + 1)
+                        + " eres el líder del taller, pero cada risa de Santa te recordará lo que has hecho.");
+            }
+        }
+
     }
 
-    // System.out.println("¡Felicidades! Elfo " + (turno + 1) + ". Eres el líder del taller, pero cada risa de Santa te recordará lo que has hecho.");
 }

@@ -2,30 +2,33 @@ package UD_3.Relacion_0;
 
 public class Ejercicio19 {
     
-    public static String[] convertirPalabraAStringChar (String palabra) {
-        String[] palabraArray = palabra.split("");
-        return palabraArray;
-    }
+    // public static String[] convertirPalabraAStringChar (String palabra) {
+    //     String[] palabraArray = palabra.split("");
+    //     return palabraArray;
+    // }
 
-    public static String convertirPrimeraLetaMayuscula (String[] palabraArray) {
-        String primeraLetra = palabraArray[0].toUpperCase();
+    public static char convertirPrimeraLetaMayuscula (String palabraArray) {
+        char primeraLetra = palabraArray.toUpperCase().charAt(0);
         return primeraLetra;
     }
 
-    public static String unificar (String primeraLetra, String[] palabraArray) {
-        String resultadoUnificado = primeraLetra;
-        for (int i = 1; i < palabraArray.length; i++) {
-            resultadoUnificado += palabraArray[i];
+    public static String unificar (char primeraLetra, String palabraArray) {
+        //String resultadoUnificado = ""+primeraLetra;
+
+        String resultadoUnificado = "";
+        resultadoUnificado += primeraLetra;
+
+        for (int i = 1; i < palabraArray.length(); i++) {
+            resultadoUnificado += palabraArray.charAt(i);
         }
         return resultadoUnificado;
     }
 
     public static void main(String[] args) {
-        String palabra = "hola";
+        String palabra = "caracola";
         
-        String[] palabraArray = convertirPalabraAStringChar(palabra);
-        String primeraLetra = convertirPrimeraLetaMayuscula(palabraArray);
-        String resultado = unificar(primeraLetra, palabraArray);
+        char primeraLetra = convertirPrimeraLetaMayuscula(palabra);
+        String resultado = unificar(primeraLetra, palabra);
         System.out.println(resultado);
 
     }
