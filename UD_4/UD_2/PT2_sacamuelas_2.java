@@ -39,6 +39,7 @@ public class PT2_sacamuelas_2 {
                 tableroInvisible.add(indiceAleatorio, dienteAleatorio);
             }
         }
+        
         return tableroInvisible;
     }
 
