@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class PT2 {
+public class PT2_sacamuelas_1 {
 
     static final int cantidadDientesDanados = 5;
 

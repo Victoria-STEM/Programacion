@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
 
-public class PT2_3 {
+public class PT2_elfos_3 {
 
     public static ArrayList<Integer> generarRuleta(int numeroBalas) {
 
