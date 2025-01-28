@@ -101,8 +101,8 @@ public class CifradoCesar {
         String mensajeCifrado = "";
 
         for (int i = 0; i < mensaje.length(); i++) {
-            System.out.println(mensaje.charAt(i));
-            System.out.println(alfabetoDesplazado.get(i));
+            // System.out.println(mensaje.charAt(i));
+            // System.out.println(alfabetoDesplazado.get(i));
 
             for (int j = 0; j < alfabeto.size(); j++) {
 
