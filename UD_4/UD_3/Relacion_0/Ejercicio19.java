@@ -25,7 +25,7 @@ public class Ejercicio19 {
     }
 
     public static void main(String[] args) {
-        String palabra = "caracola";
+        String palabra = "hola caracola";
         
         char primeraLetra = convertirPrimeraLetaMayuscula(palabra);
         String resultado = unificar(primeraLetra, palabra);

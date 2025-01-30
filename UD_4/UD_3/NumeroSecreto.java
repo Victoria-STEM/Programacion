@@ -1,7 +1,6 @@
 package UD_3;
 
 import java.util.Scanner;
-import java.util.Random;
 
 /**
  * Juego del Número Secreto.
