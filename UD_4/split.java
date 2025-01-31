@@ -93,8 +93,8 @@ public class split {
             palabra = "";
 
             while (mensaje.length() > 0 && !comprobarSiEsElemento(mensaje.charAt(0), elemento)) {   
-                    palabra += mensaje.charAt(0); // anado la letra a la palabra
-                    mensaje = mensaje.substring(1);
+                palabra += mensaje.charAt(0); // anado la letra a la palabra
+                mensaje = mensaje.substring(1);
             }
 
             // Solo introducimos palabras, omitimos espacios ""
@@ -116,7 +116,7 @@ public class split {
     public static void main(String[] args) {
 
         String mensaje = "Hola  que tal    como estas?";
-        String mensaje2 = "Hela que!";
+        String mensaje2 = " Hela que!  ";
 
         // Texto en array de palabras
         ArrayList arrayPalabras = convertirEnArrayDePalabras(mensaje);
@@ -125,7 +125,7 @@ public class split {
         System.out.println("Despues del for: " + arrayPalabras);
 
         // Texto dividido según elemento
-        ArrayList arrayPalabras2 = splitT(mensaje2, 'e');
+        ArrayList arrayPalabras2 = splitT(mensaje2, ' ');
 
         System.out.println("Despues del for: " + mensaje2);
         System.out.println("Despues del for: " + arrayPalabras2);
