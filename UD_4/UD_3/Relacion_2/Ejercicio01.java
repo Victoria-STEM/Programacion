@@ -18,7 +18,7 @@ public class Ejercicio01 {
 
     public static void main(String[] args) {
         
-        String nombreUsuario = unirNombreApellido("Carlos", "Martinez", 3);
+        String nombreUsuario = unirNombreApellido("Alejandro", "Moreno", 3);
         System.out.println(nombreUsuario);
 
     }
