@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PT3",
+            "request": "launch",
+            "mainClass": "PT3",
+            "projectName": "Programacion_a8fb04ef"
+        },
+        {
+            "type": "java",
+            "name": "PT2_1",
+            "request": "launch",
+            "mainClass": "PT2_1",
+            "projectName": "Programacion_a8fb04ef"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
