@@ -11,7 +11,7 @@ public class Ejercicio06 {
 
         while (parejas.size() < gente.size()) {
 
-            indice = (int) (Math.random() * (gente.size() - 1)) + 1;
+            indice = (int) (Math.random() * gente.size());
 
             if (!buscarEnArray(parejas, gente.get(indice))) {
                 parejas.add(gente.get(indice));
@@ -47,9 +47,8 @@ public class Ejercicio06 {
         gente.add("santo");
         gente.add("carioca");
 
-        System.out.println(buscarEnArray(gente, "gorge"));
+        System.out.println(buscarEnArray(gente, "juan"));
         System.out.println(emparejarGente(gente));
-
 
     }
 }

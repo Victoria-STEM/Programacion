@@ -14,13 +14,24 @@ public class Ejercicio12 {
 
         ArrayList<String> lanzamientosMoneda = new ArrayList();
 
-        while (contador < 3) {
+        // while (contador < 3) {
+        //     int indice = (int) (Math.random() * 2);
+        //     lanzamientosMoneda.add(moneda.get(indice));
+        //     if (indice == 0) {
+        //         contador ++;
+        //     }
+        // }
+
+        while (contador != 3) {
 
             int indice = (int) (Math.random() * 2);
             lanzamientosMoneda.add(moneda.get(indice));
 
             if (indice == 0) {
-                contador ++;
+                contador++;
+            }
+            else {
+                contador = 0;
             }
 
         }
@@ -37,6 +48,6 @@ public class Ejercicio12 {
         ArrayList resultado = simularLanzamientoHastaTresCaras();
         System.out.println(resultado);
         System.out.println("La moneda se ha lanzado: " + resultado.size() + " veces.");
-        
+
     }
 }
