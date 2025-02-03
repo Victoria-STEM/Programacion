@@ -35,7 +35,6 @@ public class Ejercicio11 {
 
             if (opcionJugador.equals("salir")) {
                 juego = false;
-
             } 
             
             else if (!opcionJugador.equals("piedra") && !opcionJugador.equals("papel") && !opcionJugador.equals("tijera")) {

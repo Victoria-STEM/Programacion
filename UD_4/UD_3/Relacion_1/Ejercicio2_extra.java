@@ -18,17 +18,16 @@ public class Ejercicio2_extra {
         }
 
         int sumaDados = 0;
-        int contador = 0;
 
         for (int i = 0; i < veces; i++) {
 
+            
             int dadoUno = (int) (Math.random() * (max - min + 1)) + min;
             int dadoDos = (int) (Math.random() * (max - min + 1)) + min;
 
             sumaDados = dadoUno + dadoDos;
-            // System.out.println(sumaDados);
 
-            resultadosLanzamiento.set(sumaDados, (contador++));
+            resultadosLanzamiento.set(sumaDados, resultadosLanzamiento.get(sumaDados) + 1);
             
         }
         
@@ -54,7 +53,7 @@ public class Ejercicio2_extra {
         // Crea una función llamada lanzarDosDados que lance dos dados, es decir, que genere dos números aleatorios entre 1 y 6 y los sume. 
         // La función debe devolver la suma de estos dos números. Por ejemplo, si los dados muestran 3 y 4, el resultado será 7.
 
-        ArrayList<Integer> resultados = lanzarDosDados(7000);
+        ArrayList<Integer> resultados = lanzarDosDados(1000);
         System.out.println("Los resultados de lanzar los dados son: " + resultados);
 
         int numeroMasRepetido = buscarNumeroMasGrandeEnArray(resultados);

@@ -37,5 +37,6 @@ public class Ejercicio12 {
         ArrayList resultado = simularLanzamientoHastaTresCaras();
         System.out.println(resultado);
         System.out.println("La moneda se ha lanzado: " + resultado.size() + " veces.");
+        
     }
 }
