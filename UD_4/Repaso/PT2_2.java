@@ -71,7 +71,7 @@ public class PT2_2 {
             }
 
             // Reseteamos los turnos
-            if (turno == 4) {
+            if (turno == (elfosTotales + 1)) {
                 turno = 1;
             }
 
