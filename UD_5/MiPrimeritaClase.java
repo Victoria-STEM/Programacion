@@ -50,21 +50,54 @@ class Persona {
 
 class Perro {
 
-    public String nombre;
-    public String raza;
-    public int edad;
-    public String tamano;
-    public double peso;
+    // Atributos:
+    private String nombre;
+    private String raza;
+    private int edad;
+    private String tamano;
+    private double peso;
 
-    public Perro (String nombre, String raza, int edad, String tamano, double peso) {
+    // Constructor
+    public Perro (String nombre, String raza, int edad, double peso) {
         this.nombre = nombre;
         this.raza = raza;
         this.edad = edad;
-        this.tamano = tamano;
-        this.peso = peso;
+        this.setPeso(peso);
     }
 
-    public Integer calcularEdadHumana() {
+    // Getters & setters:
+    public void setTamano() {
+
+        if (this.peso < 5) {
+            this.tamano = "pequeño";
+        }
+        else if (this.peso <= 10) {
+            this.tamano = "mediano";
+        }
+        else if (this.peso > 10) {
+            this.tamano = "grande";
+        }
+    }
+
+    public String getTamano() {
+        return this.tamano;
+    }
+
+    public void setPeso() {
+        this.peso = peso;
+        
+        if (this.peso < 0 || this.peso > 60) {
+            this.peso = 0;
+        } 
+
+        this.setTamano();
+    }
+
+    public double getPeso() {
+        return this.peso;
+    }
+
+    public int calcularEdadHumana() {
         return this.edad * 7;
     }
 
@@ -82,6 +115,7 @@ class Perro {
         }
         return ladrido;
     }
+
 }
 
 public class MiPrimeritaClase {
@@ -105,16 +139,23 @@ public class MiPrimeritaClase {
         // System.out.println(mariFlor.calcularAnioNacimiento());
         // System.out.println(mariFlor.esMayorDeEdad());
         
-        Perro patan = new Perro("patan", "perro rata", 5, "pequeño", 5.5);
-        Perro rex = new Perro("Rex", "pastor aleman", 10, "grande", 22.2);
+        // Perro patan = new Perro("patan", "perro rata", 5, "pequeño", 5.5);
+        // Perro rex = new Perro("Rex", "pastor aleman", 10, "grande", 22.2);
 
-        System.out.println(patan.ladrar());
-        System.out.println(patan.nombre);
-        System.out.println(patan.calcularEdadHumana());
+        // System.out.println(patan.ladrar());
+        // System.out.println(patan.nombre);
+        // System.out.println(patan.calcularEdadHumana());
 
-        System.out.println(rex.ladrar());
-        System.out.println(rex.nombre);
-        System.out.println(rex.calcularEdadHumana());
+        // System.out.println(rex.ladrar());
+        // System.out.println(rex.nombre);
+        // System.out.println(rex.calcularEdadHumana());
+
+        Perro rex = new Perro("Rex", "pastor aleman", 10, 15);
+
+        System.out.println("Rex es un perro " + rex.getTamano() + " porque pesa " + rex.getPeso());
+        System.out.println(rex.getTamano());
+        System.out.println(rex.setPeso(5.5));
+        System.out.println(rex.getTamano());
     }
     
 }
