@@ -31,14 +31,10 @@ class Persona {
     }
 
     public boolean esMayorDeEdad() {
-        boolean mayorDeEdad = false;
-
-        mayorDeEdad = (edad >= 18) ? true : false;
-
         // if (edad >= 18) {
         //     mayorDeEdad = true;
         // }
-        return mayorDeEdad;
+        return (edad >= 18);
     }
     
     public double calcularIMC() {
@@ -59,13 +55,40 @@ class Perro {
 
     // Constructor
     public Perro (String nombre, String raza, int edad, double peso) {
-        this.nombre = nombre;
-        this.raza = raza;
-        this.edad = edad;
+        this.setNombre(nombre);
+        this.setRaza(raza);
+        this.setEdad(edad);
         this.setPeso(peso);
     }
 
     // Getters & setters:
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    private void setRaza(String raza) {
+        this.raza = raza.toUpperCase();
+    }
+
+    public String getRaza() {
+        return this.raza;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+        if (edad < 0 || edad > 20) {
+            edad = 0;
+        }
+    }
+
+    public int getEdad() {
+        return this.edad;
+    }
+
     public void setTamano() {
 
         if (this.peso < 5) {
@@ -83,7 +106,7 @@ class Perro {
         return this.tamano;
     }
 
-    public void setPeso() {
+    public void setPeso(double peso) {
         this.peso = peso;
         
         if (this.peso < 0 || this.peso > 60) {
@@ -150,12 +173,15 @@ public class MiPrimeritaClase {
         // System.out.println(rex.nombre);
         // System.out.println(rex.calcularEdadHumana());
 
-        Perro rex = new Perro("Rex", "pastor aleman", 10, 15);
+        Perro rex = new Perro("Rex", "pastor aleman", 10, 20);
 
-        System.out.println("Rex es un perro " + rex.getTamano() + " porque pesa " + rex.getPeso());
-        System.out.println(rex.getTamano());
-        System.out.println(rex.setPeso(5.5));
-        System.out.println(rex.getTamano());
+        System.out.println(rex.getNombre() + " es un perro " + rex.getTamano() + " porque pesa " + rex.getPeso() + " kg.");
+        System.out.println(rex.getNombre() + " es un pero: " + rex.getTamano());
+        System.out.println(rex.getNombre() + " pesa: " + rex.getPeso() + " kg.");
+        System.out.println(rex.getNombre() + " es un: " + rex.getRaza());
+
+        rex.setPeso(70);
+        System.out.println(rex.getPeso());
+
     }
-    
 }
