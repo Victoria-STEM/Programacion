@@ -12,8 +12,6 @@ class Auto {
         this.velocidadActual = velocidadActual;
     }
 
-
-
     public int acelerar(int cantidad) {
         int nuevaVelodidad = this.velocidadActual + cantidad;
         return this.velocidadActual = nuevaVelodidad;
