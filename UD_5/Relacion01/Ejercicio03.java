@@ -13,7 +13,11 @@ class Alumno {
     }
 
     public boolean aprobar() {
-        return this.calificacion < 6 ? false : true;
+        return this.calificacion <= 6 ? false : true;
+    }
+
+    public String toString() {
+        return "El alumno " + this.nombre + " ha sacado un " + this.calificacion + " en " + this.materia + ".";
     }
 
 }
@@ -24,6 +28,7 @@ public class Ejercicio03 {
 
         Alumno maria = new Alumno("Maria", "Matematicas", 6);
         System.out.println(maria.aprobar());
+        System.out.println(maria);
 
     }
 }

@@ -10,19 +10,16 @@ class Televisor {
         this.volumen = volumen;
     }
 
-    public int subirVolumen (int cantidad) {
+    public void subirVolumen (int cantidad) {
         this.volumen += cantidad;
-        return this.volumen;
     }
 
-    public int bajarVolumen (int cantidad) {
+    public void bajarVolumen (int cantidad) {
         this.volumen -= cantidad;
-        return this.volumen;
     }
 
-    public String cambiar_canal(String nuevoCanal) {
+    public void cambiar_canal(String nuevoCanal) {
         this.canal = nuevoCanal;
-        return this.canal;
     }
 
     public String mostrarInfo () {

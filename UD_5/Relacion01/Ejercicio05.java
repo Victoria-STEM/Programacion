@@ -16,6 +16,10 @@ class Termometro {
         double farenheit = (this.temperatura * 1.8) + 32;
         return farenheit;
     }
+
+    public String toString () {
+        return "El termometro indica " + this.temperatura + " ºC."; 
+    }
     
 }
 
@@ -24,6 +28,7 @@ public class Ejercicio05 {
     public static void main(String[] args) {
         
         Termometro termometroUno = new Termometro(30);
+        System.out.println(termometroUno);
         System.out.println(termometroUno.getTemperatura() + "°C, son " + termometroUno.convertir_a_farenheit() + "F.");
 
     }

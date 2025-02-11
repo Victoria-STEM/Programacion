@@ -2,30 +2,50 @@ package Relacion01;
 
 class Reloj {
 
-    private String hora;
-    private String minuto;
-    private String segundo;
+    public int hora;
+    public int minuto;
+    public int segundo;
 
-    public Reloj (String hora, String minuto, String segundo) {
+    public Reloj (int hora, int minuto, int segundo) {
         this.hora = hora;
         this.minuto = minuto;
         this.segundo = segundo;
     }
 
-    public String mostrar_hora () {
-        String horaActual = "";
-        horaActual = this.hora + ":" + this.minuto + ":" + this.segundo;
-        return horaActual;
-    }
+    public String toString () {
+
+        // empezamos con los segundos:
+        int minutos = this.segundo / 60;
+        int segundosRestantes = this.segundo % 60;
+        this.segundo = segundosRestantes; // actualizo los segundos.
+
+        // seguimos con los minutos:
+        this.minuto += minutos;
+        int horas = this.minuto / 60;
+        int minutosRestantes = this.minuto % 60;
+        this.minuto = minutosRestantes;
+        
+        // seguimos con las horas:
+        this.hora += horas;
+        int horasRestantes = this.hora / 24;
+        this.hora = horasRestantes;
+
+        if (this.hora > 12) {
+            this.hora /= 12;
+        }
+
+        return "El Reloj indica: " + this.hora + ":" + this.minuto + ":" + this.segundo + (this.hora > 12) ? "PM" : "AM"; 
     
+    }
+
 }
 
 public class Ejercicio06 {
 
     public static void main(String[] args) {
         
-        Reloj relojUno = new Reloj("10", "20", "10");
-        System.out.println(relojUno.mostrar_hora());
+        Reloj relojUno = new Reloj(100, 100, 100);
+        System.out.println(relojUno);
 
     }
 }
