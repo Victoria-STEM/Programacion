@@ -1,3 +1,4 @@
+package Relacion01;
 // 1º que en toString() salgan 0s cuando la hora, el minuto o el segundo sea menor que 10
 // 2º las horas deben ser 0 - 23 y los minutos y segundos de 0 - 59
 // 3º completa el método setReloj()
@@ -39,7 +40,7 @@ class Reloj {
             this.hora = 0;
         }
         else {
-            System.out.println("Erros: los minutos deben estar entre 0 y 59");
+            // System.out.println("Erros: los minutos deben estar entre 0 y 59");
             this.hora = 00;
         }
     }
@@ -50,7 +51,7 @@ class Reloj {
             this.minuto = minuto;
         }
         else {
-            System.out.println("Erros: los minutos deben estar entre 0 y 59");
+            // System.out.println("Erros: los minutos deben estar entre 0 y 59");
             this.minuto = 00;
         }
     }
@@ -61,13 +62,16 @@ class Reloj {
             this.segundo = segundo;
         }
         else {
-            System.out.println("Erros: los segundos deben estar entre 0 y 59");
+            // System.out.println("Erros: los segundos deben estar entre 0 y 59");
             this.segundo = 00;
         }
     }
 
     public String toString() {
-        return "Es/son las: " + String.format("%02d:%02d:%02d", hora, minuto, segundo);
+        return "Es/son las: " + 
+        (this.hora < 10 ? "0" + this.hora : this.hora) + ":" +
+        (this.minuto < 10 ? "0" + this.minuto : this.minuto) + ":" +
+        (this.segundo < 10 ? "0" + this.segundo : this.segundo);
     }
 
 }

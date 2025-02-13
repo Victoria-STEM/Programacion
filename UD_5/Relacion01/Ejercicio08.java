@@ -7,7 +7,11 @@ class Televisor {
 
     public Televisor (String canal, int volumen) {
         this.canal = canal;
-        this.volumen = volumen;
+        this.setVolumen(volumen);
+    }
+
+    public void setVolumen (int volumen) {
+        this.volumen = (volumen > 100 ? 100 : this.volumen);
     }
 
     public void subirVolumen (int cantidad) {
@@ -22,7 +26,7 @@ class Televisor {
         this.canal = nuevoCanal;
     }
 
-    public String mostrarInfo () {
+    public String toString () {
         return this.canal + " " + this.volumen;
     }
 
@@ -32,12 +36,12 @@ public class Ejercicio08 {
     public static void main(String[] args) {
         
         Televisor televisorUno = new Televisor("TeleCinco", 10);
-        System.out.println(televisorUno.mostrarInfo());
+        System.out.println(televisorUno);
 
         televisorUno.cambiar_canal("Antena3");
         televisorUno.bajarVolumen(5);
 
-        System.out.println(televisorUno.mostrarInfo());
+        System.out.println(televisorUno);
 
     }
 }
