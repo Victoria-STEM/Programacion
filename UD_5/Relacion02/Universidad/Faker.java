@@ -1,4 +1,4 @@
-package Relacion02;
+package Relacion02.Universidad;
 
 public class Faker {
 
