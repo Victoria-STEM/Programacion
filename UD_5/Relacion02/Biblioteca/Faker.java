@@ -212,18 +212,18 @@ public class Faker {
      */
     public static void main(String[] args) {
 
-        System.out.println(Faker.entero(5, 100));
-        System.out.println(Faker.precio(5.30, 100.32));
-        System.out.println(Faker.nombre());
-        System.out.println(Faker.apellido());
-        System.out.println(Faker.nombreCompleto());
-        System.out.println(Faker.edad());
+        System.out.println(entero(5, 100));
+        System.out.println(precio(5.30, 100.32));
+        System.out.println(nombre());
+        System.out.println(apellido());
+        System.out.println(nombreCompleto());
+        System.out.println(edad());
 
-        System.out.println(Faker.telefono());
-        System.out.println(Faker.correo());
-        System.out.println(Faker.lorem(10));
-        System.out.println(Faker.loremCorto());
-        System.out.println(Faker.loremLargo());
+        System.out.println(telefono());
+        System.out.println(correo());
+        System.out.println(lorem(10));
+        System.out.println(loremCorto());
+        System.out.println(loremLargo());
 
     }
 

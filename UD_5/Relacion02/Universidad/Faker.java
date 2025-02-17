@@ -1,5 +1,7 @@
 package Relacion02.Universidad;
 
+import java.util.ArrayList;
+
 public class Faker {
 
     // Arrays con datos de ejemplo
@@ -52,7 +54,7 @@ public class Faker {
      * @return Precio aleatorio con dos decimales.
      */
     public static double precio(double min, double max) {
-        double precioFinal = (Math.random() * (max - min + 1)) + min;
+        double precioFinal = entero((int) min * 100, (int)max * 100) / 100;
         return precioFinal;
     }
 
@@ -62,7 +64,7 @@ public class Faker {
      * @return Nombre aleatorio.
      */
     public static String nombre() {
-        int indiceAleatorio = (int) (Math.random() * (nombres.length));
+        int indiceAleatorio = (int) (Math.random() * (nombres.length - 1));
         String nombreAleatorio = nombres[indiceAleatorio];
         return nombreAleatorio;
     }
@@ -73,7 +75,7 @@ public class Faker {
      * @return Apellido aleatorio.
      */
     public static String apellido() {
-        int indiceAleatorio = (int) (Math.random() * (apellidos.length));
+        int indiceAleatorio = (int) (Math.random() * (apellidos.length - 1));
         String apellidoAleatorio = apellidos[indiceAleatorio];
         return apellidoAleatorio;
     }
@@ -117,13 +119,12 @@ public class Faker {
     public static String telefono() {
 
         String telefonoAleatorio = "+34 ";
-        int digito;
+        telefonoAleatorio += entero(6, 9);
 
         for (int i = 0; i < 9; i++) {
 
-            digito = (int) (Math.random() * (9 + 1));
-            telefonoAleatorio += "" + digito;
-
+            telefonoAleatorio += (int) (Math.random() * (9 + 1));
+        
             if (i == 2 || i == 5) {
                 telefonoAleatorio += " ";
             }
@@ -141,6 +142,35 @@ public class Faker {
     public static String correo() {
         String mail = nombre().toLowerCase() + apellido().toLowerCase() + "@gamil.com";
         return mail;
+    }
+
+    public static String toTildesCase (String textoConTilde) {
+
+        char[] conTilde = {'á', 'é', 'í', 'ó', 'ú'};
+        char[] sinTilde = {'a', 'e', 'i', 'o', 'u'};
+
+        String textoSinTilde = "";
+
+        for (int i = 0; i < textoConTilde.length(); i++) {
+
+            char letraActual = textoConTilde.charAt(i);
+            boolean encontrado = false;
+
+            for (int j = 0; j < conTilde.length && !encontrado; j ++) {
+
+                if (letraActual == conTilde[j]) {
+                    textoSinTilde += sinTilde[j];
+                    encontrado = true;
+                }
+            }
+
+            if (!encontrado) {
+                textoSinTilde += letraActual;
+
+            }
+        }
+        
+        return textoSinTilde;
     }
 
     /**
@@ -213,19 +243,20 @@ public class Faker {
      */
     public static void main(String[] args) {
 
-        System.out.println(Faker.entero(5, 100));
-        System.out.println(Faker.precio(5.30, 100.32));
-        System.out.println(Faker.nombre());
-        System.out.println(Faker.apellido());
-        System.out.println(Faker.nombreCompleto());
-        System.out.println(Faker.edad());
+        System.out.println(entero(0, 100));
+        System.out.println(precio(5.30, 100.32));
+        System.out.println(nombre());
+        System.out.println(apellido());
+        System.out.println(nombreCompleto());
+        System.out.println(edad());
 
-        System.out.println(Faker.telefono());
-        System.out.println(Faker.correo());
-        System.out.println(Faker.lorem(10));
-        System.out.println(Faker.loremCorto());
-        System.out.println(Faker.loremLargo());
-
+        System.out.println(telefono());
+        System.out.println(correo());
+        System.out.println(lorem(10));
+        System.out.println(loremCorto());
+        System.out.println(loremLargo());
+        System.out.println(toTildesCase("María"));
+        //System.out.println(apellido().charAt(0));
     }
 
 }
