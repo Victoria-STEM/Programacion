@@ -1,6 +1,8 @@
 
 import java.util.ArrayList;
 
+import Relacion02.Universidad.Estudiante;
+
 // Luego, crea una clase Biblioteca con un array de libros 
 // y métodos para:
 
@@ -18,22 +20,6 @@ public class biblioteca {
 
     public void agregarLibros (libro nuevoLibro) {
         archivoLibros.add(nuevoLibro);
-    }
-
-    public void generarLibro (int cantidad) {
-
-        int id = 1;
-
-        for (int i = 0; i < cantidad; i++) {
-            String titulo = Faker.loremCorto();
-            String nombreCompleto = Faker.nombreCompleto();
-            String sinopsis = Faker.loremLargo();
-
-            libro nuevoLibro = new libro(id, titulo, nombreCompleto, sinopsis, true);
-            archivoLibros.add(nuevoLibro);
-
-            id ++;
-        }
     }
 
     public void prestarLibro (int id) {
@@ -59,9 +45,24 @@ public class biblioteca {
         }
     }
 
+    public libro buscarLibro (int id) {
+
+        libro libroBuscado = null;
+
+        for (int i = 0; i < archivoLibros.size(); i++) {
+            libro libroActual = archivoLibros.get(i);
+            
+            if (libroActual.getId() == id) {
+                libroBuscado = libroActual;
+            }
+        }
+
+        return libroBuscado;
+    }
+
     public String toString () {
 
-        String listaLibros = "La biblioteca contiene los siguientes titulos:";
+        String listaLibros = "La biblioteca contiene los siguientes titulos:\n";
 
         for (int i = 0; i < archivoLibros.size(); i++) {
             libro libroActual = archivoLibros.get(i);
