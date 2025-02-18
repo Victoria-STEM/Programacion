@@ -29,7 +29,6 @@ public class Main {
 
             else if (opcion == 3) {
                 System.out.println(mercado); 
-
             }
 
             else if (opcion == 4) {
@@ -68,9 +67,6 @@ public class Main {
 
     public static void agregarProducto() {
 
-        System.out.println("Introduce el id: ");
-        int nuevoId = intScanner.nextInt();
-
         System.out.println("Introduce el nombre del producto: ");
         String producto = stringScanner.nextLine();
 
@@ -83,7 +79,7 @@ public class Main {
         System.out.println("Introduce la cantidad del producto:");
         int cantidad = intScanner.nextInt();
 
-        Producto nuevoLibro = new Producto(nuevoId, producto, descripcion, precio, cantidad);
+        Producto nuevoLibro = new Producto(producto, descripcion, precio, cantidad);
         mercado.agregarProducto(nuevoLibro);
 
     }
