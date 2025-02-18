@@ -11,47 +11,43 @@ import Relacion02.Universidad.Estudiante;
 // Devolver un libro
 
 public class biblioteca {
-   
+
     private ArrayList<libro> archivoLibros;
 
-    public biblioteca () {
+    public biblioteca() {
         this.archivoLibros = new ArrayList<libro>();
     }
 
-    public void agregarLibros (libro nuevoLibro) {
+    public void agregarLibros(libro nuevoLibro) {
+        nuevoLibro.setId(archivoLibros.size() + 1);
         archivoLibros.add(nuevoLibro);
     }
 
-    public void prestarLibro (int id) {
+    public void prestarLibro(int id) {
 
-        for (int i = 0; i < 10; i++) {
-            libro libroActual = archivoLibros.get(i);
-
-            if (libroActual.getId() == id) {
-                libroActual.setDisponible(false);
-            }
-
+        libro buscado = buscarLibro(id);
+        if (buscado != null) {
+            buscado.setDisponible(false);
         }
+
     }
 
-    public void devolverLibro (int id) {
+    public void devolverLibro(int id) {
 
-        for (int i = 0; i < 10; i++) {
-            libro libroActual = archivoLibros.get(i);
-
-            if (libroActual.getId() == id) {
-                libroActual.setDisponible(true);
-            }
+        libro buscado = buscarLibro(id);
+        if (buscado != null) {
+            buscado.setDisponible(true);
         }
+
     }
 
-    public libro buscarLibro (int id) {
+    public libro buscarLibro(int id) {
 
         libro libroBuscado = null;
 
         for (int i = 0; i < archivoLibros.size(); i++) {
             libro libroActual = archivoLibros.get(i);
-            
+
             if (libroActual.getId() == id) {
                 libroBuscado = libroActual;
             }
@@ -60,7 +56,7 @@ public class biblioteca {
         return libroBuscado;
     }
 
-    public String toString () {
+    public String toString() {
 
         String listaLibros = "La biblioteca contiene los siguientes titulos:\n";
 

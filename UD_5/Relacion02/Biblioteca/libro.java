@@ -14,8 +14,8 @@ public class libro {
     private String sinopsis;
     private boolean disponible;
 
-    public libro (int id, String titulo, String autor, String sinopsis, boolean disponible) {
-        this.setId(id);
+    public libro (String titulo, String autor, String sinopsis, boolean disponible) {
+        this.id = -1;
         this.setTitulo(titulo);
         this.setAutor(autor);
         this.setSinopsis(sinopsis);

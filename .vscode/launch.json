@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MiPrimeritaClase",
+            "request": "launch",
+            "mainClass": "MiPrimeritaClase",
+            "projectName": "Programacion_4392962b"
+        },
+        {
+            "type": "java",
+            "name": "PT4",
+            "request": "launch",
+            "mainClass": "PT4",
+            "projectName": "Programacion_4392962b"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio2_extra",
+            "request": "launch",
+            "mainClass": "Relacion_1.Ejercicio2_extra",
+            "projectName": "Programacion_4392962b"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio12",
+            "request": "launch",
+            "mainClass": "Relacion_1.Ejercicio12",
+            "projectName": "Programacion_4392962b"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio11",
+            "request": "launch",
+            "mainClass": "Relacion_1.Ejercicio11",
+            "projectName": "Programacion_4392962b"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio06",
+            "request": "launch",
+            "mainClass": "Relacion_2.Ejercicio06",
+            "projectName": "Programacion_4392962b"
+        },
+        {
+            "type": "java",
+            "name": "NumeroSecreto",
+            "request": "launch",
+            "mainClass": "NumeroSecreto",
+            "projectName": "Programacion_4392962b"
+        },
+        {
+            "type": "java",
             "name": "PT3",
             "request": "launch",
             "mainClass": "PT3",

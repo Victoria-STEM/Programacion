@@ -8,8 +8,8 @@ public class Producto {
     private double precio;
     private int cantidadStock;
 
-    public Producto (int id, String nombre, String descripcion, double precio, int cantidadStock) {
-        this.id = id;
+    public Producto (String nombre, String descripcion, double precio, int cantidadStock) {
+        this.id = -1;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;

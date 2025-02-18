@@ -3,17 +3,26 @@ import java.util.Scanner;
 
 // En el main, implementa un menú para probar la funcionalidad. 
 // Usa la clase Faker para generar 100 libros.
+
 public class Ejercicio {
+
+    public static void imprimirMenu () {
+        System.out.println("Escoge una opcion:\n"
+        + "1. Agregar libro\n"
+        + "2. Prestar un libro\n"
+        + "3. Devolver un libro\n"
+        + "4. Salir del programa");
+    }
 
     public static void main(String[] args) {
 
         biblioteca howarts = new biblioteca();
 
-        int cantidad = 100;
+        final int CANTIDAD_LIBROS = 100;
 
-        for (int i = 0; i < cantidad; i++) {
+        for (int i = 1; i <= CANTIDAD_LIBROS; i++) {
 
-            libro nuevoLibro = new libro((i + 1), Faker.loremCorto(), Faker.nombreCompleto(), Faker.loremLargo(), true);
+            libro nuevoLibro = new libro(Faker.loremCorto(), Faker.nombreCompleto(), Faker.loremLargo(), true);
             howarts.agregarLibros(nuevoLibro);
 
         }
@@ -27,18 +36,10 @@ public class Ejercicio {
 
         while (programa) {
 
-            System.out.println("Escoge una opcion:\n"
-                    + "1. Agregar libros\n"
-                    + "2. Prestar un libro (cambiar disponible a false)\n"
-                    + "3. Devolver un libro\n"
-                    + "4. Salir del programa");
-
+            imprimirMenu();
             int opcion = miScanner.nextInt();
 
             if (opcion == 1) {
-
-                System.out.println("Introduce el id: ");
-                int nuevoId = miScanner.nextInt();
 
                 System.out.println("Introduce el titulo del libro: ");
                 String nuevoTitulo = stringScanner.nextLine();
@@ -49,9 +50,10 @@ public class Ejercicio {
                 System.out.println("Introduce la sinopsis:");
                 String nuevaSinopsis = stringScanner.nextLine();
 
-                libro nuevoLibro = new libro(nuevoId, nuevoTitulo, nuevoAutor, nuevaSinopsis, true);
+                libro nuevoLibro = new libro(nuevoTitulo, nuevoAutor, nuevaSinopsis, true);
                 howarts.agregarLibros(nuevoLibro);
-                System.out.println(howarts.buscarLibro(nuevoId));
+
+                System.out.println(howarts.buscarLibro(0));
 
             } else if (opcion == 2) {
 
