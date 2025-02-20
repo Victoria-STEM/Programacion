@@ -1,4 +1,3 @@
-package Relacion02.Supermercado;
 import java.util.Scanner;
 
 public class Main {
@@ -50,7 +49,7 @@ public class Main {
         mercado = new Supermercado();
 
         for (int i = 0; i < cantidadProductos; i++) {
-            Producto nuevoProducto = new Producto((i + 1), Faker.lorem(4), Faker.loremCorto(),
+            Producto nuevoProducto = new Producto(Faker.lorem(4), Faker.loremCorto(),
                     Faker.precio(0.10, 100.01), Faker.entero(1, 100));
             mercado.agregarProducto(nuevoProducto);
         }
@@ -93,6 +92,5 @@ public class Main {
                 int cantidad = intScanner.nextInt();
 
                 mercado.venderProducto(id, cantidad);
-                System.out.println(mercado.buscarProducto(id));
     }
 }

@@ -1,5 +1,3 @@
-package Relacion02.Supermercado;
-
 import java.util.ArrayList;
 
 public class Supermercado {
@@ -11,18 +9,21 @@ public class Supermercado {
     }
 
     public void agregarProducto(Producto nuevoProducto) {
+        int idNuevoProducto = almacen.size() + 1;
+        nuevoProducto.setId(idNuevoProducto);
         almacen.add(nuevoProducto);
     }
 
-    public Producto buscarProducto (int id) {
+    private Producto buscarProducto (int id) {
 
         Producto productoBuscado = null;
+        boolean encontrado = false;
 
-        for (int i = 0; i < almacen.size(); i++) {
-            Producto productoActual = almacen.get(i);
+        for (int i = 0; i < almacen.size() && !encontrado; i++) {
 
-            if (productoActual.getId() == id) {
-                productoBuscado = productoActual;
+            if (almacen.get(i).getId() == id) {
+                encontrado = true;
+                productoBuscado = almacen.get(i);
             }
         }
 
@@ -31,7 +32,7 @@ public class Supermercado {
 
     public void venderProducto (int id, int cantidad) {
 
-        Producto productoBuscado = buscarProducto(id);
+        Producto productoBuscado = this.buscarProducto(id);
         int nuevaCantidad = productoBuscado.getCantidad() - cantidad;
         
         productoBuscado.setCantidad(nuevaCantidad);

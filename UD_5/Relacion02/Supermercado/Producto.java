@@ -1,5 +1,3 @@
-package Relacion02.Supermercado;
-
 public class Producto {
     
     private int id;
@@ -18,6 +16,10 @@ public class Producto {
 
     public int getId () {
         return this.id;
+    }
+
+    public int setId (int id) {
+        return this.id = id;
     }
 
     public void setCantidad (int cantidad) {

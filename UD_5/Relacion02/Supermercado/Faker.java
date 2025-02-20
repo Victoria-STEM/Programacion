@@ -1,5 +1,3 @@
-package Relacion02.Supermercado;
-
 public class Faker {
 
     // Arrays con datos de ejemplo
