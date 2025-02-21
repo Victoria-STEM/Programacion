@@ -29,7 +29,7 @@ public class Playlist {
         for (int i = 0; i < listaCanciones.size(); i++) {
             listaCancionesActual += listaCanciones.get(i) + "\n";
         }
-
+        
         return listaCancionesActual;
     }
 }

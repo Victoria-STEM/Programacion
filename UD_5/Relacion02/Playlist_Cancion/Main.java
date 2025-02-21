@@ -60,7 +60,7 @@ public class Main {
         miPlaylist = new Playlist();
 
         for (int i = 0; i < numeroCanciones; i++) {
-            Cancion nuevaCancion = new Cancion ("Cancion", "Nombre Completo", 150);
+            Cancion nuevaCancion = new Cancion (Faker.lorem(4), Faker.nombreCompleto(), Faker.entero(100, 400));
             miPlaylist.agregarCanciones(nuevaCancion);
         }
 

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Relacion02.Supermercado.Main",
+            "projectName": "Programacion_4392962b"
+        },
+        {
+            "type": "java",
             "name": "MiPrimeritaClase",
             "request": "launch",
             "mainClass": "MiPrimeritaClase",

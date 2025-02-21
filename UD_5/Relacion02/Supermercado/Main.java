@@ -3,8 +3,7 @@ import java.util.Scanner;
 public class Main {
 
     final static int cantidadProductos = 100;
-    final static Scanner intScanner = new Scanner(System.in);
-    final static Scanner stringScanner = new Scanner(System.in);
+    final static Scanner miScanner = new Scanner(System.in);
 
     private static Supermercado mercado;
 
@@ -16,7 +15,7 @@ public class Main {
         while (programa) {
 
             imprimirMenu();
-            int opcion = intScanner.nextInt();
+            int opcion = miScanner.nextInt();
 
             if (opcion == 1) {
                 agregarProducto();
@@ -37,20 +36,17 @@ public class Main {
             else {
                 System.out.println("Opcion incorrecta. Introduce 1, 2, 3 o 4.");
             }
-
         }
 
         // System.out.println(mercado);
-        intScanner.close();
-        stringScanner.close();
+        miScanner.close();
     }
 
     public static void inicializarSupermercado() {
         mercado = new Supermercado();
 
         for (int i = 0; i < cantidadProductos; i++) {
-            Producto nuevoProducto = new Producto(Faker.lorem(4), Faker.loremCorto(),
-                    Faker.precio(0.10, 100.01), Faker.entero(1, 100));
+            Producto nuevoProducto = new Producto(Faker.lorem(4), Faker.loremCorto(), Faker.precio(0.10, 100.01), Faker.entero(1, 100));
             mercado.agregarProducto(nuevoProducto);
         }
     }
@@ -67,16 +63,16 @@ public class Main {
     public static void agregarProducto() {
 
         System.out.println("Introduce el nombre del producto: ");
-        String producto = stringScanner.nextLine();
+        String producto = miScanner.nextLine();
 
         System.out.println("Introduce la drescripcion del producto: ");
-        String descripcion = stringScanner.nextLine();
+        String descripcion = miScanner.nextLine();
 
         System.out.println("Introduce el precio del producto:");
-        double precio = intScanner.nextInt();
+        double precio = Double.parseDouble(miScanner.nextLine());
 
         System.out.println("Introduce la cantidad del producto:");
-        int cantidad = intScanner.nextInt();
+        int cantidad = Integer.parseInt(miScanner.nextLine());
 
         Producto nuevoLibro = new Producto(producto, descripcion, precio, cantidad);
         mercado.agregarProducto(nuevoLibro);
@@ -84,13 +80,16 @@ public class Main {
     }
 
     public static void venderProducto() {
+        miScanner.nextLine();
 
         System.out.println("Introduce el id: ");
-                int id = intScanner.nextInt();
+        int id = Integer.parseInt(miScanner.nextLine());
 
-                System.out.println("Introduce la cantidad del producto:");
-                int cantidad = intScanner.nextInt();
+        System.out.println("Introduce la cantidad del producto:");
+        int cantidad = Integer.parseInt(miScanner.nextLine());
 
-                mercado.venderProducto(id, cantidad);
+        boolean vendido = mercado.venderProducto(id, cantidad);
+        System.out.println(vendido ? "Vendido" : "No vendido");
+
     }
 }

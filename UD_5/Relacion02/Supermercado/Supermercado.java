@@ -4,7 +4,7 @@ public class Supermercado {
 
     private ArrayList<Producto> almacen;
 
-    public Supermercado(){
+    public Supermercado() {
         this.almacen = new ArrayList<Producto>();
     }
 
@@ -14,7 +14,7 @@ public class Supermercado {
         almacen.add(nuevoProducto);
     }
 
-    private Producto buscarProducto (int id) {
+    private Producto buscarProducto(int id) {
 
         Producto productoBuscado = null;
         boolean encontrado = false;
@@ -30,23 +30,32 @@ public class Supermercado {
         return productoBuscado;
     }
 
-    public void venderProducto (int id, int cantidad) {
-
+    public boolean venderProducto(int id, int cantidad) {
+        boolean ventaRealizada = false;
         Producto productoBuscado = this.buscarProducto(id);
-        int nuevaCantidad = productoBuscado.getCantidad() - cantidad;
-        
-        productoBuscado.setCantidad(nuevaCantidad);
+
+        if (productoBuscado != null && productoBuscado.getCantidad() >= cantidad) {
+            int nuevaCantidad = productoBuscado.getCantidad() - cantidad;
+            productoBuscado.setCantidad(nuevaCantidad);
+            ventaRealizada = true;
+        }
+
+        return ventaRealizada;
+    }
+
+    public String mostrarInvetario() {
+        toString();
     }
 
     public String toString() {
-        
+
         String listaProductos = "Los productos disponibles: \n";
         for (int i = 0; i < almacen.size(); i++) {
             listaProductos += almacen.get(i) + "\n";
         }
 
         return listaProductos;
-
+ 
     }
 
 }
