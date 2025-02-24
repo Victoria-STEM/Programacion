@@ -13,13 +13,13 @@ public class Playlist {
     }
 
     public int contarDuracionTotalCanciones() {
-        int duracionTotal = 0;
+        int duracionPlaylist = 0;
         
         for (int i = 0; i < listaCanciones.size(); i++) {
-            duracionTotal += listaCanciones.get(i).getDuracion();
+            duracionPlaylist += listaCanciones.get(i).getDuracion();
         }
         
-        return duracionTotal;
+        return duracionPlaylist;
     }
 
     public String toString() {
