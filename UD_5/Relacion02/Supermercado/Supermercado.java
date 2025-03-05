@@ -44,7 +44,7 @@ public class Supermercado {
     }
 
     public String mostrarInvetario() {
-        toString();
+        return toString();
     }
 
     public String toString() {
