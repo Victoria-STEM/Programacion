@@ -9,9 +9,14 @@ public class Faker {
 
     private static final String[] apellidos = {
         "García", "Rodríguez", "Martínez", "López", "González", "Pérez", "Fernández", "Sánchez", "Ramírez",
-        "Torres",
-        "Díaz", "Jiménez", "Moreno", "Vargas", "Rojas", "Castro", "Mendoza", "Romero", "Herrera", "Ortega",
+        "Torres", "Díaz", "Jiménez", "Moreno", "Vargas", "Rojas", "Castro", "Mendoza", "Romero", "Herrera", "Ortega",
         "Navarro", "Delgado", "Cabrera", "Reyes", "Acosta", "Campos", "Peña", "Vega", "Guerrero", "Cruz"
+    };
+
+    private static final String[] productos = {
+        "Leche", "Pan", "Arroz", "Azúcar", "Sal", "Aceite de oliva", "Harina", "Pasta", "Café", "Té",
+        "Manzanas", "Plátanos", "Naranjas", "Papas", "Zanahorias", "Tomates", "Cebollas", "Ajo", "Lechuga", "Espinaca",
+        "Pollo", "Carne de res", "Pescado", "Huevos", "Queso", "Yogur", "Mantequilla", "Chocolate", "Refresco", "Galletas"
     };
 
     private static final String[] ciudades = {
@@ -74,6 +79,17 @@ public class Faker {
         int indiceAleatorio = (int) (Math.random() * (apellidos.length - 1));
         String apellidoAleatorio = apellidos[indiceAleatorio];
         return apellidoAleatorio;
+    }
+
+    /**
+     * Genera un producto aleatorio.
+     *
+     * @return Producto aleatorio.
+     */
+    public static String producto() {
+        int indiceAleatorio = (int) (Math.random() * (apellidos.length - 1));
+        String productoAleatorio = productos[indiceAleatorio];
+        return productoAleatorio;
     }
 
     /**
