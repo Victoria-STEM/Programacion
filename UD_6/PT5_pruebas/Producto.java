@@ -44,6 +44,25 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
+    // ------------------------ METODOS ------------------------ //
+
+    public double aplicarDescuento(int cantidad) {
+
+        int cantidadDescuento10 = 10;
+        double descuento5 = 0.05;
+        int cantidadDescuento50 = 50;
+        double descuento10 = 0.10;
+        double precioFinal = this.precio;
+
+        if (cantidad > cantidadDescuento10) {
+            precioFinal -= precio * descuento5;
+        }
+        if (cantidad > cantidadDescuento50) {
+            precioFinal -= precio * descuento10;
+        }
+        return precioFinal;
+    }
+
     public String toString() {
         return "Codigo: " + this.codigo + " | " + "Nombre: " + this.nombre + " | " + "Cantidad: " + this.cantidad + " | " + "Precio: " + this.precio + " €";
     }

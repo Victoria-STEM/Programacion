@@ -2,10 +2,11 @@ import java.util.Scanner;
 
 public class Main {
 
-    final static int cantidadProductos = 3;
+    final static int cantidadProductos = 5;
+    final static int cantidadProveedores = 5;
     final static Scanner miScanner = new Scanner(System.in);
 
-    private static Almacen listaProductos;
+    private static Almacen gestorAlmacen = new Almacen();
 
     public static void main(String[] args) {
 
@@ -18,7 +19,8 @@ public class Main {
             int opcion = miScanner.nextInt();
 
             if (opcion == 1) {
-                System.out.println(listaProductos);
+                System.out.println(gestorAlmacen.listarProductos());
+                System.out.println(gestorAlmacen.listarProveedores());
             }
 
             else if (opcion == 2) {
@@ -28,7 +30,7 @@ public class Main {
                 System.out.println("Introduce el codigo del producto:");
                 codigoProducto = miScanner.nextInt();
 
-                productoBuscado = listaProductos.buscarProducto(codigoProducto);
+                productoBuscado = gestorAlmacen.buscarProducto(codigoProducto);
 
                 if (productoBuscado != null) {
                     System.out.println(productoBuscado);
@@ -48,7 +50,7 @@ public class Main {
                 System.out.println("Introduce la cantidad del producto a anadir:");
                 cantidadProductoAnadida = miScanner.nextInt();
 
-                productoBuscado = listaProductos.buscarProducto(codigoProducto);
+                productoBuscado = gestorAlmacen.buscarProducto(codigoProducto);
 
                 if (productoBuscado != null) {
                     productoBuscado.setCantidad(productoBuscado.getCantidad() + cantidadProductoAnadida);
@@ -69,7 +71,7 @@ public class Main {
                 System.out.println("Introduce la cantidad del producto a retirar:");
                 cantidadProductoSustraer = miScanner.nextInt();
 
-                productoBuscado = listaProductos.buscarProducto(codigoProducto);
+                productoBuscado = gestorAlmacen.buscarProducto(codigoProducto);
 
                 if (productoBuscado != null) {
                     cantidadProductoActual = productoBuscado.getCantidad();
@@ -93,12 +95,12 @@ public class Main {
                 System.out.println("Introduce el codigo del producto a eliminar:");
                 codigoProducto = miScanner.nextInt();
 
-                productoBuscado = listaProductos.buscarProducto(codigoProducto);
+                productoBuscado = gestorAlmacen.buscarProducto(codigoProducto);
 
                 if(productoBuscado != null) {
 
                     if(productoBuscado.getCantidad() == 0) {
-                        listaProductos.eliminarProducto(codigoProducto);
+                        gestorAlmacen.eliminarProducto(codigoProducto);
                         System.out.println("El producto con codigo " + codigoProducto + " ha sido eliminado del almacen.");
                     }
                     else {
@@ -114,21 +116,76 @@ public class Main {
                 programa = false;
             }
 
+            else if (opcion == 7) {
+                int stockComprobar;
+                
+                System.out.println("Introduce el stock: ");
+                stockComprobar = miScanner.nextInt();
+
+                System.out.println(gestorAlmacen.listarProductoMenorQueCantidad(stockComprobar));
+
+            }
+
+            else if (opcion == 8) {
+                int codigoProducto, idProveedor;
+
+                System.out.println("Introduce el codigo del producto: ");
+                codigoProducto = miScanner.nextInt();
+
+                System.out.println("Introduce el id del proveedor: ");
+                idProveedor = miScanner.nextInt();
+
+                if (gestorAlmacen.buscarProducto(codigoProducto) != null && gestorAlmacen.buscarProveedor(idProveedor) != null) {
+                    Producto productoBuscado = gestorAlmacen.buscarProducto(codigoProducto);
+                    Proveedor proveedorBuscado = gestorAlmacen.buscarProveedor(idProveedor);
+                    proveedorBuscado.agregarProducto(productoBuscado);
+                    System.out.println("Producto agregado al proveedor.");
+                    System.out.println(proveedorBuscado);
+                }
+                else {
+                    System.out.println("Producto o proveedor no encontrado.");
+                }
+            }
+
+            else if (opcion == 9) {
+
+                int codigoProducto, cantidadProducto;
+                Producto productoBuscado;
+
+                System.out.println("Introduce el codigo del producto: ");
+                codigoProducto = miScanner.nextInt();
+
+                System.out.println("Introduce la cantidad de producto: ");
+                cantidadProducto = miScanner.nextInt();
+
+                productoBuscado = gestorAlmacen.buscarProducto(codigoProducto);
+
+                System.out.println("Precio sin descuento: " + productoBuscado.getPrecio());
+                System.out.println("Precio con descuento: " + productoBuscado.aplicarDescuento(cantidadProducto));
+
+                productoBuscado.setPrecio(8.00);
+
+                System.out.println("Precio sin descuento: " + productoBuscado.getPrecio());
+                System.out.println("Precio con descuento: " + productoBuscado.aplicarDescuento(cantidadProducto));
+                
+            }
+
             else {
                 System.out.println("Opcion incorrecta. Introduce: 1, 2, 3, 4, 5 o 6.");
             }
         }
 
-        System.out.println(listaProductos);
+        System.out.println(gestorAlmacen);
         miScanner.close();
     }
 
     public static void inicializarSupermercado() {
-        listaProductos = new Almacen();
-
+    
         for (int i = 0; i < cantidadProductos; i++) {
             Producto nuevoProducto = new Producto(Faker.nombre(), Faker.precio(0.5, 10), Faker.entero(2, 10));
-            listaProductos.agregarProducto(nuevoProducto);
+            Proveedor nuevoProveedor = new Proveedor((i +1), Faker.nombreCompleto());
+            gestorAlmacen.agregarProducto(nuevoProducto);
+            gestorAlmacen.agregarProveedor(nuevoProveedor);
         }
     }
 

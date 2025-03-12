@@ -17,13 +17,19 @@ public class Almacen {
     }
 
     public void agregarProducto(Producto nuevoProducto) {
-        int idNuevoProducto = listaProductos.size() + 1;
+        int idNuevoProducto;
+        if (listaProductos.isEmpty()) {
+            idNuevoProducto = 1;
+        }
+        else {
+            idNuevoProducto = listaProductos.get(listaProductos.size() - 1).getCodigo() + 1;
+        }
         nuevoProducto.setCodigo(idNuevoProducto);
         listaProductos.add(nuevoProducto);
+
     }
 
     public Producto buscarProducto(int codigo) {
-
         Producto productoBuscado = null;
         boolean encontrado = false;
 
@@ -56,7 +62,7 @@ public class Almacen {
     }
 
     public String toString() {
-
+        
         String listaProductosAlmacen = "Lista de productos disponibles: \n";
 
         for (int i = 0; i < listaProductos.size(); i++) {
