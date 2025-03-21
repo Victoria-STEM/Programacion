@@ -25,6 +25,7 @@ public class Libro extends MaterialBibliografico {
         this.genero = genero;
     }
 
+    @Override
     public String toString() {
         return "Libro: " + super.getTitulo() + " por " + super.getAutor() + " Género: " + this.genero + ", Páginas: " + this.numePaginas + ".";
 
