@@ -1,14 +1,14 @@
 public abstract class MaterialDigital extends MaterialBiblioteca implements AccesoDigital{
 
     private String usuario;
-    private String ulr;
+    private String url;
     private boolean sesionActiva;
 
-    public MaterialDigital (String titulo, String codigo, String categoria, String usuario, String url, boolean sesionActiva) {
+    public MaterialDigital (String titulo, String codigo, String categoria, String url) {
         super(titulo, codigo, categoria);
-        this.usuario = usuario;
-        this.ulr = url;
-        this.sesionActiva = sesionActiva;
+        this.usuario = null;
+        this.url = url;
+        this.sesionActiva = false;
     }
 
     // ------------------ GETTERS & SETTERS ------------------ //
@@ -21,12 +21,12 @@ public abstract class MaterialDigital extends MaterialBiblioteca implements Acce
         this.usuario = usuario;
     }
 
-    public String getUlr() {
-        return ulr;
+    public String getUrl() {
+        return url;
     }
 
-    public void setUlr(String ulr) {
-        this.ulr = ulr;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public boolean isSesionActiva() {
@@ -38,5 +38,26 @@ public abstract class MaterialDigital extends MaterialBiblioteca implements Acce
     }
 
     // ------------------ METODOS ------------------ //
+
+    @Override
+    public String toString() {
+        return "Usuario: " + usuario +
+           " | URL: " + url +
+           " | Sesión Activa: " + (sesionActiva ? "Sí" : "No") +
+           " | Título: " + getTitulo() +
+           " | Código: " + getCodigo() +
+           " | Categoría: " + getCategoria() +
+           " | Sesión Activa (método): " + (isSesionActiva() ? "Sí" : "No") +
+           " | Información: " + obtenerInformacion() +
+           " | Cerrar Sesión (método): " + cerrarSesion() +
+           " | Clase: " + getClass() +
+           " | HashCode: " + hashCode() +
+           " | Super.toString(): " + super.toString() + "\n";
+    }
+
+    @Override
+    public String obtenerInformacion() {
+        return toString();
+    }
     
 }

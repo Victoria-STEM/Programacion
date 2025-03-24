@@ -1,21 +1,20 @@
+
 public class LibroFisico extends MaterialBiblioteca implements Prestamo, Reservable {
-    
+
     private String autor;
     private int anioPublicacion;
     private boolean prestado;
     private boolean reservado;
 
-    public LibroFisico(String titulo, String codigo, String categoria, String autor, int anioPublicacion,
-            boolean prestado, boolean reservado) {
+    public LibroFisico(String titulo, String codigo, String categoria, String autor, int anioPublicacion) {
         super(titulo, codigo, categoria);
         this.autor = autor;
         this.anioPublicacion = anioPublicacion;
-        this.prestado = prestado;
-        this.reservado = reservado;
+        this.prestado = false;
+        this.reservado = false;
     }
 
     // ------------------- GETTERS & SETTERS ------------------- //
-
     public String getAutor() {
         return autor;
     }
@@ -47,44 +46,53 @@ public class LibroFisico extends MaterialBiblioteca implements Prestamo, Reserva
     public void setReservado(boolean reservado) {
         this.reservado = reservado;
     }
-    
+
     // ------------------- METODOS ------------------- //
     
-    public boolean prestar(){
+    public boolean prestar() {
         if (!isReservado()) {
             setPrestado(true);
         }
         return isPrestado();
     }
 
-    public boolean devolver(){
-        if (isPrestado()) { // si no está reservado se puede prestar
-            setPrestado(false);
-        }
+    public boolean devolver() {
+        this.setPrestado(false);
         return isPrestado();
     }
-    
+
     public boolean reservable() {
-        if (!isReservado()) { // solo si está prestado se puede ser
-            setReservado(true);
-        }
-        return isReservado();
+        return this.isReservado() ? false : true;
     }
 
-    public String reservar() {
-
+    public boolean reservar() {
+        this.setReservado(true);
+        return this.isReservado();
     }
 
-    public String cancelarReserva() {
-
+    public boolean cancelarReserva() {
+        this.setReservado(false);
+        return this.isReservado();
     }
-    
+
     public boolean estaReservado() {
-        
+        return this.isPrestado();
     }
-    
+
+    @Override
     public String toString() {
-        return this.getTitulo() + this.getCodigo() + this.getCategoria() + this.getAutor() + this.getAnioPublicacion() + this.isPrestado() + this.isReservado();
+        return "Código: " + getCodigo()
+                + " | Título: " + getTitulo()
+                + " | Categoría: " + getCategoria()
+                + " | Autor: " + getAutor()
+                + " | Año de Publicación: " + getAnioPublicacion()
+                + "\nPrestado: " + (isPrestado() ? "Sí" : "No")
+                + " | Reservado: " + (isReservado() ? "Sí" : "No");
     }
-    
+
+    @Override
+    public String obtenerInformacion() {
+        return this.toString();
+    }
+
 }

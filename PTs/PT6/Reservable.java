@@ -1,7 +1,7 @@
 public interface Reservable {
 
-    public String reservar();
-    public String cancelarReserva();
+    public boolean reservar();
+    public boolean cancelarReserva();
     public boolean estaReservado();
      
 }
