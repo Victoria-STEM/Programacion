@@ -28,16 +28,22 @@ public class DVD extends MaterialBiblioteca implements Prestamo {
     }
 
     // ---------------- METODOS ---------------- //
-    public boolean prestar() {
+    @Override
+    public void prestar() {
         this.setPrestado(true);
-        return this.isPrestado();
     }
 
-    public boolean devolver() {
+    @Override
+    public boolean prestable() {
+        return (this.isPrestado()? false : true);
+    }
+
+    @Override
+    public void devolver() {
         this.setPrestado(false);
-        return this.isPrestado();
     }
 
+    @Override
     public boolean reservable() {
         return this.isPrestado() ? false : true;
     }

@@ -43,7 +43,7 @@ public class RevistaDigital extends MaterialDigital {
 
     @Override
     public boolean sesionActiva() { 
-        return (super.getUsuario() == null? false : true);
+        return this.getUsuario() != null;
     }
 
     @Override
@@ -54,8 +54,8 @@ public class RevistaDigital extends MaterialDigital {
                 + " | Publicador: " + getEditorial() 
                 + " | Edición: " + getEdicion() 
                 + " | URL: " + getUrl()
-                + " | Sesion: " + (sesionActiva()? "Cerrada" : "Activa")
-                + " | Usuario: " + getUsuario();
+                + " | Sesion: " + (this.sesionActiva() ? "Activa" : "Cerrada" )
+                + " | Usuario: " + (getUsuario() == null ? "Sin usuario" : getUsuario());
     }
 
     @Override

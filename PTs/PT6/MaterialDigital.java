@@ -30,7 +30,7 @@ public abstract class MaterialDigital extends MaterialBiblioteca implements Acce
     }
 
     public boolean isSesionActiva() {
-        return sesionActiva;
+        return this.getUsuario() != null;
     }
 
     public void setSesionActiva(boolean sesionActiva) {
@@ -39,25 +39,14 @@ public abstract class MaterialDigital extends MaterialBiblioteca implements Acce
 
     // ------------------ METODOS ------------------ //
 
-    @Override
-    public String toString() {
-        return "Usuario: " + usuario +
-           " | URL: " + url +
-           " | Sesión Activa: " + (sesionActiva ? "Sí" : "No") +
-           " | Título: " + getTitulo() +
-           " | Código: " + getCodigo() +
-           " | Categoría: " + getCategoria() +
-           " | Sesión Activa (método): " + (isSesionActiva() ? "Sí" : "No") +
-           " | Información: " + obtenerInformacion() +
-           " | Cerrar Sesión (método): " + cerrarSesion() +
-           " | Clase: " + getClass() +
-           " | HashCode: " + hashCode() +
-           " | Super.toString(): " + super.toString() + "\n";
-    }
+    // @Override
+    // public String toString() {
+    //     return super.toString();
+    // }
 
-    @Override
-    public String obtenerInformacion() {
-        return toString();
-    }
+    // @Override
+    // public String obtenerInformacion() {
+    //     return toString();
+    // }
     
 }

@@ -1,7 +1,8 @@
 public interface Prestamo {
 
-    public boolean prestar();
-    public boolean devolver();
+    public void prestar();
+    public void devolver();
     public boolean reservable();
+    public boolean prestable();
 
 }

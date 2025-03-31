@@ -48,35 +48,41 @@ public class LibroFisico extends MaterialBiblioteca implements Prestamo, Reserva
     }
 
     // ------------------- METODOS ------------------- //
-    
-    public boolean prestar() {
+    @Override
+    public void prestar() {
         if (!isReservado()) {
             setPrestado(true);
         }
-        return isPrestado();
     }
 
-    public boolean devolver() {
+    @Override
+    public boolean prestable() {
+        return (this.isPrestado()? false : true);
+    }
+
+    @Override
+    public void devolver() {
         this.setPrestado(false);
-        return isPrestado();
     }
 
+    @Override
     public boolean reservable() {
         return this.isReservado() ? false : true;
     }
 
-    public boolean reservar() {
+    @Override
+    public void reservar() {
         this.setReservado(true);
-        return this.isReservado();
     }
 
-    public boolean cancelarReserva() {
+    @Override
+    public void cancelarReserva() {
         this.setReservado(false);
-        return this.isReservado();
     }
 
+    @Override
     public boolean estaReservado() {
-        return this.isPrestado();
+        return this.isReservado();
     }
 
     @Override
@@ -86,7 +92,7 @@ public class LibroFisico extends MaterialBiblioteca implements Prestamo, Reserva
                 + " | Categoría: " + getCategoria()
                 + " | Autor: " + getAutor()
                 + " | Año de Publicación: " + getAnioPublicacion()
-                + "\nPrestado: " + (isPrestado() ? "Sí" : "No")
+                + " | Prestado: " + (isPrestado() ? "Sí" : "No")
                 + " | Reservado: " + (isReservado() ? "Sí" : "No");
     }
 

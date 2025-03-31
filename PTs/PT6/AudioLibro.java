@@ -40,17 +40,17 @@ public class AudioLibro extends MaterialDigital implements Reservable {
     }
 
     // ---------------------- METODOS ---------------------- //
-    
-    public boolean reservar() {
+    @Override
+    public void reservar() {
         this.setReservado(true);
-        return this.isReservado();
     }
 
-    public boolean cancelarReserva() {
+    @Override
+    public void cancelarReserva() {
         this.setReservado(false);
-        return isReservado();
     }
 
+    @Override
     public boolean estaReservado() {
         return isReservado();
     }
@@ -76,13 +76,13 @@ public class AudioLibro extends MaterialDigital implements Reservable {
     public String toString() {
         return  "Código: " + getCodigo() 
                 + " | Título: " + getTitulo()
-                + " | Categoría: " + getCategoria()
-                + " | Usuario: " + getUsuario() 
-                + " | URL: " + getUrl() 
-                + " | Sesión Activa: " + (isSesionActiva() ? "Sí" : "No")
                 + " | Autor: " + getAutor() 
+                + " | Categoría: " + getCategoria()
+                + " | URL: " + getUrl() 
                 + " | Duración: " + getDuracionMinutos() + " min"
-                + "\nReservado: " + (isReservado() ? "Sí" : "No");
+                + " | Usuario: " + (getUsuario() == null ? "Sin usuario" : getUsuario())
+                + " | Sesión Activa: " + (isSesionActiva() ? "Sí" : "No")
+                + " | Reservado: " + (isReservado() ? "Sí" : "No");
     }
 
     @Override
